@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ice text-gray-700 font-sans antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display tracking-wider text-navy-950;
+}
