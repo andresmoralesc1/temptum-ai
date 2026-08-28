@@ -3,7 +3,7 @@ import { getAllCasoSlugs } from '@/lib/content';
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-  'https://temptum.io';
+  'https://temptum.andresmorales.com.co';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/servicios',
     '/inteligencia-politica',
     '/casos-de-estudio',
+    '/articulos-linkedin',
     '/contacto',
     '/politica-de-privacidad',
     '/mapa-del-sitio',
