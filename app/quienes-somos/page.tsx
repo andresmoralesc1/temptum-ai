@@ -138,14 +138,14 @@ export default function QuienesSomosPage() {
               <figure className="border-l-2 border-gold pl-6">
                 <Image
                   src="/images/equipo/equipo-reunion.jpg"
-                  alt="Equipo de Temptum en sesión de trabajo"
+                  alt="Sesión de consultoría con clientes y aliados"
                   width={1000}
                   height={667}
                   sizes="(min-width: 1024px) 480px, 100vw"
                   className="aspect-[3/2] w-full object-cover"
                 />
                 <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-gray-500">
-                  Sesión de análisis estratégico
+                  Sesión de análisis con aliados y clientes
                 </figcaption>
               </figure>
 

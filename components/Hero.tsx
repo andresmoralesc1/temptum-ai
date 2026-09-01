@@ -77,7 +77,7 @@ export function Hero() {
           <figure className="mt-12 hidden border-l-2 border-gold pl-6 lg:block">
             <Image
               src="/images/equipo/equipo-reunion.jpg"
-              alt="Equipo de consultores en reunión estratégica"
+              alt="Sesión de trabajo con clientes y aliados"
               width={680}
               height={453}
               priority
@@ -85,7 +85,7 @@ export function Hero() {
               className="aspect-[3/2] w-full max-w-2xl object-cover"
             />
             <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-navy-100">
-              Análisis y consultoría · Trabajo en equipo
+              Sesión de trabajo con aliados · Workshops y consultoría
             </figcaption>
           </figure>
         </div>
@@ -151,7 +151,7 @@ export function Hero() {
           <figure className="mt-10 border-l-2 border-gold pl-4 lg:hidden">
             <Image
               src="/images/equipo/equipo-reunion.jpg"
-              alt="Equipo de consultores en reunión estratégica"
+              alt="Sesión de trabajo con clientes y aliados"
               width={680}
               height={453}
               priority
@@ -159,7 +159,7 @@ export function Hero() {
               className="aspect-[3/2] w-full object-cover"
             />
             <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-navy-100">
-              Análisis y consultoría · Trabajo en equipo
+              Workshops y consultoría con aliados
             </figcaption>
           </figure>
         </aside>
