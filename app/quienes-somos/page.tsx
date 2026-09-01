@@ -324,6 +324,52 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
+      {/* ALIADOS Y SECTORES */}
+      <section className="bg-white py-24 lg:py-32">
+        <div className="mx-auto max-w-content px-5 lg:px-20">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-5">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-navy-600">
+                Aliados y sectores
+              </p>
+              <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-navy-950 md:text-4xl">
+                Un ecosistema amplio,
+                <br />
+                <span className="text-navy-600">
+                  articulado para cada encargo.
+                </span>
+              </h2>
+              <p className="mt-6 text-base leading-relaxed text-gray-700">
+                Temptum trabaja con una red estable de aliados sectoriales,
+                académicos y consultivos en Colombia y la región andina. Para
+                cada proyecto convocamos a los perfiles que el contexto exige:
+                abogados, economistas, científicos políticos, comunicadores
+                estratégicos y especialistas técnicos.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-gray-700">
+                Esta red no reemplaza al equipo permanente: lo complementa. La
+                coordinación, el criterio editorial y la interlocución con el
+                cliente permanecen en casa.
+              </p>
+            </div>
+
+            <figure className="border-l-2 border-gold pl-6 lg:col-span-7">
+              <Image
+                src="/images/equipo/equipo-acuerdo.jpg"
+                alt="Equipo interdisciplinario de aliados y colaboradores"
+                width={1600}
+                height={900}
+                sizes="(min-width: 1024px) 800px, 100vw"
+                className="aspect-[16/9] w-full object-cover"
+              />
+              <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-gray-500">
+                Red de aliados sectoriales y académicos
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       {/* CÓMO TRABAJAMOS */}
       <section className="bg-navy-950 py-24 text-white lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">

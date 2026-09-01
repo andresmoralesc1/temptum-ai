@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Building2, ShieldAlert, Gavel, Leaf } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { WHATSAPP_SERVICIOS } from '@/lib/constants';
@@ -88,6 +89,52 @@ export default function ServiciosPage() {
           },
         ]}
       />
+
+      <section className="bg-white py-24 lg:py-32">
+        <div className="mx-auto max-w-content px-5 lg:px-20">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <figure className="border-l-2 border-gold pl-6 lg:col-span-7">
+              <Image
+                src="/images/equipo/equipo-acuerdo.jpg"
+                alt="Equipo interdisciplinario de aliados y colaboradores en sesión de trabajo"
+                width={1600}
+                height={900}
+                sizes="(min-width: 1024px) 800px, 100vw"
+                className="aspect-[16/9] w-full object-cover"
+              />
+              <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-gray-500">
+                Sesión de trabajo con aliados sectoriales y académicos
+              </figcaption>
+            </figure>
+
+            <div className="lg:col-span-5">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-navy-600">
+                Ecosistema de trabajo
+              </p>
+              <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-navy-950 md:text-4xl">
+                Las necesidades de nuestros clientes son diversas.
+                <br />
+                <span className="text-navy-600">
+                  Integramos equipos para cada encargo.
+                </span>
+              </h2>
+              <p className="mt-6 text-base leading-relaxed text-gray-700">
+                Por cada proyecto convocamos una combinación de perfiles
+                especializados —jurídicos, técnicos, académicos, sectoriales— que
+                se articulan con nuestro equipo permanente. No vendemos un
+                catálogo fijo: diseñamos el equipo que cada contexto exige,
+                manteniendo una coordinación central y un solo interlocutor
+                responsable.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-gray-700">
+                Esa flexibilidad es la que nos permite operar simultáneamente en
+                sectores regulados, escenarios de crisis y procesos legislativos
+                de alta complejidad técnica.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-ice py-24 lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">
