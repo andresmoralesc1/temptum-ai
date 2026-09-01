@@ -4,23 +4,52 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { WHATSAPP_BASE } from '@/lib/constants';
+import { NavMenu, type NavSecondaryItem } from '@/components/NavMenu';
 
-const navItems = [
-  { href: '/quienes-somos', label: 'Quiénes somos' },
+// Primary nav: 5 items principales en la barra horizontal.
+// Orden pensado por relevancia para un visitante B2B:
+//  1. Servicios (qué ofrecen)
+//  2. Casos   (prueba de trabajo)
+//  3. Quiénes somos (credibilidad)
+//  4. Inteligencia (contenido)
+//  5. Menú "Más" (dropdown con el resto)
+const navItems: { href: string; label: string }[] = [
   { href: '/servicios', label: 'Servicios' },
-  { href: '/inteligencia-politica', label: 'Inteligencia' },
   { href: '/casos-de-estudio', label: 'Casos' },
-  { href: '/articulos-linkedin', label: 'LinkedIn' },
-  { href: '/contacto', label: 'Contacto' },
+  { href: '/quienes-somos', label: 'Quiénes somos' },
+  { href: '/inteligencia-politica', label: 'Inteligencia' },
+];
+
+const secondaryItems: NavSecondaryItem[] = [
+  {
+    href: '/articulos-linkedin',
+    label: 'Artículos en LinkedIn',
+    description: 'Análisis publicados en LinkedIn.',
+  },
+  {
+    href: '/contacto',
+    label: 'Contacto',
+    description: 'Canales y formulario institucional.',
+  },
+  {
+    href: '/mapa-del-sitio',
+    label: 'Mapa del sitio',
+    description: 'Vista completa del sitio.',
+  },
+  {
+    href: '/politica-de-privacidad',
+    label: 'Política de privacidad',
+  },
 ];
 
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -31,6 +60,7 @@ export function Header() {
 
   useEffect(() => {
     setOpen(false);
+    setMoreOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -67,13 +97,6 @@ export function Header() {
             <span className="font-display text-xl font-semibold tracking-tight text-white">
               Temptum
             </span>
-            <span
-              className="hidden h-3 w-px bg-gold/60 md:block"
-              aria-hidden="true"
-            />
-            <span className="hidden text-[11px] font-medium uppercase tracking-[0.18em] text-navy-100 md:block">
-              Consultoría
-            </span>
           </Link>
 
           <nav className="hidden lg:block" aria-label="Navegación principal">
@@ -107,6 +130,9 @@ export function Header() {
                   </li>
                 );
               })}
+              <li className="ml-1">
+                <NavMenu label="Más" items={secondaryItems} />
+              </li>
             </ul>
           </nav>
 
@@ -115,13 +141,12 @@ export function Header() {
               href={WHATSAPP_BASE}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden lg:inline-flex items-center gap-2 border border-gold/40 bg-navy-800 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-white shadow-sm transition-all duration-150 hover:border-gold hover:bg-navy-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+              className="hidden items-center gap-2 bg-gold px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-950 shadow-sm transition-all duration-150 hover:bg-gold/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 lg:inline-flex"
               aria-label="Conversemos por WhatsApp"
             >
               <MessageCircle
                 size={14}
-                strokeWidth={1.75}
-                className="text-gold"
+                strokeWidth={2}
                 aria-hidden="true"
               />
               Hablemos
@@ -163,56 +188,111 @@ export function Header() {
         id="mobile-menu"
         aria-label="Navegación móvil"
         className={cn(
-          'fixed inset-x-0 top-16 z-40 origin-top border-b border-white/5 bg-navy-950 transition-transform duration-200 ease-out lg:hidden',
+          'fixed inset-x-0 top-16 z-40 max-h-[calc(100vh-4rem)] origin-top overflow-y-auto border-b border-white/5 bg-navy-950 transition-transform duration-200 ease-out lg:hidden',
           open ? 'translate-y-0' : '-translate-y-2 opacity-0 pointer-events-none',
         )}
       >
-        <ul className="mx-auto flex max-w-content flex-col gap-1 px-5 py-6">
-          {navItems.map((item) => {
-            const active =
-              pathname === item.href || pathname.startsWith(item.href + '/');
-            return (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className={cn(
-                    'flex items-center justify-between rounded px-3 py-3 text-base font-medium transition-colors',
-                    active
-                      ? 'bg-white/5 text-white'
-                      : 'text-navy-100 hover:bg-white/5 hover:text-white',
-                  )}
-                >
-                  {item.label}
-                  <span
-                    aria-hidden="true"
+        <div className="mx-auto max-w-content px-5 py-6">
+          {/* Primary items */}
+          <ul className="flex flex-col gap-1">
+            {navItems.map((item) => {
+              const active =
+                pathname === item.href ||
+                pathname.startsWith(item.href + '/');
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setOpen(false)}
                     className={cn(
-                      'h-1.5 w-1.5 rounded-full bg-gold transition-opacity',
-                      active ? 'opacity-100' : 'opacity-0',
+                      'flex items-center justify-between rounded px-3 py-3 text-base font-medium transition-colors',
+                      active
+                        ? 'bg-white/5 text-white'
+                        : 'text-navy-100 hover:bg-white/5 hover:text-white',
                     )}
-                  />
-                </Link>
-              </li>
-            );
-          })}
-          <li className="mt-4 border-t border-white/5 pt-4">
+                  >
+                    {item.label}
+                    <span
+                      aria-hidden="true"
+                      className={cn(
+                        'h-1.5 w-1.5 rounded-full bg-gold transition-opacity',
+                        active ? 'opacity-100' : 'opacity-0',
+                      )}
+                    />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* Más — acordeón */}
+          <div className="mt-2 border-t border-white/5 pt-2">
+            <button
+              type="button"
+              onClick={() => setMoreOpen((v) => !v)}
+              aria-expanded={moreOpen}
+              aria-controls="mobile-more"
+              className="flex w-full items-center justify-between rounded px-3 py-3 text-base font-medium text-navy-100 hover:bg-white/5 hover:text-white"
+            >
+              Más
+              <ChevronDown
+                size={16}
+                strokeWidth={2}
+                className={cn(
+                  'transition-transform duration-200',
+                  moreOpen && 'rotate-180',
+                )}
+                aria-hidden="true"
+              />
+            </button>
+            {moreOpen && (
+              <ul id="mobile-more" className="flex flex-col gap-1 pb-2">
+                {secondaryItems.map((item) => {
+                  const active = pathname === item.href;
+                  return (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                        className={cn(
+                          'flex flex-col rounded px-3 py-2.5 text-sm transition-colors',
+                          active
+                            ? 'bg-white/5 text-white'
+                            : 'text-navy-100 hover:bg-white/5 hover:text-white',
+                        )}
+                      >
+                        <span className="font-medium">{item.label}</span>
+                        {item.description && (
+                          <span className="mt-0.5 text-xs leading-relaxed text-navy-100/70">
+                            {item.description}
+                          </span>
+                        )}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </div>
+
+          {/* CTA WhatsApp */}
+          <div className="mt-4 border-t border-white/5 pt-4">
             <a
               href={WHATSAPP_BASE}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 border border-gold/40 bg-navy-800 px-4 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-white transition-all duration-150 hover:border-gold hover:bg-navy-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+              className="flex items-center justify-center gap-2 bg-gold px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-950 transition-all duration-150 hover:bg-gold/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
               aria-label="Conversemos por WhatsApp"
             >
               <MessageCircle
                 size={14}
-                strokeWidth={1.75}
-                className="text-gold"
+                strokeWidth={2}
                 aria-hidden="true"
               />
               Hablemos por WhatsApp
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </nav>
     </>
   );
