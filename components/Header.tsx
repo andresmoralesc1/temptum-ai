@@ -57,12 +57,12 @@ export function Header() {
             aria-label="Temptum — Inicio"
           >
             <Image
-              src="/logo-temptum.png"
+              src="/logo-temptum-darkbg.png"
               alt=""
-              width={32}
-              height={32}
+              width={36}
+              height={36}
               priority
-              className="h-8 w-8"
+              className="h-9 w-9"
             />
             <span className="font-display text-xl font-semibold tracking-tight text-white">
               Temptum
