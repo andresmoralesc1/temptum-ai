@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto max-w-content px-5 pt-16 lg:px-20">
         <div className="flex items-center gap-3 border-b border-navy-800 pb-10">
           <Image
-            src="/logo-temptum.png"
+            src="/logo-temptum-white.png"
             alt=""
             width={36}
             height={36}
