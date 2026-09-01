@@ -1,10 +1,30 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-navy-950 text-navy-100">
-      <div className="mx-auto grid max-w-content gap-12 px-5 py-16 md:grid-cols-3 lg:px-20">
+      <div className="mx-auto max-w-content px-5 pt-16 lg:px-20">
+        <div className="flex items-center gap-3 border-b border-navy-800 pb-10">
+          <Image
+            src="/logo-temptum.png"
+            alt=""
+            width={36}
+            height={36}
+            className="h-9 w-9"
+          />
+          <div>
+            <p className="font-display text-base font-semibold tracking-tight text-white">
+              Temptum
+            </p>
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-navy-100">
+              Corporate &amp; Government Affairs
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="mx-auto grid max-w-content gap-12 px-5 py-12 md:grid-cols-3 lg:px-20">
         <div>
           <h3 className="font-display text-sm uppercase tracking-widest text-white">
             Dirección

@@ -68,7 +68,7 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: 'Temptum',
   url: SITE_URL,
-  logo: `${SITE_URL}/images/hero.jpg`,
+  logo: `${SITE_URL}/logo-temptum.png`,
   description: SITE_DESCRIPTION,
   email: 'info@temptum.io',
   telephone: '+57-302-238-8618',

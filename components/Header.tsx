@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -55,6 +56,14 @@ export function Header() {
             className="group flex items-center gap-3"
             aria-label="Temptum — Inicio"
           >
+            <Image
+              src="/logo-temptum.png"
+              alt=""
+              width={32}
+              height={32}
+              priority
+              className="h-8 w-8"
+            />
             <span className="font-display text-xl font-semibold tracking-tight text-white">
               Temptum
             </span>
