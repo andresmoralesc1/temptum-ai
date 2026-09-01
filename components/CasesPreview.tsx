@@ -7,7 +7,7 @@ export function CasesPreview() {
   const casos = getAllCasos().slice(0, 3);
 
   return (
-    <section className="bg-ice py-24 lg:py-32">
+    <section className="bg-ice py-16 lg:py-32">
       <div className="mx-auto max-w-content px-5 lg:px-20">
         <header className="flex flex-col items-start justify-between gap-6 border-b border-navy-100 pb-10 lg:flex-row lg:items-end">
           <div>

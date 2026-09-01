@@ -24,7 +24,7 @@ export default function ContactoPage() {
         subhead="Cuéntenos brevemente el contexto de su organización y el desafío que enfrenta. Le responderemos en un plazo de dos días hábiles."
       />
 
-      <section className="bg-ice py-24 lg:py-32">
+      <section className="bg-ice py-16 lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <div className="grid gap-12 lg:grid-cols-12">
             <aside className="space-y-8 lg:col-span-4">

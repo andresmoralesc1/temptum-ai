@@ -86,7 +86,7 @@ export default function QuienesSomosPage() {
       />
 
       {/* SOBRE TEMPTUM */}
-      <section className="bg-ice py-24 lg:py-32">
+      <section className="bg-ice py-16 lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <header className="grid gap-8 border-b border-navy-100 pb-12 lg:grid-cols-12 lg:gap-12">
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-navy-600 lg:col-span-4">
@@ -182,7 +182,7 @@ export default function QuienesSomosPage() {
       </section>
 
       {/* LIDERAZGO — SILVIA JULIANA */}
-      <section className="bg-navy-100 py-24 lg:py-32">
+      <section className="bg-navy-100 py-16 lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <header className="grid gap-8 border-b border-navy-100 pb-12 lg:grid-cols-12 lg:gap-12">
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-navy-600 lg:col-span-4">
@@ -325,7 +325,7 @@ export default function QuienesSomosPage() {
       </section>
 
       {/* ALIADOS Y SECTORES */}
-      <section className="bg-white py-24 lg:py-32">
+      <section className="bg-white py-16 lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
@@ -431,7 +431,7 @@ export default function QuienesSomosPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-ice py-24 lg:py-32">
+      <section className="bg-ice py-16 lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <div className="grid items-end gap-12 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-8">

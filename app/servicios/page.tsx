@@ -90,7 +90,7 @@ export default function ServiciosPage() {
         ]}
       />
 
-      <section className="bg-white py-24 lg:py-32">
+      <section className="bg-white py-16 lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <figure className="border-l-2 border-gold pl-6 lg:col-span-7">
@@ -136,7 +136,7 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      <section className="bg-ice py-24 lg:py-32">
+      <section className="bg-ice py-16 lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <nav
             aria-label="Índice de servicios"

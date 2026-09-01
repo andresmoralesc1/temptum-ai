@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export function Equipo() {
   return (
-    <section className="bg-ice py-24 lg:py-32">
+    <section className="bg-ice py-16 lg:py-32">
       <div className="mx-auto max-w-content px-5 lg:px-20">
         <header className="grid gap-8 border-b border-navy-100 pb-12 lg:grid-cols-12 lg:gap-12">
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-navy-600 lg:col-span-4">

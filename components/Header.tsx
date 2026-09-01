@@ -80,7 +80,7 @@ export function Header() {
             : 'bg-navy-950',
         )}
       >
-        <div className="mx-auto flex h-16 max-w-content items-center justify-between px-5 lg:px-20">
+        <div className="mx-auto flex min-h-16 max-w-content items-center justify-between px-5 pt-[env(safe-area-inset-top)] lg:px-20">
           <Link
             href="/"
             className="group flex items-center gap-3"
@@ -171,7 +171,7 @@ export function Header() {
       </header>
 
       {/* Spacer para compensar el header fixed */}
-      <div aria-hidden="true" className="h-16" />
+      <div aria-hidden="true" style={{ minHeight: 'calc(4rem + env(safe-area-inset-top))' }} />
 
       {/* Mobile menu overlay */}
       <div

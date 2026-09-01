@@ -36,7 +36,7 @@ export default async function CasoDetailPage({
   const fecha = formatDate(caso.date);
 
   return (
-    <article className="bg-ice py-24 lg:py-32">
+    <article className="bg-ice py-16 lg:py-32">
       <div className="mx-auto max-w-3xl px-5 lg:px-0">
         <Link
           href="/casos-de-estudio"

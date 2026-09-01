@@ -38,7 +38,7 @@ export default function InteligenciaPoliticaPage() {
         subhead="Documentos producidos por nuestro equipo para clientes y aliados. El acceso a los informes completos está reservado a suscriptores institucionales."
       />
 
-      <section className="bg-navy-100 py-24 lg:py-32">
+      <section className="bg-navy-100 py-16 lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <div className="space-y-8">
             {documents.map((doc) => (
@@ -64,16 +64,19 @@ export default function InteligenciaPoliticaPage() {
                   <p className="mt-4 text-sm leading-relaxed text-gray-700">
                     {doc.summary}
                   </p>
-                  <p className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-navy-600">
+                  <a
+                    href="mailto:info@temptum.io?subject=Suscripci%C3%B3n%20institucional%20%E2%80%94%20Inteligencia%20Temptum"
+                    className="mt-6 inline-flex items-center gap-2 border-b border-navy-600 pb-0.5 text-xs uppercase tracking-widest text-navy-600 transition-colors hover:border-gold hover:text-gold"
+                  >
                     <Lock size={14} strokeWidth={2} aria-hidden="true" />
-                    Acceso para suscriptores institucionales
-                  </p>
+                    Solicitar acceso
+                  </a>
                 </div>
               </article>
             ))}
           </div>
 
-          <div className="mt-16 border-l-2 border-gold bg-white p-8">
+          <div className="mt-12 border-l-2 border-gold bg-white p-8 lg:mt-16">
             <h2 className="font-display text-lg font-semibold text-navy-950">
               Suscripción institucional
             </h2>
@@ -81,10 +84,10 @@ export default function InteligenciaPoliticaPage() {
               Para acceder a los informes completos y a nuestro servicio de
               alertas regulatorias personalizadas, contáctenos en{' '}
               <a
-                href="mailto:inteligencia@temptum.io"
+                href="mailto:info@temptum.io?subject=Suscripci%C3%B3n%20institucional"
                 className="text-navy-600 underline-offset-4 hover:underline"
               >
-                inteligencia@temptum.io
+                info@temptum.io
               </a>
               .
             </p>

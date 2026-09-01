@@ -22,7 +22,7 @@ const documents = [
 
 export function IntelligenceCenter() {
   return (
-    <section className="relative isolate overflow-hidden border-y border-navy-100 bg-navy-100 py-24 lg:py-32">
+    <section className="relative isolate overflow-hidden border-y border-navy-100 bg-navy-100 py-16 lg:py-32">
       <div
         aria-hidden="true"
         className="absolute inset-y-0 left-0 -z-10 w-1/3 bg-gradient-to-r from-navy-600/10 to-transparent"

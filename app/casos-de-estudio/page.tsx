@@ -28,7 +28,7 @@ export default function CasosDeEstudioPage() {
         subhead="Reflexiones de nuestro equipo sobre temas de comunicaciones estratégicas, cumplimiento normativo, gestión de crisis y el impacto de la inteligencia artificial en la disciplina."
       />
 
-      <section className="bg-ice py-24 lg:py-32">
+      <section className="bg-ice py-16 lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <ul className="space-y-8">
             {casos.map((caso) => {
