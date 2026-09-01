@@ -1,0 +1,31 @@
+# Append to /etc/caddy/Caddyfile. TLS via Caddy ACME (Let's Encrypt).
+# Modelado en el bloque portafolio.andresmorales.com.co existente.
+
+temptum.andresmorales.com.co {
+	encode zstd gzip
+
+	reverse_proxy 127.0.0.1:3008 {
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+		header_down -Server
+	}
+
+	@nextStatic path /_next/static/*
+	header @nextStatic Cache-Control "public, max-age=31536000, immutable"
+
+	@nextImage path /_next/image*
+	header @nextImage Cache-Control "public, max-age=86400, must-revalidate"
+
+	@nextMedia path /_next/static/media/*
+	header @nextMedia Cache-Control "public, max-age=31536000, immutable"
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		X-Frame-Options "DENY"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "geolocation=(), camera=(), microphone=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()"
+		-X-Powered-By
+	}
+}

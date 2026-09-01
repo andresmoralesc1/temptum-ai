@@ -1,0 +1,19 @@
+[Unit]
+Description=Temptum Next.js (temptum.andresmorales.com.co)
+After=network.target
+
+[Service]
+Type=simple
+User=telchar
+WorkingDirectory=/home/telchar/temptum-ai
+ExecStart=/home/telchar/.npm-global/bin/pnpm start
+Environment=PORT=3008
+Environment=HOSTNAME=127.0.0.1
+Environment=NODE_ENV=production
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

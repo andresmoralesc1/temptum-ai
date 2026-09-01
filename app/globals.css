@@ -14,6 +14,42 @@ body {
   @apply bg-ice text-gray-700 font-sans antialiased;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   @apply font-display tracking-wider text-navy-950;
+}
+
+/* Visibilidad de foco coherente en todos los elementos interactivos.
+   No se aplica a focus (mouse) para no romper el diseño. */
+:focus-visible {
+  outline: 2px solid theme('colors.navy.600');
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip-link accesible: oculto visualmente hasta que recibe foco. */
+.sr-only-focusable:not(:focus):not(:focus-within) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Respeta la preferencia del usuario de reducir movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

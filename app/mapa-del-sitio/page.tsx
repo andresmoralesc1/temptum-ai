@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { PageHero } from '@/components/PageHero';
 
 export const metadata: Metadata = {
   title: 'Mapa del Sitio',
@@ -41,40 +42,47 @@ const secciones = [
 
 export default function MapaDelSitioPage() {
   return (
-    <div className="bg-ice py-24 lg:py-32">
-      <div className="mx-auto max-w-content px-5 lg:px-20">
-        <p className="text-xs font-medium uppercase tracking-widest text-navy-600">
-          Mapa del Sitio
-        </p>
-        <h1 className="mt-4 font-display text-4xl font-bold text-navy-950 md:text-5xl">
-          Todas las páginas
-        </h1>
+    <>
+      <PageHero
+        variant="light"
+        kicker="Mapa del sitio"
+        headline={
+          <>
+            Todas las páginas,
+            <br />
+            <span className="text-navy-600">en un solo lugar.</span>
+          </>
+        }
+      />
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {secciones.map((sec) => (
-            <div
-              key={sec.title}
-              className="border border-navy-100 bg-white p-6"
-            >
-              <h2 className="font-display text-xs font-semibold uppercase tracking-widest text-navy-600">
-                {sec.title}
-              </h2>
-              <ul className="mt-4 space-y-2">
-                {sec.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-base text-navy-950 hover:underline"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+      <section className="bg-ice pb-24 pt-12 lg:pb-32 lg:pt-16">
+        <div className="mx-auto max-w-content px-5 lg:px-20">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {secciones.map((sec) => (
+              <div
+                key={sec.title}
+                className="border border-navy-100 bg-white p-6"
+              >
+                <h2 className="font-display text-xs font-semibold uppercase tracking-widest text-navy-600">
+                  {sec.title}
+                </h2>
+                <ul className="mt-4 space-y-2">
+                  {sec.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-base text-navy-950 hover:underline"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

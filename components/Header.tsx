@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { WHATSAPP_BASE } from '@/lib/constants';
 
 const navItems = [
   { href: '/quienes-somos', label: 'Quiénes somos' },
@@ -14,10 +15,6 @@ const navItems = [
   { href: '/articulos-linkedin', label: 'LinkedIn' },
   { href: '/contacto', label: 'Contacto' },
 ];
-
-const WHATSAPP_HREF =
-  'https://wa.me/573022388618?text=' +
-  encodeURIComponent('Hola Temptum, me gustaría agendar una conversación.');
 
 export function Header() {
   const pathname = usePathname();
@@ -104,32 +101,38 @@ export function Header() {
             </ul>
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="flex items-center gap-3">
             <a
-              href={WHATSAPP_HREF}
+              href={WHATSAPP_BASE}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-medium text-white shadow-sm transition-all duration-150 hover:bg-[#1ebd5b] hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+              className="hidden lg:inline-flex items-center gap-2 border border-gold/40 bg-navy-800 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-white shadow-sm transition-all duration-150 hover:border-gold hover:bg-navy-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+              aria-label="Conversemos por WhatsApp"
             >
-              <MessageCircle size={16} strokeWidth={2} aria-hidden="true" />
-              WhatsApp
+              <MessageCircle
+                size={14}
+                strokeWidth={1.75}
+                className="text-gold"
+                aria-hidden="true"
+              />
+              Hablemos
             </a>
-          </div>
 
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="rounded p-1 text-white lg:hidden"
-            aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-          >
-            {open ? (
-              <X size={24} aria-hidden="true" />
-            ) : (
-              <Menu size={24} aria-hidden="true" />
-            )}
-          </button>
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              className="rounded p-1 text-white lg:hidden"
+              aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+            >
+              {open ? (
+                <X size={24} aria-hidden="true" />
+              ) : (
+                <Menu size={24} aria-hidden="true" />
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -185,13 +188,19 @@ export function Header() {
           })}
           <li className="mt-4 border-t border-white/5 pt-4">
             <a
-              href={WHATSAPP_HREF}
+              href={WHATSAPP_BASE}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-base font-medium text-white"
+              className="flex items-center justify-center gap-2 border border-gold/40 bg-navy-800 px-4 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-white transition-all duration-150 hover:border-gold hover:bg-navy-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+              aria-label="Conversemos por WhatsApp"
             >
-              <MessageCircle size={18} strokeWidth={2} aria-hidden="true" />
-              Escríbenos por WhatsApp
+              <MessageCircle
+                size={14}
+                strokeWidth={1.75}
+                className="text-gold"
+                aria-hidden="true"
+              />
+              Hablemos por WhatsApp
             </a>
           </li>
         </ul>

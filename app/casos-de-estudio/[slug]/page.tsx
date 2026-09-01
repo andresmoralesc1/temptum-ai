@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import { getAllCasoSlugs, getCasoBySlug } from '@/lib/content';
+import { formatDate } from '@/lib/dates';
 
 export async function generateStaticParams() {
   return getAllCasoSlugs().map((slug) => ({ slug }));
@@ -32,16 +33,7 @@ export default async function CasoDetailPage({
   const caso = getCasoBySlug(slug);
   if (!caso) notFound();
 
-  const [year, month, day] = caso.date.split('-');
-  const fecha = new Date(
-    Number(year),
-    Number(month) - 1,
-    Number(day),
-  ).toLocaleDateString('es-CO', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  const fecha = formatDate(caso.date);
 
   return (
     <article className="bg-ice py-24 lg:py-32">

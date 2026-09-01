@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
 import { Building2, ShieldAlert, Gavel, Leaf } from 'lucide-react';
+import { PageHero } from '@/components/PageHero';
+import { WHATSAPP_SERVICIOS } from '@/lib/constants';
+
+const WHATSAPP_HREF = WHATSAPP_SERVICIOS;
 
 export const metadata: Metadata = {
   title: 'Servicios Especializados',
@@ -64,76 +68,89 @@ const servicios = [
 
 export default function ServiciosPage() {
   return (
-    <div className="bg-ice py-24 lg:py-32">
-      <div className="mx-auto max-w-content px-5 lg:px-20">
-        <p className="text-xs font-medium uppercase tracking-widest text-navy-600">
-          Servicios Especializados
-        </p>
-        <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold text-navy-950 md:text-5xl">
-          Cuatro líneas de trabajo, una sola metodología
-        </h1>
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-700">
-          Nuestros servicios se articulan bajo una metodología común de análisis,
-          interlocución y ejecución. Cada línea puede contratarse de forma
-          independiente o como parte de un encargo integrado.
-        </p>
+    <>
+      <PageHero
+        kicker="Servicios especializados"
+        headline={
+          <>
+            Cuatro líneas de trabajo,
+            <br />
+            <span className="text-gold">una sola metodología.</span>
+          </>
+        }
+        subhead="Nuestros servicios se articulan bajo una metodología común de análisis, interlocución y ejecución. Cada línea puede contratarse de forma independiente o como parte de un encargo integrado."
+        ctas={[
+          {
+            label: 'Hablemos por WhatsApp',
+            href: WHATSAPP_HREF,
+            variant: 'outline',
+            external: true,
+          },
+        ]}
+      />
 
-        <nav aria-label="Índice de servicios" className="mt-12 border-y border-navy-100 bg-white">
-          <ul className="flex flex-wrap divide-x divide-navy-100">
-            {servicios.map((s) => (
-              <li key={s.id} className="flex-1">
-                <a
-                  href={`#${s.id}`}
-                  className="block px-5 py-4 text-[13px] font-medium uppercase tracking-widest text-navy-950 hover:bg-navy-100"
-                >
-                  {s.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className="mt-16 space-y-20">
-          {servicios.map((s) => {
-            const Icon = s.icon;
-            return (
-              <section
-                key={s.id}
-                id={s.id}
-                className="grid gap-8 border-t border-navy-100 pt-10 lg:grid-cols-12"
-              >
-                <div className="lg:col-span-4">
-                  <Icon
-                    size={36}
-                    strokeWidth={1.5}
-                    className="text-navy-600"
-                    aria-hidden="true"
-                  />
-                  <h2 className="mt-6 font-display text-2xl font-bold text-navy-950">
+      <section className="bg-ice py-24 lg:py-32">
+        <div className="mx-auto max-w-content px-5 lg:px-20">
+          <nav
+            aria-label="Índice de servicios"
+            className="border-y border-navy-100 bg-white"
+          >
+            <ul className="flex flex-wrap divide-x divide-navy-100">
+              {servicios.map((s) => (
+                <li key={s.id} className="flex-1">
+                  <a
+                    href={`#${s.id}`}
+                    className="block px-5 py-4 text-[13px] font-medium uppercase tracking-widest text-navy-950 hover:bg-navy-100"
+                  >
                     {s.title}
-                  </h2>
-                  <p className="mt-4 text-sm leading-relaxed text-gray-700">
-                    {s.summary}
-                  </p>
-                </div>
-                <div className="lg:col-span-8">
-                  <ul className="space-y-4 text-base leading-relaxed text-gray-700">
-                    {s.body.map((line, idx) => (
-                      <li key={idx} className="flex gap-4">
-                        <span
-                          className="mt-2 h-1 w-4 flex-shrink-0 bg-gold"
-                          aria-hidden="true"
-                        />
-                        <span>{line}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </section>
-            );
-          })}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="mt-16 space-y-20">
+            {servicios.map((s) => {
+              const Icon = s.icon;
+              return (
+                <section
+                  key={s.id}
+                  id={s.id}
+                  className="grid gap-8 border-t border-navy-100 pt-10 lg:grid-cols-12"
+                >
+                  <div className="lg:col-span-4">
+                    <Icon
+                      size={36}
+                      strokeWidth={1.5}
+                      className="text-navy-600"
+                      aria-hidden="true"
+                    />
+                    <h2 className="mt-6 font-display text-2xl font-bold text-navy-950">
+                      {s.title}
+                    </h2>
+                    <p className="mt-4 text-sm leading-relaxed text-gray-700">
+                      {s.summary}
+                    </p>
+                  </div>
+                  <div className="lg:col-span-8">
+                    <ul className="space-y-4 text-base leading-relaxed text-gray-700">
+                      {s.body.map((line, idx) => (
+                        <li key={idx} className="flex gap-4">
+                          <span
+                            className="mt-2 h-1 w-4 flex-shrink-0 bg-gold"
+                            aria-hidden="true"
+                          />
+                          <span>{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </section>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
