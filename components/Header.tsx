@@ -79,10 +79,10 @@ export function Header() {
     <>
       <header
         className={cn(
-          'fixed inset-x-0 top-0 z-50 transition-all duration-300',
-          scrolled
-            ? 'border-b border-white/5 bg-navy-950/80 backdrop-blur-md'
-            : 'bg-navy-950',
+          // border-b siempre presente: evita CLS al hidratar y detectar scroll.
+          // La diferencia visual entre scrolled/no-scrolled viene del backdrop-blur y bg opacity.
+          'fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-navy-950 transition-[backdrop-filter,background-color] duration-300',
+          scrolled && 'bg-navy-950/80 backdrop-blur-md',
         )}
       >
         <div className="mx-auto flex min-h-16 max-w-content items-center justify-between px-5 pt-[env(safe-area-inset-top)] lg:px-20">
@@ -175,8 +175,8 @@ export function Header() {
         </div>
       </header>
 
-      {/* Spacer para compensar el header fixed */}
-      <div aria-hidden="true" style={{ minHeight: 'calc(4rem + env(safe-area-inset-top))' }} />
+      {/* Spacer para compensar el header fixed. Incluye 1px del border-b siempre presente. */}
+      <div aria-hidden="true" style={{ minHeight: 'calc(4rem + 1px + env(safe-area-inset-top))' }} />
 
       {/* Mobile menu overlay */}
       <div
@@ -194,7 +194,7 @@ export function Header() {
         id="mobile-menu"
         aria-label="Navegación móvil"
         className={cn(
-          'fixed inset-x-0 top-16 z-40 max-h-[calc(100vh-4rem)] origin-top overflow-y-auto border-b border-white/5 bg-navy-950 transition-transform duration-200 ease-out lg:hidden',
+          'fixed inset-x-0 top-[calc(4rem+1px+env(safe-area-inset-top))] z-40 max-h-[calc(100vh-4rem-1px)] origin-top overflow-y-auto border-b border-white/5 bg-navy-950 transition-transform duration-200 ease-out lg:hidden',
           open ? 'translate-y-0' : 'pointer-events-none -translate-y-2 opacity-0',
         )}
       >

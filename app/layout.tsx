@@ -7,8 +7,15 @@ import './globals.css';
 const archivo = Archivo({
   subsets: ['latin'],
   variable: '--font-archivo',
+  // 'swap' muestra fallback mientras carga, luego cambia a Archivo.
+  // adjustFontFallback:true genera @font-face con size-adjust/override
+  // para que la fallback (Arial) ocupe el mismo espacio que Archivo,
+  // evitando CLS cuando ocurre el swap.
   display: 'swap',
   weight: ['400', '500', '600', '700'],
+  preload: true,
+  fallback: ['Arial', 'system-ui', 'sans-serif'],
+  adjustFontFallback: true,
 });
 
 const inter = Inter({
@@ -16,6 +23,9 @@ const inter = Inter({
   variable: '--font-inter',
   display: 'swap',
   weight: ['400', '500', '600'],
+  preload: true,
+  fallback: ['Arial', 'system-ui', 'sans-serif'],
+  adjustFontFallback: true,
 });
 
 const SITE_URL =
