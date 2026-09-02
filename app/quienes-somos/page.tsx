@@ -251,10 +251,10 @@ export default function QuienesSomosPage() {
                 <Image
                   src="/images/equipo/silvia-juliana.png"
                   alt="Silvia Juliana Parra Cañas, CEO y socia fundadora de Temptum"
-                  width={720}
-                  height={900}
+                  width={800}
+                  height={800}
                   sizes="(min-width: 1024px) 480px, 100vw"
-                  className="aspect-[4/5] w-full object-cover"
+                  className="aspect-square w-full object-cover"
                   priority
                 />
               </figure>
@@ -413,7 +413,7 @@ export default function QuienesSomosPage() {
             ].map((p) => (
               <article key={p.n}>
                 <p
-                  className="font-display text-5xl font-bold leading-none text-navy-600"
+                  className="font-display text-5xl font-bold leading-none text-gold"
                   aria-hidden="true"
                 >
                   {p.n}

@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   title: 'Artículos en LinkedIn',
   description:
     'Análisis y opinión publicados por nuestro equipo en LinkedIn sobre asuntos corporativos, regulatorios y de comunicaciones estratégicas.',
+  alternates: {
+    canonical: '/articulos-linkedin',
+  },
 };
 
 export default function ArticulosLinkedInPage() {

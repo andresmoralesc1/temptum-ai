@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Inteligencia y Política Pública',
   description:
     'Análisis de coyuntura económica y política, y monitoreo legislativo sectorial producido por el equipo de Temptum.',
+  alternates: {
+    canonical: '/inteligencia-politica',
+  },
 };
 
 const documents = [
@@ -66,7 +69,7 @@ export default function InteligenciaPoliticaPage() {
                   </p>
                   <a
                     href="mailto:info@temptum.io?subject=Suscripci%C3%B3n%20institucional%20%E2%80%94%20Inteligencia%20Temptum"
-                    className="mt-6 inline-flex items-center gap-2 border-b border-navy-600 pb-0.5 text-xs uppercase tracking-widest text-navy-600 transition-colors hover:border-gold hover:text-gold"
+                    className="mt-6 inline-flex items-center gap-2 border-b-2 border-navy-600 pb-0.5 text-xs font-semibold uppercase tracking-widest text-navy-950 transition-colors hover:border-gold hover:text-gold"
                   >
                     <Lock size={14} strokeWidth={2} aria-hidden="true" />
                     Solicitar acceso
@@ -85,7 +88,7 @@ export default function InteligenciaPoliticaPage() {
               alertas regulatorias personalizadas, contáctenos en{' '}
               <a
                 href="mailto:info@temptum.io?subject=Suscripci%C3%B3n%20institucional"
-                className="text-navy-600 underline-offset-4 hover:underline"
+                className="font-semibold text-navy-950 underline-offset-4 hover:underline"
               >
                 info@temptum.io
               </a>

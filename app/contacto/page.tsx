@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'Contacto',
   description:
     'Póngase en contacto con el equipo de Temptum. Bogotá, Colombia.',
+  alternates: {
+    canonical: '/contacto',
+  },
 };
 
 export default function ContactoPage() {

@@ -39,36 +39,39 @@ export function Footer() {
           <h3 className="font-display text-sm uppercase tracking-widest text-white">
             Contacto
           </h3>
-          <p className="mt-4 text-sm leading-relaxed">
-            <a
-              href="mailto:info@temptum.io"
-              className="hover:text-white transition-colors"
-            >
-              info@temptum.io
-            </a>
-            <br />
-            <a
-              href="tel:+573022388618"
-              className="hover:text-white transition-colors"
-            >
-              +57 302 238 8618
-            </a>
-          </p>
+          <ul className="mt-4 space-y-1 text-sm">
+            <li>
+              <a
+                href="mailto:info@temptum.io"
+                className="inline-block py-2 hover:text-white transition-colors"
+              >
+                info@temptum.io
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:+573022388618"
+                className="inline-block py-2 hover:text-white transition-colors"
+              >
+                +57 302 238 8618
+              </a>
+            </li>
+          </ul>
         </div>
         <div>
           <h3 className="font-display text-sm uppercase tracking-widest text-white">
             Legal
           </h3>
-          <ul className="mt-4 space-y-2 text-sm">
+          <ul className="mt-4 space-y-1 text-sm">
             <li>
-              <Link href="/mapa-del-sitio" className="hover:text-white transition-colors">
+              <Link href="/mapa-del-sitio" className="inline-block py-2 hover:text-white transition-colors">
                 Mapa del Sitio
               </Link>
             </li>
             <li>
               <Link
                 href="/politica-de-privacidad"
-                className="hover:text-white transition-colors"
+                className="inline-block py-2 hover:text-white transition-colors"
               >
                 Política de Privacidad
               </Link>
@@ -77,7 +80,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-navy-800">
-        <p className="mx-auto max-w-content px-5 py-6 text-xs text-gray-500 lg:px-20">
+        <p className="mx-auto max-w-content px-5 py-6 text-xs text-navy-100 lg:px-20">
           © {year} Temptum. Todos los derechos reservados.
         </p>
       </div>

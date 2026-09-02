@@ -71,7 +71,7 @@ export function Services() {
                   href={`/servicios#${service.id}`}
                   className="grid items-start gap-6 px-4 py-10 lg:grid-cols-12 lg:gap-8 lg:px-6 lg:py-12"
                 >
-                  <div className="font-display text-4xl font-bold leading-none text-navy-100 transition-colors duration-200 group-hover:text-navy-600 lg:col-span-2 lg:text-6xl">
+                  <div className="font-display text-4xl font-bold leading-none text-navy-600 transition-colors duration-200 group-hover:text-gold lg:col-span-2 lg:text-6xl">
                     {service.number}
                   </div>
 

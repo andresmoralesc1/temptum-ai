@@ -5,6 +5,9 @@ import { PageHero } from '@/components/PageHero';
 export const metadata: Metadata = {
   title: 'Mapa del Sitio',
   description: 'Listado completo de páginas del sitio web de Temptum.',
+  alternates: {
+    canonical: '/mapa-del-sitio',
+  },
 };
 
 const secciones = [

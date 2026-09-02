@@ -116,11 +116,10 @@ export function Equipo() {
               <Image
                 src="/images/equipo/silvia-juliana.png"
                 alt="Silvia Juliana Parra Cañas, CEO y socia fundadora de Temptum"
-                width={720}
-                height={900}
+                width={800}
+                height={800}
                 sizes="(min-width: 1024px) 480px, 100vw"
-                className="aspect-[4/5] w-full object-cover"
-                priority
+                className="aspect-square w-full object-cover"
               />
             </div>
             <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-gray-500">

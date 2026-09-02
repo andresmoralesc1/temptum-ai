@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'Casos de Estudio',
   description:
     'Análisis y opinión de nuestro equipo sobre asuntos corporativos, regulatorios y de comunicaciones estratégicas.',
+  alternates: {
+    canonical: '/casos-de-estudio',
+  },
 };
 
 export default function CasosDeEstudioPage() {

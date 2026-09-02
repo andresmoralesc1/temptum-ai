@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Política de Privacidad',
   description:
     'Política de privacidad y tratamiento de datos personales de Temptum.',
+  alternates: {
+    canonical: '/politica-de-privacidad',
+  },
 };
 
 export default function PoliticaPrivacidadPage() {

@@ -81,10 +81,10 @@ export function Hero() {
               width={680}
               height={453}
               priority
-              sizes="(min-width: 1024px) 580px, 100vw"
+              sizes="(min-width: 1024px) 580px, 0px"
               className="aspect-[3/2] w-full max-w-2xl object-cover"
             />
-            <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-navy-100">
+            <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-white/80">
               Sesión de trabajo con aliados · Workshops y consultoría
             </figcaption>
           </figure>
@@ -99,45 +99,45 @@ export function Hero() {
               Organizaciones que defienden decisiones complejas.
             </h2>
 
-            <dl className="mt-10 divide-y divide-white/10">
-              <div className="grid grid-cols-2 gap-6 py-5 first:pt-0">
+            <ul className="mt-10 divide-y divide-white/10" role="list">
+              <li className="grid grid-cols-2 gap-6 py-5 first:pt-0">
                 <div>
-                  <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-navy-100">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/80">
                     Sectores
-                  </dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-white">
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-white">
                     Energía, infraestructura, financiero, tecnología, salud.
-                  </dd>
+                  </p>
                 </div>
                 <div>
-                  <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-navy-100">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/80">
                     Cobertura
-                  </dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-white">
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-white">
                     Colombia y región andina.
-                  </dd>
+                  </p>
                 </div>
-              </div>
-              <div className="grid grid-cols-2 gap-6 py-5">
+              </li>
+              <li className="grid grid-cols-2 gap-6 py-5">
                 <div>
-                  <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-navy-100">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/80">
                     Líneas de servicio
-                  </dt>
-                  <dd className="mt-2 font-display text-3xl font-bold leading-none text-white">
+                  </p>
+                  <p className="mt-2 font-display text-3xl font-bold leading-none text-white">
                     04
-                  </dd>
+                  </p>
                 </div>
                 <div>
-                  <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-navy-100">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/80">
                     Análisis público
-                  </dt>
-                  <dd className="mt-2 text-base font-medium leading-snug text-white">
+                  </p>
+                  <p className="mt-2 text-base font-medium leading-snug text-white">
                     Anual
                     <br />+ trimestral
-                  </dd>
+                  </p>
                 </div>
-              </div>
-            </dl>
+              </li>
+            </ul>
 
             <div className="mt-10 border-t border-white/10 pt-6">
               <p className="text-xs leading-relaxed text-navy-100">
@@ -155,10 +155,10 @@ export function Hero() {
               width={680}
               height={453}
               priority
-              sizes="100vw"
+              sizes="(max-width: 1023px) 100vw, 0px"
               className="aspect-[3/2] w-full object-cover"
             />
-            <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-navy-100">
+            <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-white/80">
               Workshops y consultoría con aliados
             </figcaption>
           </figure>

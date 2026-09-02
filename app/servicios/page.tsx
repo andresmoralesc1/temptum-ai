@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: 'Servicios Especializados',
   description:
     'Relaciones institucionales, gestión de riesgos y crisis, asuntos regulatorios y legislativos, y comunicaciones ASG y sostenibilidad.',
+  alternates: {
+    canonical: '/servicios',
+  },
 };
 
 const servicios = [
