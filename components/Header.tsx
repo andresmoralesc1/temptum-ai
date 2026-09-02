@@ -3,11 +3,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu, X, MessageCircle, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { WHATSAPP_BASE } from '@/lib/constants';
 import { NavMenu, type NavSecondaryItem } from '@/components/NavMenu';
+import { useFocusTrap } from '@/hooks/useFocusTrap';
 
 // Primary nav: 5 items principales en la barra horizontal.
 // Orden pensado por relevancia para un visitante B2B:
@@ -50,6 +51,10 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
+  const mobileNavRef = useRef<HTMLElement>(null);
+
+  // Focus trap inside the mobile drawer while it is open.
+  useFocusTrap(mobileNavRef, open, () => setOpen(false));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -185,11 +190,12 @@ export function Header() {
 
       {/* Mobile menu panel */}
       <nav
+        ref={mobileNavRef}
         id="mobile-menu"
         aria-label="Navegación móvil"
         className={cn(
           'fixed inset-x-0 top-16 z-40 max-h-[calc(100vh-4rem)] origin-top overflow-y-auto border-b border-white/5 bg-navy-950 transition-transform duration-200 ease-out lg:hidden',
-          open ? 'translate-y-0' : '-translate-y-2 opacity-0 pointer-events-none',
+          open ? 'translate-y-0' : 'pointer-events-none -translate-y-2 opacity-0',
         )}
       >
         <div className="mx-auto max-w-content px-5 py-6">
