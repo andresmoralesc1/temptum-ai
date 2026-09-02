@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { ContactForm } from '@/components/ContactForm';
+import { CopyButton } from '@/components/CopyButton';
 import { PageHero } from '@/components/PageHero';
 
 export const metadata: Metadata = {
@@ -38,12 +39,15 @@ export default function ContactoPage() {
                     Correo
                   </h2>
                 </div>
-                <a
-                  href="mailto:info@temptum.io"
-                  className="mt-3 block text-base text-navy-950 hover:underline"
-                >
-                  info@temptum.io
-                </a>
+                <div className="mt-3 flex items-center gap-2">
+                  <a
+                    href="mailto:info@temptum.io"
+                    className="text-base text-navy-950 hover:underline"
+                  >
+                    info@temptum.io
+                  </a>
+                  <CopyButton value="info@temptum.io" label="Correo" />
+                </div>
               </div>
               <div>
                 <div className="flex items-center gap-3 text-navy-600">
@@ -52,12 +56,15 @@ export default function ContactoPage() {
                     Teléfono
                   </h2>
                 </div>
-                <a
-                  href="tel:+573022388618"
-                  className="mt-3 block text-base text-navy-950 hover:underline"
-                >
-                  +57 302 238 8618
-                </a>
+                <div className="mt-3 flex items-center gap-2">
+                  <a
+                    href="tel:+573022388618"
+                    className="text-base text-navy-950 hover:underline"
+                  >
+                    +57 302 238 8618
+                  </a>
+                  <CopyButton value="+573022388618" label="Teléfono" />
+                </div>
               </div>
               <div>
                 <div className="flex items-center gap-3 text-navy-600">

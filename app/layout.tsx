@@ -67,14 +67,17 @@ const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Temptum',
+  alternateName: 'Temptum Consultoría Estratégica',
   url: SITE_URL,
   logo: `${SITE_URL}/logo-temptum.png`,
   description: SITE_DESCRIPTION,
   email: 'info@temptum.io',
   telephone: '+57-302-238-8618',
+  foundingDate: '2023',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Bogotá',
+    addressRegion: 'Bogotá, D.C.',
     addressCountry: 'CO',
   },
   areaServed: { '@type': 'Country', name: 'Colombia' },
@@ -84,7 +87,23 @@ const organizationJsonLd = {
     'Gestión de riesgos',
     'Comunicaciones ASG',
     'Inteligencia política',
+    'Asuntos públicos',
+    'Comunicación corporativa',
   ],
+  founder: {
+    '@type': 'Person',
+    name: 'Silvia Juliana Parra Cañas',
+    jobTitle: 'CEO y socia fundadora',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    email: 'info@temptum.io',
+    telephone: '+57-302-238-8618',
+    areaServed: 'CO',
+    availableLanguage: ['Spanish', 'English'],
+  },
+  priceRange: '$$$$',
 };
 
 const websiteJsonLd = {
