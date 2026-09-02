@@ -385,7 +385,7 @@ export default function QuienesSomosPage() {
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-navy-100">
                 Cada encargo se ejecuta bajo los mismos tres principios. No son
-                slogans: son la base operativa de la firma.
+                eslóganes: son la base operativa de la firma.
               </p>
             </div>
           </header>
@@ -442,7 +442,7 @@ export default function QuienesSomosPage() {
                 Cuéntenos el contexto.
                 <br />
                 <span className="text-navy-600">
-                  Le respondemos en menos de 24 horas.
+                  Le respondemos en un plazo de dos días hábiles.
                 </span>
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-700">

@@ -25,7 +25,7 @@ export default function CasosDeEstudioPage() {
           <>
             Lo que estamos
             <br />
-            <span className="text-gold">leyendo.</span>
+            <span className="text-gold">pensando.</span>
           </>
         }
         subhead="Reflexiones de nuestro equipo sobre temas de comunicaciones estratégicas, cumplimiento normativo, gestión de crisis y el impacto de la inteligencia artificial en la disciplina."

@@ -88,7 +88,7 @@ export default function InteligenciaPoliticaPage() {
               alertas regulatorias personalizadas, contáctenos en{' '}
               <a
                 href="mailto:info@temptum.io?subject=Suscripci%C3%B3n%20institucional"
-                className="font-semibold text-navy-950 underline-offset-4 hover:underline"
+                className="font-semibold text-navy-950 underline underline-offset-4 hover:text-gold hover:decoration-gold"
               >
                 info@temptum.io
               </a>
