@@ -62,7 +62,7 @@ export function IntelligenceCenter() {
                 >
                   <div className="flex flex-shrink-0 items-start gap-4 md:w-48 md:flex-col md:items-center md:gap-3 md:text-center">
                     <span
-                      className="font-display text-2xl font-bold text-navy-100 transition-colors duration-200 group-hover:text-navy-600 lg:text-3xl"
+                      className="font-display text-2xl font-bold text-navy-600 transition-colors duration-200 group-hover:text-gold lg:text-3xl"
                       aria-hidden="true"
                     >
                       {String(idx + 1).padStart(2, '0')}

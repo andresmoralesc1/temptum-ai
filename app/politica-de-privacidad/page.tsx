@@ -67,7 +67,7 @@ export default function PoliticaPrivacidadPage() {
                 a{' '}
                 <a
                   href="mailto:info@temptum.io"
-                  className="text-navy-600 underline-offset-4 hover:underline"
+                  className="text-navy-600 underline underline-offset-4 hover:text-navy-950"
                 >
                   info@temptum.io
                 </a>

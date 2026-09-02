@@ -42,9 +42,9 @@ export function ArticuloLinkedInCard({ articulo }: Props) {
             <LinkedInIcon size={14} />
           </span>
         </div>
-        <h3 className="mt-4 font-display text-xl font-bold leading-tight text-navy-950 transition-colors duration-200 group-hover:text-navy-600 lg:text-2xl">
+        <h2 className="mt-4 font-display text-xl font-bold leading-tight text-navy-950 transition-colors duration-200 group-hover:text-navy-600 lg:text-2xl">
           {articulo.title}
-        </h3>
+        </h2>
         <p className="mt-4 flex-1 text-sm leading-relaxed text-gray-700">
           {articulo.resumen}
         </p>

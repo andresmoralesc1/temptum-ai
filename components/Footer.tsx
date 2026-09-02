@@ -26,9 +26,9 @@ export function Footer() {
       </div>
       <div className="mx-auto grid max-w-content gap-12 px-5 py-12 md:grid-cols-3 lg:px-20">
         <div>
-          <h3 className="font-display text-sm uppercase tracking-widest text-white">
+          <h2 className="font-display text-sm uppercase tracking-widest text-white">
             Dirección
-          </h3>
+          </h2>
           <p className="mt-4 text-sm leading-relaxed">
             Bogotá, D.C.
             <br />
@@ -36,9 +36,9 @@ export function Footer() {
           </p>
         </div>
         <div>
-          <h3 className="font-display text-sm uppercase tracking-widest text-white">
+          <h2 className="font-display text-sm uppercase tracking-widest text-white">
             Contacto
-          </h3>
+          </h2>
           <ul className="mt-4 space-y-1 text-sm">
             <li>
               <a
@@ -59,9 +59,9 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="font-display text-sm uppercase tracking-widest text-white">
+          <h2 className="font-display text-sm uppercase tracking-widest text-white">
             Legal
-          </h3>
+          </h2>
           <ul className="mt-4 space-y-1 text-sm">
             <li>
               <Link href="/mapa-del-sitio" className="inline-block py-2 hover:text-white transition-colors">

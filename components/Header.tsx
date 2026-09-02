@@ -147,7 +147,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               className="hidden items-center gap-2 bg-gold px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-950 shadow-sm transition-all duration-150 hover:bg-gold/90 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 lg:inline-flex"
-              aria-label="Conversemos por WhatsApp"
+              aria-label="Hablemos por WhatsApp"
             >
               <MessageCircle
                 size={14}
@@ -288,7 +288,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-gold px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-950 transition-all duration-150 hover:bg-gold/90 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
-              aria-label="Conversemos por WhatsApp"
+              aria-label="Hablemos por WhatsApp"
             >
               <MessageCircle
                 size={14}
