@@ -53,7 +53,7 @@ export function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href="/servicios" className="group w-full sm:w-auto">
+            <Button href="/servicios" className="group w-full active:scale-[0.98] sm:w-auto">
               Conozca nuestra metodología
               <ArrowRight
                 size={16}
@@ -66,7 +66,7 @@ export function Hero() {
               href={WHATSAPP_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded bg-gold px-6 py-3 text-[13px] font-semibold uppercase tracking-widest text-navy-950 shadow-sm transition-colors hover:bg-gold/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded bg-gold px-6 py-3 text-[13px] font-semibold uppercase tracking-widest text-navy-950 shadow-sm transition-all duration-150 hover:bg-gold/90 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 sm:w-auto"
             >
               <MessageCircle size={16} strokeWidth={2} aria-hidden="true" />
               Hablemos por WhatsApp

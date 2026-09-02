@@ -42,7 +42,7 @@ export function CasesPreview() {
             >
               <Link
                 href={`/casos-de-estudio/${caso.slug}`}
-                className="group flex h-full flex-col border-t-2 border-navy-950 pt-6 transition-colors duration-200 hover:border-gold"
+                className="group flex h-full flex-col border-t-2 border-navy-950 pt-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-gold hover:shadow-sm"
               >
                 <div className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">
                   <Calendar size={12} strokeWidth={1.5} aria-hidden="true" />

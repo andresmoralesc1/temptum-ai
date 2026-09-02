@@ -65,7 +65,7 @@ export function Services() {
             return (
               <li
                 key={service.id}
-                className="group transition-colors duration-200 hover:bg-white"
+                className="group transition-all duration-200 hover:-translate-y-0.5 hover:bg-white hover:shadow-sm"
               >
                 <Link
                   href={`/servicios#${service.id}`}
