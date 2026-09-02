@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Building2, ShieldAlert, Gavel, Leaf, ArrowUpRight } from 'lucide-react';
+import { Reveal } from '@/components/Reveal';
 
 const services = [
   {
@@ -60,11 +61,13 @@ export function Services() {
         </header>
 
         <ol className="mt-4 divide-y divide-navy-100">
-          {services.map((service) => {
+          {services.map((service, i) => {
             const Icon = service.icon;
             return (
-              <li
+              <Reveal
+                as="li"
                 key={service.id}
+                delay={i * 80}
                 className="group transition-all duration-200 hover:-translate-y-0.5 hover:bg-white hover:shadow-sm"
               >
                 <Link
@@ -103,7 +106,7 @@ export function Services() {
                     />
                   </div>
                 </Link>
-              </li>
+              </Reveal>
             );
           })}
         </ol>

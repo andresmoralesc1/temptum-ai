@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
+import { Reveal } from '@/components/Reveal';
 
 export function Equipo() {
   return (
@@ -25,7 +26,7 @@ export function Equipo() {
         </header>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-7">
+          <Reveal as="div" className="lg:col-span-7">
             <blockquote className="border-l-2 border-gold pl-6">
               <p className="font-display text-xl font-medium leading-snug text-navy-950 lg:text-2xl">
                 <span className="text-gold" aria-hidden="true">
@@ -109,9 +110,9 @@ export function Equipo() {
                 aria-hidden="true"
               />
             </Link>
-          </div>
+          </Reveal>
 
-          <figure className="lg:col-span-5">
+          <Reveal as="figure" delay={120} className="lg:col-span-5">
             <div className="border-l-2 border-gold pl-6">
               <Image
                 src="/images/equipo/silvia-juliana.png"
@@ -125,7 +126,7 @@ export function Equipo() {
             <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-gray-500">
               Silvia Juliana Parra Cañas · CEO &amp; socia fundadora
             </figcaption>
-          </figure>
+          </Reveal>
         </div>
       </div>
     </section>

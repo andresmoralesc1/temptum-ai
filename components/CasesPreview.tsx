@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Calendar, ArrowUpRight } from 'lucide-react';
 import { getAllCasos } from '@/lib/content';
 import { formatDate } from '@/lib/dates';
+import { Reveal } from '@/components/Reveal';
 
 export function CasesPreview() {
   const casos = getAllCasos().slice(0, 3);
@@ -34,8 +35,10 @@ export function CasesPreview() {
 
         <ul className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
           {casos.map((caso, idx) => (
-            <li
+            <Reveal
+              as="li"
               key={caso.slug}
+              delay={idx * 100}
               className={`flex flex-col ${
                 idx === 0 ? 'md:col-span-2 lg:col-span-1' : ''
               }`}
@@ -66,7 +69,7 @@ export function CasesPreview() {
                   </span>
                 </div>
               </Link>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </div>

@@ -42,14 +42,37 @@ h4 {
   border-width: 0;
 }
 
-/* Respeta la preferencia del usuario de reducir movimiento. */
+/* Respeta la preferencia del usuario de reducir movimiento.
+   - Anula duraciones de animación/transición a ~0 (instantáneo).
+   - Desactiva scroll suave y caret de texto intermitente.
+   - Fuerza background-position estático en gradientes (anula marquee-like
+     efectos que se construyen con transition sobre background). */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
     animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
     scroll-behavior: auto !important;
+    caret-color: transparent;
+  }
+
+  /* Desactiva hovers basados en transform (card lift, scale, etc).
+     Tailwind genera utilidades como hover:-translate-y-0.5 que aplican
+     transform en :hover; sin esto, el transform se aplicaría aunque
+     la transición sea instantánea. */
+  @media (hover: hover) {
+    .group:hover,
+    a:hover,
+    button:hover {
+      transform: none !important;
+    }
   }
 }

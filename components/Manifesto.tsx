@@ -1,3 +1,5 @@
+import { Reveal } from '@/components/Reveal';
+
 export function Manifesto() {
   return (
     <section className="relative isolate overflow-hidden bg-navy-950 py-24 text-white lg:py-32">
@@ -15,35 +17,37 @@ export function Manifesto() {
       />
 
       <div className="mx-auto max-w-content px-5 lg:px-20">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
-          Manifiesto
-        </p>
-        <blockquote className="mt-10 max-w-5xl">
-          <p className="font-display text-3xl font-bold leading-[1.1] text-white md:text-5xl lg:text-[56px]">
-            <span className="text-gold" aria-hidden="true">
-              &ldquo;
-            </span>
-            No reemplazamos la decisión: la hacemos defendible.
-            <span className="text-gold" aria-hidden="true">
-              &rdquo;
-            </span>
+        <Reveal as="div">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
+            Manifiesto
           </p>
-        </blockquote>
+          <blockquote className="mt-10 max-w-5xl">
+            <p className="font-display text-3xl font-bold leading-[1.1] text-white md:text-5xl lg:text-[56px]">
+              <span className="text-gold" aria-hidden="true">
+                &ldquo;
+              </span>
+              No reemplazamos la decisión: la hacemos defendible.
+              <span className="text-gold" aria-hidden="true">
+                &rdquo;
+              </span>
+            </p>
+          </blockquote>
+        </Reveal>
 
         <div className="mt-12 grid gap-10 border-t border-white/10 pt-10 lg:grid-cols-3 lg:gap-16">
-          <p className="font-display text-xl leading-snug text-white lg:text-2xl">
+          <Reveal as="p" delay={120} className="font-display text-xl leading-snug text-white lg:text-2xl">
             Influencia, rigor técnico y mitigación de riesgos.
-          </p>
-          <p className="text-base leading-relaxed text-navy-100">
+          </Reveal>
+          <Reveal as="p" delay={200} className="text-base leading-relaxed text-navy-100">
             Trabajamos bajo estándares estrictos de confidencialidad,
             independencia y cumplimiento. Cada encargo es liderado por un socio
             responsable y ejecutado por equipos pequeños.
-          </p>
-          <p className="text-base leading-relaxed text-navy-100">
+          </Reveal>
+          <Reveal as="p" delay={280} className="text-base leading-relaxed text-navy-100">
             Aplicamos metodologías de análisis de riesgos, monitoreo
             regulatorio y mapeo de actores para traducir contextos complejos en
             decisiones defendibles.
-          </p>
+          </Reveal>
         </div>
       </div>
     </section>
