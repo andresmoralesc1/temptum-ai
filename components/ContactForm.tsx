@@ -1,12 +1,21 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { Loader2 } from 'lucide-react';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const statusRef = useRef<HTMLDivElement>(null);
+
+  // Tras éxito o error, desplaza la vista al mensaje de estado.
+  useEffect(() => {
+    if ((status === 'success' || status === 'error') && statusRef.current) {
+      statusRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [status]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -102,10 +111,29 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="inline-flex items-center justify-center bg-navy-600 px-6 py-3 text-[13px] font-medium uppercase tracking-widest text-white transition-colors duration-150 hover:bg-navy-800 disabled:cursor-not-allowed disabled:bg-navy-100 disabled:text-navy-600"
+          aria-busy={status === 'submitting'}
+          className="inline-flex items-center justify-center gap-2 bg-navy-600 px-6 py-3 text-[13px] font-medium uppercase tracking-widest text-white transition-colors duration-150 hover:bg-navy-800 disabled:cursor-not-allowed disabled:bg-navy-100 disabled:text-navy-600"
         >
+          {status === 'submitting' && (
+            <Loader2
+              size={16}
+              strokeWidth={2}
+              className="animate-spin"
+              aria-hidden="true"
+            />
+          )}
           {status === 'submitting' ? 'Enviando…' : 'Enviar Mensaje'}
         </button>
+      </div>
+
+      {/*
+        Región aria-live persistente (vacía en idle) para que el screen reader
+        anuncie el cambio cuando aparezca un mensaje. role="status" implica
+        aria-live="polite"; role="alert" implica aria-live="assertive".
+      */}
+      <div ref={statusRef} aria-live="polite" className="sr-only">
+        {status === 'success' && 'Su mensaje fue enviado correctamente.'}
+        {status === 'error' && errorMessage}
       </div>
 
       {status === 'success' && (
