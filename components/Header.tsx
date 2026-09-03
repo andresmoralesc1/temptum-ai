@@ -89,6 +89,7 @@ export function Header() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
+                      aria-current={active ? 'page' : undefined}
                       className={cn(
                         'group relative inline-flex h-16 items-center px-4 text-sm font-medium transition-colors duration-150',
                         'focus:outline-none focus-visible:text-white',
@@ -118,7 +119,8 @@ export function Header() {
               href={WHATSAPP_BASE}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden items-center gap-2 bg-gold px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-950 shadow-sm transition-all duration-150 hover:bg-gold/90 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 lg:inline-flex"
+              // min-h-11 = 44px (WCAG target size). py-2.5 (10px) + 14px text = ~34px
+              className="hidden items-center gap-2 bg-gold px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-950 shadow-sm transition-all duration-150 hover:bg-gold/90 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 lg:inline-flex min-h-11"
               aria-label="Hablemos por WhatsApp"
             >
               <MessageCircle
@@ -132,10 +134,12 @@ export function Header() {
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className="rounded p-1 text-white lg:hidden"
+              // min-h-11 min-w-11 = 44x44px (WCAG 2.5.5 target size)
+              className="flex min-h-11 min-w-11 items-center justify-center rounded p-1 text-white lg:hidden"
               aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
               aria-expanded={open}
               aria-controls="mobile-menu"
+              aria-haspopup="dialog"
             >
               {open ? (
                 <X size={24} aria-hidden="true" />
@@ -182,6 +186,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
+                    aria-current={active ? 'page' : undefined}
                     className={cn(
                       'flex items-center justify-between rounded px-3 py-3 text-base font-medium transition-colors',
                       active
