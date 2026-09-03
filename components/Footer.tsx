@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-navy-950 text-navy-100">
-      <div className="mx-auto max-w-content px-5 pt-16 lg:px-20">
-        <div className="flex items-center gap-3 border-b border-navy-800 pb-10">
+      {/* Top brand block */}
+      <div className="mx-auto max-w-content px-5 pt-12 lg:px-20 lg:pt-16">
+        <div className="flex items-center gap-3 border-b border-navy-800 pb-8 lg:pb-10">
           <Image
             src="/logo-temptum-white.png"
             alt=""
@@ -24,17 +26,35 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="mx-auto grid max-w-content gap-12 px-5 py-12 md:grid-cols-3 lg:px-20">
+
+      {/* Main columns */}
+      <div className="mx-auto grid max-w-content gap-10 px-5 py-10 md:grid-cols-3 md:gap-12 md:py-12 lg:px-20">
+        {/* Dirección */}
         <div>
           <h2 className="font-display text-sm uppercase tracking-widest text-white">
             Dirección
           </h2>
-          <p className="mt-4 text-sm leading-relaxed">
-            Bogotá, D.C.
-            <br />
-            Colombia
-          </p>
+          <div className="mt-4 space-y-2 text-sm leading-relaxed">
+            <p className="flex items-start gap-2">
+              <MapPin
+                size={16}
+                strokeWidth={1.5}
+                className="mt-0.5 flex-shrink-0 text-gold"
+                aria-hidden="true"
+              />
+              <span>
+                Bogotá, D.C.
+                <br />
+                Colombia
+              </span>
+            </p>
+            <p className="text-navy-100/80">
+              Cobertura nacional y región andina.
+            </p>
+          </div>
         </div>
+
+        {/* Navegación */}
         <div>
           <h2 className="font-display text-sm uppercase tracking-widest text-white">
             Navegación
@@ -43,7 +63,8 @@ export function Footer() {
             <li>
               <Link
                 href="/servicios"
-                className="inline-block py-2 hover:text-white transition-colors"
+                // min-h-11 (44px) cumple WCAG 2.5.5 en touch.
+                className="-mx-2 inline-flex min-h-11 items-center rounded px-2 py-2.5 hover:text-white transition-colors"
               >
                 Servicios
               </Link>
@@ -51,7 +72,7 @@ export function Footer() {
             <li>
               <Link
                 href="/casos-de-estudio"
-                className="inline-block py-2 hover:text-white transition-colors"
+                className="-mx-2 inline-flex min-h-11 items-center rounded px-2 py-2.5 hover:text-white transition-colors"
               >
                 Casos
               </Link>
@@ -59,7 +80,7 @@ export function Footer() {
             <li>
               <Link
                 href="/quienes-somos"
-                className="inline-block py-2 hover:text-white transition-colors"
+                className="-mx-2 inline-flex min-h-11 items-center rounded px-2 py-2.5 hover:text-white transition-colors"
               >
                 Quiénes somos
               </Link>
@@ -67,7 +88,7 @@ export function Footer() {
             <li>
               <Link
                 href="/contacto"
-                className="inline-block py-2 hover:text-white transition-colors"
+                className="-mx-2 inline-flex min-h-11 items-center rounded px-2 py-2.5 hover:text-white transition-colors"
               >
                 Contacto
               </Link>
@@ -75,13 +96,15 @@ export function Footer() {
             <li>
               <Link
                 href="/inteligencia-politica"
-                className="inline-block py-2 hover:text-white transition-colors"
+                className="-mx-2 inline-flex min-h-11 items-center rounded px-2 py-2.5 hover:text-white transition-colors"
               >
                 Inteligencia política
               </Link>
             </li>
           </ul>
         </div>
+
+        {/* Contacto */}
         <div>
           <h2 className="font-display text-sm uppercase tracking-widest text-white">
             Contacto
@@ -90,23 +113,35 @@ export function Footer() {
             <li>
               <a
                 href="mailto:info@temptum.io"
-                className="inline-block py-2 hover:text-white transition-colors"
+                className="-mx-2 inline-flex min-h-11 items-center gap-2 rounded px-2 py-2.5 hover:text-white transition-colors"
               >
+                <Mail
+                  size={16}
+                  strokeWidth={1.5}
+                  className="flex-shrink-0 text-gold"
+                  aria-hidden="true"
+                />
                 info@temptum.io
               </a>
             </li>
             <li>
               <a
                 href="tel:+573022388618"
-                className="inline-block py-2 hover:text-white transition-colors"
+                className="-mx-2 inline-flex min-h-11 items-center gap-2 rounded px-2 py-2.5 hover:text-white transition-colors"
               >
+                <Phone
+                  size={16}
+                  strokeWidth={1.5}
+                  className="flex-shrink-0 text-gold"
+                  aria-hidden="true"
+                />
                 +57 302 238 8618
               </a>
             </li>
             <li>
               <Link
                 href="/politica-de-privacidad"
-                className="inline-block py-2 hover:text-white transition-colors"
+                className="-mx-2 inline-flex min-h-11 items-center rounded px-2 py-2.5 hover:text-white transition-colors"
               >
                 Política de privacidad
               </Link>
@@ -114,8 +149,10 @@ export function Footer() {
           </ul>
         </div>
       </div>
+
+      {/* Bottom bar */}
       <div className="border-t border-navy-800">
-        <p className="mx-auto max-w-content px-5 py-6 text-xs text-navy-100 lg:px-20">
+        <p className="mx-auto max-w-content px-5 py-5 text-xs text-navy-100 lg:px-20">
           © {year} Temptum. Todos los derechos reservados.
         </p>
       </div>
