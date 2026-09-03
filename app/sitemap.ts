@@ -14,10 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/servicios',
     '/inteligencia-politica',
     '/casos-de-estudio',
-    '/articulos-linkedin',
     '/contacto',
     '/politica-de-privacidad',
-    '/mapa-del-sitio',
   ].map((path) => ({
     url: `${BASE_URL}${path}`,
     lastModified,

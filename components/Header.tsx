@@ -4,53 +4,29 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { Menu, X, MessageCircle, ChevronDown } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { WHATSAPP_BASE } from '@/lib/constants';
-import { NavMenu, type NavSecondaryItem } from '@/components/NavMenu';
 import { useFocusTrap } from '@/hooks/useFocusTrap';
 
-// Primary nav: 5 items principales en la barra horizontal.
+// Primary nav: 4 items principales en la barra horizontal.
 // Orden pensado por relevancia para un visitante B2B:
-//  1. Servicios (qué ofrecen)
-//  2. Casos   (prueba de trabajo)
+//  1. Servicios    (qué ofrecen)
+//  2. Casos        (prueba de trabajo)
 //  3. Quiénes somos (credibilidad)
-//  4. Inteligencia (contenido)
-//  5. Menú "Más" (dropdown con el resto)
+//  4. Contacto     (conversión)
+// Inteligencia política y política de privacidad viven en el footer.
 const navItems: { href: string; label: string }[] = [
   { href: '/servicios', label: 'Servicios' },
   { href: '/casos-de-estudio', label: 'Casos' },
   { href: '/quienes-somos', label: 'Quiénes somos' },
-  { href: '/inteligencia-politica', label: 'Inteligencia' },
-];
-
-const secondaryItems: NavSecondaryItem[] = [
-  {
-    href: '/articulos-linkedin',
-    label: 'Artículos en LinkedIn',
-    description: 'Análisis publicados en LinkedIn.',
-  },
-  {
-    href: '/contacto',
-    label: 'Contacto',
-    description: 'Canales y formulario institucional.',
-  },
-  {
-    href: '/mapa-del-sitio',
-    label: 'Mapa del sitio',
-    description: 'Vista completa del sitio.',
-  },
-  {
-    href: '/politica-de-privacidad',
-    label: 'Política de privacidad',
-  },
+  { href: '/contacto', label: 'Contacto' },
 ];
 
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [moreOpen, setMoreOpen] = useState(false);
   const mobileNavRef = useRef<HTMLElement>(null);
 
   // Focus trap inside the mobile drawer while it is open.
@@ -65,7 +41,6 @@ export function Header() {
 
   useEffect(() => {
     setOpen(false);
-    setMoreOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -135,9 +110,6 @@ export function Header() {
                   </li>
                 );
               })}
-              <li className="ml-1">
-                <NavMenu label="Más" items={secondaryItems} />
-              </li>
             </ul>
           </nav>
 
@@ -230,56 +202,6 @@ export function Header() {
               );
             })}
           </ul>
-
-          {/* Más — acordeón */}
-          <div className="mt-2 border-t border-white/5 pt-2">
-            <button
-              type="button"
-              onClick={() => setMoreOpen((v) => !v)}
-              aria-expanded={moreOpen}
-              aria-controls="mobile-more"
-              className="flex w-full items-center justify-between rounded px-3 py-3 text-base font-medium text-navy-100 hover:bg-white/5 hover:text-white"
-            >
-              Más
-              <ChevronDown
-                size={16}
-                strokeWidth={2}
-                className={cn(
-                  'transition-transform duration-200',
-                  moreOpen && 'rotate-180',
-                )}
-                aria-hidden="true"
-              />
-            </button>
-            {moreOpen && (
-              <ul id="mobile-more" className="flex flex-col gap-1 pb-2">
-                {secondaryItems.map((item) => {
-                  const active = pathname === item.href;
-                  return (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        onClick={() => setOpen(false)}
-                        className={cn(
-                          'flex flex-col rounded px-3 py-2.5 text-sm transition-colors',
-                          active
-                            ? 'bg-white/5 text-white'
-                            : 'text-navy-100 hover:bg-white/5 hover:text-white',
-                        )}
-                      >
-                        <span className="font-medium">{item.label}</span>
-                        {item.description && (
-                          <span className="mt-0.5 text-xs leading-relaxed text-navy-100/70">
-                            {item.description}
-                          </span>
-                        )}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-          </div>
 
           {/* CTA WhatsApp */}
           <div className="mt-4 border-t border-white/5 pt-4">
