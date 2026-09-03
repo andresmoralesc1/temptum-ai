@@ -76,6 +76,7 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${SITE_URL}#organization`,
   name: 'Temptum',
   alternateName: 'Temptum Consultoría Estratégica',
   url: SITE_URL,
@@ -119,9 +120,12 @@ const organizationJsonLd = {
 const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': `${SITE_URL}#website`,
   name: 'Temptum',
+  alternateName: 'Temptum Consultoría Estratégica',
   url: SITE_URL,
   inLanguage: 'es-CO',
+  publisher: { '@id': `${SITE_URL}#organization` },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

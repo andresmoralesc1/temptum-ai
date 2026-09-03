@@ -20,12 +20,11 @@ const SITE_URL =
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': `${SITE_URL}#founder`,
   name: 'Silvia Juliana Parra Cañas',
   jobTitle: 'CEO y socia fundadora',
   worksFor: {
-    '@type': 'Organization',
-    name: 'Temptum',
-    url: SITE_URL,
+    '@id': `${SITE_URL}#organization`,
   },
   url: `${SITE_URL}/quienes-somos`,
   sameAs: [
