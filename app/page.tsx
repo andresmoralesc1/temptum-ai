@@ -13,9 +13,10 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 };
 
-const SITE_URL =
+const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-  'https://temptum.andresmorales.com.co';
+  'https://temptum.andresmorales.com.co'
+).replace(/\/$/, '');
 
 const personJsonLd = {
   '@context': 'https://schema.org',

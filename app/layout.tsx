@@ -28,9 +28,10 @@ const inter = Inter({
   adjustFontFallback: true,
 });
 
-const SITE_URL =
+const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-  'https://temptum.andresmorales.com.co';
+  'https://temptum.andresmorales.com.co'
+).replace(/\/$/, '');
 
 const SITE_DESCRIPTION =
   'Nexo de influencia, rigor técnico y mitigación de riesgos para el sector privado y las instituciones en Colombia.';
