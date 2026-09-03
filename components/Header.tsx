@@ -91,7 +91,9 @@ export function Header() {
                       href={item.href}
                       aria-current={active ? 'page' : undefined}
                       className={cn(
-                        'group relative inline-flex h-16 items-center px-4 text-sm font-medium transition-colors duration-150',
+                        // h-12 (48px) da aire vertical; px-4 mantiene el ancho
+                        // cómodo sin saturar el header.
+                        'group relative inline-flex h-12 items-center rounded-sm px-4 text-sm font-medium transition-colors duration-150',
                         'focus:outline-none focus-visible:text-white',
                         active
                           ? 'text-white'
@@ -102,7 +104,8 @@ export function Header() {
                       <span
                         aria-hidden="true"
                         className={cn(
-                          'pointer-events-none absolute inset-x-4 bottom-3 h-px origin-center scale-x-0 bg-gold transition-transform duration-200 ease-out',
+                          // Indicador dorado centrado verticalmente respecto al texto.
+                          'pointer-events-none absolute inset-x-4 bottom-2 h-px origin-center scale-x-0 bg-gold transition-transform duration-200 ease-out',
                           'group-hover:scale-x-100 group-focus-visible:scale-x-100',
                           active && 'scale-x-100',
                         )}
@@ -170,11 +173,13 @@ export function Header() {
         id="mobile-menu"
         aria-label="Navegación móvil"
         className={cn(
-          'fixed inset-x-0 top-[calc(4rem+1px+env(safe-area-inset-top))] z-40 max-h-[calc(100vh-4rem-1px)] origin-top overflow-y-auto border-b border-white/5 bg-navy-950 transition-transform duration-200 ease-out lg:hidden',
+          // h-[calc(100vh-...)] fuerza altura exacta para que mt-auto funcione
+          // y el CTA quede pegado al fondo del drawer, no al medio.
+          'fixed inset-x-0 top-[calc(4rem+1px+env(safe-area-inset-top))] z-40 flex h-[calc(100vh-4rem-1px-env(safe-area-inset-top))] max-h-[calc(100vh-4rem-1px)] origin-top flex-col overflow-y-auto border-b border-white/5 bg-navy-950 transition-transform duration-200 ease-out lg:hidden',
           open ? 'translate-y-0' : 'pointer-events-none -translate-y-2 opacity-0',
         )}
       >
-        <div className="mx-auto max-w-content px-5 py-6">
+        <div className="mx-auto flex w-full max-w-content flex-1 flex-col px-5 py-6">
           {/* Primary items */}
           <ul className="flex flex-col gap-1">
             {navItems.map((item) => {
@@ -208,8 +213,8 @@ export function Header() {
             })}
           </ul>
 
-          {/* CTA WhatsApp */}
-          <div className="mt-4 border-t border-white/5 pt-4">
+          {/* CTA WhatsApp — empujado al final del drawer con mt-auto */}
+          <div className="mt-auto border-t border-white/5 pt-6">
             <a
               href={WHATSAPP_BASE}
               target="_blank"
