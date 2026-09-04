@@ -12,7 +12,10 @@
       "label": "Change language",
       "spanish": "Spanish",
       "english": "English"
-    }
+    },
+    "languagePickerLabel": "Change language",
+    "languageEsLabel": "Spanish (Colombia)",
+    "languageEnLabel": "English (United States)"
   },
   "Site": {
     "description": "An independent firm specialized in corporate & government affairs in Colombia. We support regulated companies, in-house legal and compliance teams in scenarios where the decision must hold up before a regulator, a judge, or public opinion.",
@@ -44,10 +47,7 @@
       "cases": "Case studies",
       "about": "About",
       "contact": "Contact"
-    },
-    "languagePickerLabel": "Change language",
-    "languageEsLabel": "Spanish (Colombia)",
-    "languageEnLabel": "English (United States)"
+    }
   },
   "Footer": {
     "brandTagline": "Corporate & Government Affairs",

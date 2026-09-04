@@ -12,7 +12,10 @@
       "label": "Cambiar idioma",
       "spanish": "Español",
       "english": "Inglés"
-    }
+    },
+    "languagePickerLabel": "Cambiar idioma",
+    "languageEsLabel": "Español (Colombia)",
+    "languageEnLabel": "Inglés (Estados Unidos)"
   },
   "Site": {
     "description": "Centro especializado en Colombia en corporate & government affairs. Acompañamos a empresas reguladas, equipos legales y de cumplimiento en escenarios donde la decisión tiene que sostenerse ante un regulador, un juez o la opinión pública.",
@@ -44,10 +47,7 @@
       "cases": "Casos",
       "about": "Quiénes somos",
       "contact": "Contacto"
-    },
-    "languagePickerLabel": "Cambiar idioma",
-    "languageEsLabel": "Español (Colombia)",
-    "languageEnLabel": "Inglés (Estados Unidos)"
+    }
   },
   "Footer": {
     "brandTagline": "Corporate & Government Affairs",
