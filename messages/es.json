@@ -253,106 +253,163 @@
   },
   "AboutPage": {
     "metadata": {
-      "title": "",
-      "description": "",
-      "ogTitle": "",
-      "ogDescription": "",
-      "twitterTitle": "",
-      "twitterDescription": ""
+      "title": "Quiénes somos",
+      "description": "Temptum es una firma independiente de corporate & government affairs en Bogotá. Conozca a nuestra CEO, nuestra trayectoria y cómo conformamos equipos para cada encargo.",
+      "ogTitle": "Quiénes somos | Temptum",
+      "ogDescription": "Firma independiente de corporate & government affairs en Bogotá. CEO con experiencia en Edelman y periodismo de investigación. Equipos por encargo.",
+      "twitterTitle": "Quiénes somos | Temptum",
+      "twitterDescription": "Firma independiente de corporate & government affairs en Bogotá. CEO con experiencia en Edelman y periodismo de investigación."
     },
-    "kicker": "",
-    "headline": "",
-    "headlineAccent": "",
-    "subhead": "",
+    "kicker": "Quiénes somos",
+    "headline": "El primer centro especializado en Colombia en corporate & government affairs",
+    "headlineAccent": "corporate & government affairs",
+    "subhead": "Temptum es una firma independiente con sede en Bogotá. Acompañamos a organizaciones del sector privado e instituciones en la construcción de posiciones defendibles — sustentadas en análisis técnico, conocimiento regulatorio y lectura política del entorno.",
     "stats": {
-      "office": "",
-      "coverage": "",
-      "sectors": "",
-      "founded": ""
+      "office": "Bogotá",
+      "coverage": "Colombia · Región andina",
+      "sectors": "Energía, infra, financiero, tecnología, salud",
+      "founded": "2023"
     },
     "breadcrumbs": {
-      "home": "",
-      "current": ""
+      "home": "Inicio",
+      "current": "Quiénes somos"
     },
     "about": {
-      "kicker": "",
-      "headline": "",
-      "headlineAccent": "",
-      "body": ""
+      "kicker": "Sobre Temptum",
+      "headline": "Una práctica fundada en rigor, no en urgencia",
+      "headlineAccent": "rigor, no en urgencia",
+      "body": "Combinamos experiencia en comunicación corporativa, periodismo de investigación y asuntos públicos para servir a organizaciones que toman decisiones que importan. Cada encargo se ejecuta con equipos de tres a cinco personas, entregables documentados y un socio responsable desde el primer diagnóstico."
     },
-    "aboutParagraphs": [],
-    "sessionCaption": "",
-    "languages": "",
+    "aboutParagraphs": [
+      "Temptum reúne cuatro líneas de trabajo — relaciones institucionales, gestión de riesgos y crisis, asuntos regulatorios y legislativos, y comunicaciones ASG — bajo una sola metodología: traducir contextos complejos en decisiones defendibles.",
+      "Nuestro equipo combina perfiles de ciencias políticas, derecho, economía y comunicación estratégica, con experiencia directa en el sector público, el sector privado y la academia. Aplicamos metodologías de análisis de riesgos, monitoreo regulatorio y mapeo de actores para producir inteligencia accionable — no diagnósticos genéricos.",
+      "Operamos bajo estándares estrictos de confidencialidad, independencia y cumplimiento. No sustituimos al cliente: lo acompañamos con rigor técnico y criterio estratégico para que cada decisión sea defendible ante sus audiencias, sus reguladores y la opinión pública."
+    ],
+    "sessionCaption": "Sesión de análisis con aliados y clientes",
+    "languages": "Español · Inglés",
     "engagementModels": {
-      "title": "",
+      "title": "Modelos de trabajo",
       "byProject": {
-        "title": "",
-        "body": ""
+        "title": "Por proyecto",
+        "body": "Alcance, entregables y plazo definidos. Para mandatos con inicio y cierre claros."
       },
       "retainer": {
-        "title": "",
-        "body": ""
+        "title": "Retainer mensual",
+        "body": "Disponibilidad permanente del equipo. Para organizaciones con asuntos regulatorios o institucionales recurrentes."
       },
       "advisory": {
-        "title": "",
-        "body": ""
+        "title": "Asesoría estratégica",
+        "body": "Acompañamiento al CEO, al directorio o al equipo legal en decisiones de alto impacto."
       }
     },
-    "operationalCoverage": "",
+    "operationalCoverage": "Bogotá · Medellín · Cali · Quito · Lima",
     "leadership": {
-      "kicker": "",
-      "name": "",
-      "role": "",
-      "intro": "",
-      "quote": "",
-      "trajectoryTitle": "",
-      "formationTitle": "",
-      "teachingTitle": "",
-      "linkedinCta": "",
+      "kicker": "Liderazgo",
+      "name": "Silvia Juliana Parra Cañas",
+      "role": "CEO & socia fundadora",
+      "intro": "Magíster en Periodismo por la Universidad del Rosario y comunicadora social y periodista de la Universidad Jorge Tadeo Lozano. Más de una década construyendo estrategias de comunicación, manejando crisis de alto perfil y fortaleciendo el posicionamiento de marcas nacionales e internacionales en Colombia y la región.",
+      "quote": "La cercanía con el cliente y la profundidad técnica son las dos cosas que no se pueden comprometer.",
+      "trajectoryTitle": "Trayectoria profesional",
+      "formationTitle": "Formación",
+      "teachingTitle": "Docencia",
+      "linkedinCta": "LinkedIn",
       "formation": {
         "master": {
-          "title": "",
-          "school": ""
+          "title": "Magíster en Periodismo",
+          "school": "Universidad del Rosario · 2012 – 2014"
         },
         "bachelor": {
-          "title": "",
-          "school": ""
+          "title": "Comunicadora Social y Periodista",
+          "school": "Fundación Universidad de Bogotá Jorge Tadeo Lozano · 2007 – 2010"
         }
       },
       "teaching": {
         "rosario": {
-          "title": "",
-          "body": ""
+          "title": "Universidad del Rosario",
+          "body": "Cátedra Storytelling — Maestría en Comunicación Política Digital."
         },
         "tadeo": {
-          "title": "",
-          "body": ""
+          "title": "Universidad Jorge Tadeo Lozano",
+          "body": "Cátedras de Relaciones Públicas, Communication Strategy for Organizations y Marketing y Comunicación Política (pregrado y maestría)."
         }
       }
     },
-    "trajectory": [],
+    "trajectory": [
+      {
+        "period": "2023 — Actualidad",
+        "role": "CEO",
+        "org": "Temptum Hub",
+        "detail": "Centro especializado en Colombia en corporate & government affairs: comunicaciones estratégicas, direccionamiento digital, infraestructura web y explotación de datos para inteligencia de negocios."
+      },
+      {
+        "period": "2019 — 2023",
+        "role": "Cofundadora",
+        "org": "VIM La Agencia",
+        "detail": "Expansión a medios digitales y servicios de comunicación basados en tecnología: estrategia en redes sociales y desarrollo de plataformas."
+      },
+      {
+        "period": "2015 — 2019",
+        "role": "Directora de cuenta",
+        "org": "SPR Group & Marco de Comunicaciones",
+        "detail": "Manejo de crisis, asuntos públicos y de gobierno, y relaciones públicas para clientes en escenarios de alto impacto."
+      },
+      {
+        "period": "2015",
+        "role": "Líder de cuentas",
+        "org": "Medios Milenium",
+        "detail": "Comunicación interna, externa y relaciones públicas para cuentas corporativas regionales en Latinoamérica."
+      },
+      {
+        "period": "2013 — 2014",
+        "role": "Consultora de comunicaciones",
+        "org": "Edelman Colombia",
+        "detail": "Diseño y ejecución de campañas estratégicas para marcas nacionales e internacionales en una de las firmas de PR más importantes del mundo."
+      },
+      {
+        "period": "2011 — 2013",
+        "role": "Periodista de investigación",
+        "org": "Publicaciones Semana · Revista Dinero",
+        "detail": "Reportería en los sectores económico y empresarial; redacción de géneros periodísticos e investigación para edición impresa y digital."
+      }
+    ],
     "allies": {
-      "kicker": "",
-      "headline": "",
-      "headlineAccent": "",
-      "body1": "",
-      "body2": "",
-      "caption": ""
+      "kicker": "Aliados y sectores",
+      "headline": "Un ecosistema amplio, articulado para cada encargo",
+      "headlineAccent": "articulado para cada encargo",
+      "body1": "Temptum trabaja con una red estable de aliados sectoriales, académicos y consultivos en Colombia y la región andina. Para cada proyecto convocamos a los perfiles que el contexto exige: abogados, economistas, científicos políticos, comunicadores estratégicos y especialistas técnicos.",
+      "body2": "Esta red no reemplaza al equipo permanente: lo complementa. La coordinación, el criterio editorial y la interlocución con el cliente permanecen en casa.",
+      "caption": "Red de aliados sectoriales y académicos"
     },
     "commitments": {
-      "kicker": "",
-      "headline": "",
-      "headlineAccent": "",
-      "intro": "",
-      "items": []
+      "kicker": "Cómo trabajamos",
+      "headline": "Tres compromisos innegociables",
+      "headlineAccent": "innegociables",
+      "intro": "Cada encargo se ejecuta bajo los mismos tres principios. No son eslóganes: son la base operativa de la firma.",
+      "items": [
+        {
+          "n": "01",
+          "title": "Confidencialidad estricta",
+          "body": "Manejo de información sensible bajo protocolos formales de acceso, archivo y destrucción. No usamos el nombre del cliente como activo de mercadeo."
+        },
+        {
+          "n": "02",
+          "title": "Independencia de criterio",
+          "body": "No recibimos compensación de terceros por resultados regulatorios o de política pública. Recomendamos lo que es defendible, no lo que conviene al proveedor."
+        },
+        {
+          "n": "03",
+          "title": "Cumplimiento verificable",
+          "body": "Cada entregable es trazable, cada metodología documentada, cada equipo de trabajo identificado por escrito. La auditoría del trabajo propio es parte del servicio."
+        }
+      ]
     },
     "cta": {
-      "kicker": "",
-      "headline": "",
-      "headlineAccent": "",
-      "body": "",
-      "primary": "",
-      "secondary": ""
+      "kicker": "¿Conversamos?",
+      "headline": "Cuéntenos el contexto. Le respondemos en un plazo de dos días hábiles",
+      "headlineAccent": "Le respondemos en un plazo de dos días hábiles",
+      "body": "Atendemos cada conversación de manera directa, sin formularios genéricos. Si su organización enfrenta un escenario complejo, conversemos por correo o WhatsApp.",
+      "primary": "Conversemos",
+      "secondary": "Conversemos por WhatsApp"
     }
   },
   "ServicesPage": {

@@ -253,106 +253,163 @@
   },
   "AboutPage": {
     "metadata": {
-      "title": "",
-      "description": "",
-      "ogTitle": "",
-      "ogDescription": "",
-      "twitterTitle": "",
-      "twitterDescription": ""
+      "title": "About",
+      "description": "Temptum is an independent corporate & government affairs firm in Bogotá. Meet our CEO, our track record, and how we assemble teams for each engagement.",
+      "ogTitle": "About | Temptum",
+      "ogDescription": "An independent corporate & government affairs firm in Bogotá. CEO with experience at Edelman and investigative journalism. Bespoke teams per engagement.",
+      "twitterTitle": "About | Temptum",
+      "twitterDescription": "An independent corporate & government affairs firm in Bogotá. CEO with experience at Edelman and investigative journalism."
     },
-    "kicker": "",
-    "headline": "",
-    "headlineAccent": "",
-    "subhead": "",
+    "kicker": "About",
+    "headline": "The first firm in Colombia specialized in corporate & government affairs",
+    "headlineAccent": "corporate & government affairs",
+    "subhead": "Temptum is an independent firm based in Bogotá. We support private-sector organizations and institutions in building defensible positions — grounded in technical analysis, regulatory knowledge, and political reading of the environment.",
     "stats": {
-      "office": "",
-      "coverage": "",
-      "sectors": "",
-      "founded": ""
+      "office": "Bogotá",
+      "coverage": "Colombia · Andean region",
+      "sectors": "Energy, infrastructure, financial, technology, healthcare",
+      "founded": "2023"
     },
     "breadcrumbs": {
-      "home": "",
-      "current": ""
+      "home": "Home",
+      "current": "About"
     },
     "about": {
-      "kicker": "",
-      "headline": "",
-      "headlineAccent": "",
-      "body": ""
+      "kicker": "About Temptum",
+      "headline": "A practice built on rigor, not urgency",
+      "headlineAccent": "rigor, not urgency",
+      "body": "We bring together experience in corporate communications, investigative journalism, and public affairs to serve organizations that make decisions that matter. Every engagement is staffed by teams of three to five people, with documented deliverables and a responsible partner from the first diagnosis."
     },
-    "aboutParagraphs": [],
-    "sessionCaption": "",
-    "languages": "",
+    "aboutParagraphs": [
+      "Temptum brings four lines of work — institutional relations, risk and crisis management, regulatory and legislative affairs, and ESG communications — under a single methodology: translating complex contexts into defensible decisions.",
+      "Our team combines profiles from political science, law, economics, and strategic communication, with direct experience in the public sector, the private sector, and academia. We apply risk analysis, regulatory monitoring, and stakeholder mapping methodologies to produce actionable intelligence — not generic diagnostics.",
+      "We operate under strict standards of confidentiality, independence, and compliance. We do not replace the client: we support them with technical rigor and strategic judgment so that each decision is defensible before its audiences, its regulators, and public opinion."
+    ],
+    "sessionCaption": "Analysis session with partners and clients",
+    "languages": "Spanish · English",
     "engagementModels": {
-      "title": "",
+      "title": "Engagement models",
       "byProject": {
-        "title": "",
-        "body": ""
+        "title": "By project",
+        "body": "Defined scope, deliverables, and timeline. For mandates with a clear start and close."
       },
       "retainer": {
-        "title": "",
-        "body": ""
+        "title": "Monthly retainer",
+        "body": "Permanent team availability. For organizations with recurring regulatory or institutional matters."
       },
       "advisory": {
-        "title": "",
-        "body": ""
+        "title": "Strategic advisory",
+        "body": "Support to the CEO, board, or legal team in high-impact decisions."
       }
     },
-    "operationalCoverage": "",
+    "operationalCoverage": "Bogotá · Medellín · Cali · Quito · Lima",
     "leadership": {
-      "kicker": "",
-      "name": "",
-      "role": "",
-      "intro": "",
-      "quote": "",
-      "trajectoryTitle": "",
-      "formationTitle": "",
-      "teachingTitle": "",
-      "linkedinCta": "",
+      "kicker": "Leadership",
+      "name": "Silvia Juliana Parra Cañas",
+      "role": "CEO & Founding Partner",
+      "intro": "Master's in Journalism from Universidad del Rosario, and a BA in Social Communication and Journalism from Universidad Jorge Tadeo Lozano. More than a decade building communication strategies, managing high-profile crises, and strengthening the positioning of national and international brands in Colombia and the region.",
+      "quote": "Closeness with the client and technical depth are the two things you cannot compromise on.",
+      "trajectoryTitle": "Professional track record",
+      "formationTitle": "Education",
+      "teachingTitle": "Teaching",
+      "linkedinCta": "LinkedIn",
       "formation": {
         "master": {
-          "title": "",
-          "school": ""
+          "title": "Master's in Journalism",
+          "school": "Universidad del Rosario · 2012 – 2014"
         },
         "bachelor": {
-          "title": "",
-          "school": ""
+          "title": "BA in Social Communication and Journalism",
+          "school": "Fundación Universidad de Bogotá Jorge Tadeo Lozano · 2007 – 2010"
         }
       },
       "teaching": {
         "rosario": {
-          "title": "",
-          "body": ""
+          "title": "Universidad del Rosario",
+          "body": "Course on Storytelling — Master's in Digital Political Communication."
         },
         "tadeo": {
-          "title": "",
-          "body": ""
+          "title": "Universidad Jorge Tadeo Lozano",
+          "body": "Courses in Public Relations, Communication Strategy for Organizations, and Marketing and Political Communication (undergraduate and graduate)."
         }
       }
     },
-    "trajectory": [],
+    "trajectory": [
+      {
+        "period": "2023 — Present",
+        "role": "CEO",
+        "org": "Temptum Hub",
+        "detail": "Center specialized in Colombia in corporate & government affairs: strategic communications, digital targeting, web infrastructure, and data exploitation for business intelligence."
+      },
+      {
+        "period": "2019 — 2023",
+        "role": "Co-founder",
+        "org": "VIM La Agencia",
+        "detail": "Expansion into digital media and technology-based communication services: social media strategy and platform development."
+      },
+      {
+        "period": "2015 — 2019",
+        "role": "Account Director",
+        "org": "SPR Group & Marco de Comunicaciones",
+        "detail": "Crisis management, public and government affairs, and public relations for clients in high-impact scenarios."
+      },
+      {
+        "period": "2015",
+        "role": "Accounts Lead",
+        "org": "Medios Milenium",
+        "detail": "Internal and external communications and public relations for regional corporate accounts across Latin America."
+      },
+      {
+        "period": "2013 — 2014",
+        "role": "Communications Consultant",
+        "org": "Edelman Colombia",
+        "detail": "Design and execution of strategic campaigns for national and international brands at one of the world's leading PR firms."
+      },
+      {
+        "period": "2011 — 2013",
+        "role": "Investigative Reporter",
+        "org": "Publicaciones Semana · Revista Dinero",
+        "detail": "Reporting on the economic and business sectors; feature writing and research for print and digital editions."
+      }
+    ],
     "allies": {
-      "kicker": "",
-      "headline": "",
-      "headlineAccent": "",
-      "body1": "",
-      "body2": "",
-      "caption": ""
+      "kicker": "Partners and sectors",
+      "headline": "A broad ecosystem, assembled for each engagement",
+      "headlineAccent": "assembled for each engagement",
+      "body1": "Temptum works with a stable network of sectoral, academic, and advisory partners in Colombia and the Andean region. For each project we convene the profiles the context demands: lawyers, economists, political scientists, strategic communicators, and technical specialists.",
+      "body2": "This network does not replace the permanent team: it complements it. Coordination, editorial judgment, and client liaison stay in-house.",
+      "caption": "Network of sectoral and academic partners"
     },
     "commitments": {
-      "kicker": "",
-      "headline": "",
-      "headlineAccent": "",
-      "intro": "",
-      "items": []
+      "kicker": "How we work",
+      "headline": "Three non-negotiable commitments",
+      "headlineAccent": "non-negotiable",
+      "intro": "Every engagement operates under the same three principles. They are not slogans: they are the firm's operating floor.",
+      "items": [
+        {
+          "n": "01",
+          "title": "Strict confidentiality",
+          "body": "Handling of sensitive information under formal protocols for access, filing, and destruction. We do not use the client's name as a marketing asset."
+        },
+        {
+          "n": "02",
+          "title": "Independent judgment",
+          "body": "We do not receive compensation from third parties for regulatory or public-policy outcomes. We recommend what is defensible, not what is convenient for the vendor."
+        },
+        {
+          "n": "03",
+          "title": "Verifiable compliance",
+          "body": "Every deliverable is traceable, every methodology documented, every working team identified in writing. Auditing our own work is part of the service."
+        }
+      ]
     },
     "cta": {
-      "kicker": "",
-      "headline": "",
-      "headlineAccent": "",
-      "body": "",
-      "primary": "",
-      "secondary": ""
+      "kicker": "Let's talk?",
+      "headline": "Tell us the context. We respond within two business days",
+      "headlineAccent": "We respond within two business days",
+      "body": "We handle every conversation directly, without generic forms. If your organization faces a complex scenario, let's talk by email or WhatsApp.",
+      "primary": "Let's talk",
+      "secondary": "Let's talk on WhatsApp"
     }
   },
   "ServicesPage": {
