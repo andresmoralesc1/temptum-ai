@@ -5,25 +5,26 @@ import { getAllCasos } from '@/lib/content';
 import { SITE_URL } from '@/lib/site';
 
 type Route = {
-  path: string;
+  es: string;
+  en: string;
   sourceFile: string;
   changeFrequency: 'weekly' | 'monthly' | 'yearly';
   priority: number;
 };
 
 const STATIC_ROUTES: Route[] = [
-  { path: '', sourceFile: 'app/page.tsx', changeFrequency: 'weekly', priority: 1 },
-  { path: '/quienes-somos', sourceFile: 'app/quienes-somos/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/servicios', sourceFile: 'app/servicios/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/inteligencia-politica', sourceFile: 'app/inteligencia-politica/page.tsx', changeFrequency: 'monthly', priority: 0.7 },
-  { path: '/casos-de-estudio', sourceFile: 'app/casos-de-estudio/page.tsx', changeFrequency: 'weekly', priority: 0.8 },
-  { path: '/contacto', sourceFile: 'app/contacto/page.tsx', changeFrequency: 'monthly', priority: 0.7 },
-  { path: '/politica-de-privacidad', sourceFile: 'app/politica-de-privacidad/page.tsx', changeFrequency: 'yearly', priority: 0.3 },
+  { es: '', en: '', sourceFile: 'page.tsx', changeFrequency: 'weekly', priority: 1 },
+  { es: '/quienes-somos', en: '/quienes-somos', sourceFile: 'quienes-somos/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
+  { es: '/servicios', en: '/servicios', sourceFile: 'servicios/page.tsx', changeFrequency: 'monthly', priority: 0.8 },
+  { es: '/inteligencia-politica', en: '/inteligencia-politica', sourceFile: 'inteligencia-politica/page.tsx', changeFrequency: 'monthly', priority: 0.7 },
+  { es: '/casos-de-estudio', en: '/casos-de-estudio', sourceFile: 'casos-de-estudio/page.tsx', changeFrequency: 'weekly', priority: 0.8 },
+  { es: '/contacto', en: '/contacto', sourceFile: 'contacto/page.tsx', changeFrequency: 'monthly', priority: 0.7 },
+  { es: '/politica-de-privacidad', en: '/politica-de-privacidad', sourceFile: 'politica-de-privacidad/page.tsx', changeFrequency: 'yearly', priority: 0.3 },
 ];
 
 async function getMtime(relativePath: string): Promise<Date> {
   try {
-    const stat = await fs.stat(path.join(process.cwd(), relativePath));
+    const stat = await fs.stat(path.join(process.cwd(), 'app', '[locale]', relativePath));
     return stat.mtime;
   } catch {
     return new Date();
@@ -31,21 +32,82 @@ async function getMtime(relativePath: string): Promise<Date> {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticEntries = await Promise.all(
-    STATIC_ROUTES.map(async (route) => ({
-      url: `${SITE_URL}${route.path}`,
-      lastModified: await getMtime(route.sourceFile),
+  const entries: MetadataRoute.Sitemap = [];
+
+  for (const route of STATIC_ROUTES) {
+    const lastModified = await getMtime(route.sourceFile);
+    const esUrl = `${SITE_URL}${route.es}`;
+    const enUrl = `${SITE_URL}/en${route.en}`;
+
+    entries.push({
+      url: esUrl,
+      lastModified,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
-    })),
-  );
+      alternates: {
+        languages: {
+          'es-CO': esUrl,
+          'es-419': esUrl,
+          es: esUrl,
+          en: enUrl,
+          'en-US': enUrl,
+        },
+      },
+    });
 
-  const casoEntries = getAllCasos().map((caso) => ({
-    url: `${SITE_URL}/casos-de-estudio/${caso.slug}`,
-    lastModified: new Date(caso.date),
-    changeFrequency: 'yearly' as const,
-    priority: 0.6,
-  }));
+    entries.push({
+      url: enUrl,
+      lastModified,
+      changeFrequency: route.changeFrequency,
+      priority: route.priority,
+      alternates: {
+        languages: {
+          'es-CO': esUrl,
+          'es-419': esUrl,
+          es: esUrl,
+          en: enUrl,
+          'en-US': enUrl,
+        },
+      },
+    });
+  }
 
-  return [...staticEntries, ...casoEntries];
+  for (const caso of getAllCasos()) {
+    const esUrl = `${SITE_URL}/casos-de-estudio/${caso.slug}`;
+    const enUrl = `${SITE_URL}/en/casos-de-estudio/${caso.slug}`;
+
+    entries.push({
+      url: esUrl,
+      lastModified: new Date(caso.date),
+      changeFrequency: 'yearly',
+      priority: 0.6,
+      alternates: {
+        languages: {
+          'es-CO': esUrl,
+          'es-419': esUrl,
+          es: esUrl,
+          en: enUrl,
+          'en-US': enUrl,
+        },
+      },
+    });
+
+    entries.push({
+      url: enUrl,
+      lastModified: new Date(caso.date),
+      changeFrequency: 'yearly',
+      priority: 0.6,
+      alternates: {
+        languages: {
+          'es-CO': esUrl,
+          'es-419': esUrl,
+          es: esUrl,
+          en: enUrl,
+          'en-US': enUrl,
+        },
+      },
+    });
+  }
+
+  return entries;
 }

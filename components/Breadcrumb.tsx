@@ -1,9 +1,11 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/site';
+import { getLocale } from 'next-intl/server';
 
 type Crumb = { label: string; href?: string };
 
-export function Breadcrumb({ items }: { items: Crumb[] }) {
+export async function Breadcrumb({ items }: { items: Crumb[] }) {
+  const locale = await getLocale();
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -11,7 +13,13 @@ export function Breadcrumb({ items }: { items: Crumb[] }) {
       '@type': 'ListItem',
       position: i + 1,
       name: c.label,
-      ...(c.href ? { item: `${SITE_URL}${c.href}` } : {}),
+      ...(c.href
+        ? {
+            item: locale === 'es'
+              ? `${SITE_URL}${c.href}`
+              : `${SITE_URL}/en${c.href === '/' ? '' : c.href}`,
+          }
+        : {}),
     })),
   };
 

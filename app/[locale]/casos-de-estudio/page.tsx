@@ -1,47 +1,73 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Calendar, ArrowUpRight } from 'lucide-react';
 import { getAllCasos } from '@/lib/content';
 import { formatDate } from '@/lib/dates';
 import { SITE_URL } from '@/lib/site';
+import { routing } from '@/i18n/routing';
+import { Link } from '@/i18n/routing';
 import { PageHero } from '@/components/PageHero';
 
-export const metadata: Metadata = {
-  title: 'Análisis y opinión',
-  description:
-    'Análisis y opinión de nuestro equipo sobre comunicaciones estratégicas, gestión de crisis, cumplimiento normativo y el impacto de la inteligencia artificial en la disciplina.',
-  alternates: {
-    canonical: '/casos-de-estudio',
-  },
-  openGraph: {
-    title: 'Análisis y opinión | Temptum',
-    description:
-      'Reflexiones firmadas por nuestro equipo sobre comunicaciones estratégicas, gestión de crisis y cumplimiento normativo. Análisis editoriales, no estudios de cliente.',
-    url: `${SITE_URL}/casos-de-estudio`,
-  },
-  twitter: {
-    title: 'Análisis y opinión | Temptum',
-    description:
-      'Reflexiones firmadas por nuestro equipo sobre comunicaciones estratégicas, gestión de crisis y cumplimiento normativo.',
-  },
-};
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
-export default function CasosDeEstudioPage() {
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'CaseStudiesPage' });
+  const esUrl = '/casos-de-estudio';
+  const enUrl = '/en/casos-de-estudio';
+  const canonical = locale === 'es' ? esUrl : enUrl;
+  return {
+    title: t('metadata.title'),
+    description: t('metadata.description'),
+    alternates: {
+      canonical,
+      languages: {
+        'es-CO': esUrl,
+        'es-419': esUrl,
+        es: esUrl,
+        en: enUrl,
+        'en-US': enUrl,
+      },
+    },
+    openGraph: {
+      title: t('metadata.ogTitle'),
+      description: t('metadata.ogDescription'),
+      url: `${SITE_URL}${canonical}`,
+    },
+    twitter: {
+      title: t('metadata.twitterTitle'),
+      description: t('metadata.twitterDescription'),
+    },
+  };
+}
+
+export default async function CasosDeEstudioPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: 'CaseStudiesPage' });
+  const tCase = await getTranslations({ locale, namespace: 'CaseDetailPage.cases' });
   const casos = getAllCasos();
 
   return (
     <>
       <PageHero
-        kicker="Análisis y opinión"
-        breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Análisis y opinión' }]}
+        kicker={t('kicker')}
+        breadcrumbs={[
+          { label: t('breadcrumbs.home'), href: '/' },
+          { label: t('breadcrumbs.current') },
+        ]}
         headline={
           <>
-            Lo que estamos
-            <br />
-            <span className="text-gold">leyendo y pensando.</span>
+            {t('headline').split(t('headlineAccent'))[0]}
+            <span className="text-gold">{t('headlineAccent')}</span>
+            {t('headline').split(t('headlineAccent'))[1]}
           </>
         }
-        subhead="Reflexiones firmadas por nuestro equipo sobre comunicaciones estratégicas, gestión de crisis, cumplimiento normativo y el impacto de la inteligencia artificial en la disciplina. No son estudios de cliente: son análisis editoriales."
+        subhead={t('subhead')}
       />
 
       <section className="bg-ice py-16 lg:py-32">
@@ -49,6 +75,14 @@ export default function CasosDeEstudioPage() {
           <ul className="space-y-8">
             {casos.map((caso) => {
               const fecha = formatDate(caso.date);
+              let title = caso.title;
+              let resumen = caso.resumen;
+              try {
+                title = tCase(`${caso.slug}.title`) || caso.title;
+                resumen = tCase(`${caso.slug}.resumen`) || caso.resumen;
+              } catch {
+                // fallback to original if translation missing
+              }
               return (
                 <li
                   key={caso.slug}
@@ -68,15 +102,15 @@ export default function CasosDeEstudioPage() {
                         <time dateTime={caso.date}>{fecha}</time>
                       </div>
                       <p className="mt-4 text-[11px] font-medium uppercase tracking-widest text-navy-600">
-                        Por {caso.author}
+                        {t('by', { author: caso.author })}
                       </p>
                     </div>
                     <div className="lg:col-span-8">
                       <h2 className="font-display text-2xl font-bold text-navy-950 transition-colors duration-200 group-hover:text-navy-600 lg:text-3xl">
-                        {caso.title}
+                        {title}
                       </h2>
                       <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-700">
-                        {caso.resumen}
+                        {resumen}
                       </p>
                     </div>
                     <div className="flex items-center justify-end text-navy-600 transition-transform duration-200 group-hover:translate-x-1 lg:col-span-1 lg:pt-2">

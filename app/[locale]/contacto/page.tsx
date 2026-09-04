@@ -1,44 +1,62 @@
 import type { Metadata } from 'next';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { ContactForm } from '@/components/ContactForm';
 import { CopyButton } from '@/components/CopyButton';
 import { PageHero } from '@/components/PageHero';
 import { SITE_URL } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'Contacto',
-  description:
-    'Conversemos sobre el contexto de su organización. Le respondemos en un plazo de dos días hábiles. Bogotá, Colombia.',
-  alternates: {
-    canonical: '/contacto',
-  },
-  openGraph: {
-    title: 'Contacto | Temptum',
-    description:
-      'Conversemos sobre el contexto de su organización. Le respondemos en un plazo de dos días hábiles.',
-    url: `${SITE_URL}/contacto`,
-  },
-  twitter: {
-    title: 'Contacto | Temptum',
-    description:
-      'Conversemos sobre el contexto de su organización. Le respondemos en dos días hábiles.',
-  },
-};
+type Props = { params: Promise<{ locale: string }> };
 
-export default function ContactoPage() {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'ContactPage' });
+  return {
+    title: t('metadata.title'),
+    description: t('metadata.description'),
+    alternates: {
+      canonical: locale === 'es' ? '/contacto' : `/${locale}/contacto`,
+      languages: {
+        'es-CO': '/contacto',
+        'es-419': '/contacto',
+        es: '/contacto',
+        en: '/en/contacto',
+        'en-US': '/en/contacto',
+      },
+    },
+    openGraph: {
+      title: t('metadata.ogTitle'),
+      description: t('metadata.ogDescription'),
+      url: locale === 'es' ? `${SITE_URL}/contacto` : `${SITE_URL}/en/contacto`,
+    },
+    twitter: {
+      title: t('metadata.twitterTitle'),
+      description: t('metadata.twitterDescription'),
+    },
+  };
+}
+
+export default async function ContactoPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: 'ContactPage' });
+
   return (
     <>
       <PageHero
-        kicker="Contacto"
-        breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Contacto' }]}
+        kicker={t('kicker')}
+        breadcrumbs={[
+          { label: t('breadcrumbs.home'), href: '/' },
+          { label: t('breadcrumbs.current') },
+        ]}
         headline={
           <>
-            Iniciemos
-            <br />
-            <span className="text-gold">una conversación.</span>
+            {t('headline').split(t('headlineAccent'))[0]}
+            <span className="text-gold">{t('headlineAccent')}</span>
+            {t('headline').split(t('headlineAccent'))[1]}
           </>
         }
-        subhead="Cuéntenos brevemente el contexto de su organización y el desafío que enfrenta. Le responderemos en un plazo de dos días hábiles."
+        subhead={t('subhead')}
       />
 
       <section className="bg-ice py-16 lg:py-32">
@@ -49,7 +67,7 @@ export default function ContactoPage() {
                 <div className="flex items-center gap-3 text-navy-600">
                   <Mail size={20} strokeWidth={1.5} aria-hidden="true" />
                   <h2 className="font-display text-xs font-semibold uppercase tracking-widest">
-                    Correo
+                    {t('aside.email')}
                   </h2>
                 </div>
                 <div className="mt-3 flex items-center gap-2">
@@ -59,14 +77,14 @@ export default function ContactoPage() {
                   >
                     info@temptum.io
                   </a>
-                  <CopyButton value="info@temptum.io" label="Correo" />
+                  <CopyButton value="info@temptum.io" label={t('copyLabels.email')} />
                 </div>
               </div>
               <div>
                 <div className="flex items-center gap-3 text-navy-600">
                   <Phone size={20} strokeWidth={1.5} aria-hidden="true" />
                   <h2 className="font-display text-xs font-semibold uppercase tracking-widest">
-                    Teléfono
+                    {t('aside.phone')}
                   </h2>
                 </div>
                 <div className="mt-3 flex items-center gap-2">
@@ -76,20 +94,20 @@ export default function ContactoPage() {
                   >
                     +57 302 238 8618
                   </a>
-                  <CopyButton value="+573022388618" label="Teléfono" />
+                  <CopyButton value="+573022388618" label={t('copyLabels.phone')} />
                 </div>
               </div>
               <div>
                 <div className="flex items-center gap-3 text-navy-600">
                   <MapPin size={20} strokeWidth={1.5} aria-hidden="true" />
                   <h2 className="font-display text-xs font-semibold uppercase tracking-widest">
-                    Sede
+                    {t('aside.office')}
                   </h2>
                 </div>
                 <p className="mt-3 text-base text-navy-950">
                   Bogotá, D.C.
                   <br />
-                  Colombia
+                  {t('aside.country')}
                 </p>
               </div>
             </aside>

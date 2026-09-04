@@ -1,0 +1,516 @@
+{
+  "Common": {
+    "skipToContent": "Saltar al contenido principal",
+    "copyright": "© {year} Temptum. Todos los derechos reservados.",
+    "learnMore": "Conozca",
+    "requestConversation": "Solicite una conversación",
+    "letsTalk": "Conversemos",
+    "sendMessage": "Enviar mensaje",
+    "loading": "Enviando…",
+    "sending": "Enviando…",
+    "localeSwitcher": {
+      "label": "Cambiar idioma",
+      "spanish": "Español",
+      "english": "Inglés"
+    }
+  },
+  "Site": {
+    "description": "Centro especializado en Colombia en corporate & government affairs. Acompañamos a empresas reguladas, equipos legales y de cumplimiento en escenarios donde la decisión tiene que sostenerse ante un regulador, un juez o la opinión pública.",
+    "meta": {
+      "defaultTitle": "Temptum | Consultoría Estratégica",
+      "titleTemplate": "%s | Temptum"
+    },
+    "keywords": [
+      "corporate government affairs Colombia",
+      "relaciones institucionales Bogotá",
+      "gestión de crisis corporativas",
+      "asuntos regulatorios Colombia",
+      "comunicaciones ASG sostenibilidad",
+      "consultoría estratégica Bogotá",
+      "monitoreo legislativo Colombia"
+    ]
+  },
+  "Header": {
+    "brandAriaLabel": "Temptum — Inicio",
+    "navAriaLabel": "Navegación principal",
+    "mobileNavAriaLabel": "Navegación móvil",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "whatsappLabel": "Conversemos",
+    "whatsappLabelFull": "Conversemos por WhatsApp",
+    "whatsappAriaLabel": "Conversemos por WhatsApp",
+    "nav": {
+      "services": "Servicios",
+      "cases": "Casos",
+      "about": "Quiénes somos",
+      "contact": "Contacto"
+    }
+  },
+  "Footer": {
+    "brandTagline": "Corporate & Government Affairs",
+    "addressHeading": "Dirección",
+    "country": "Colombia",
+    "coverage": "Cobertura nacional y región andina.",
+    "navHeading": "Navegación",
+    "contactHeading": "Contacto",
+    "nav": {
+      "services": "Servicios",
+      "cases": "Casos",
+      "about": "Quiénes somos",
+      "contact": "Contacto",
+      "intelligence": "Inteligencia política",
+      "privacy": "Política de privacidad"
+    }
+  },
+  "Hero": {
+    "kicker": "Consultoría estratégica · Bogotá",
+    "headline": "Decisiones defendibles, antes que el ruido",
+    "headlineAccent": "antes que el ruido",
+    "lede": "El primer centro especializado en Colombia en {discipline}. Acompañamos a empresas reguladas, equipos legales y de cumplimiento en escenarios donde la decisión tiene que sostenerse ante un regulador, un juez o la opinión pública.",
+    "discipline": "corporate & government affairs",
+    "ctaMethodology": "Conozca nuestra metodología",
+    "ctaWhatsapp": "Conversemos por WhatsApp",
+    "photoCaption": "Sesión de trabajo con aliados · Workshops y consultoría",
+    "photoCaptionMobile": "Workshops y consultoría con aliados",
+    "photoAlt": "Sesión de trabajo con clientes y aliados",
+    "card": {
+      "kicker": "Quiénes nos consultan",
+      "headline": "Organizaciones que defienden decisiones complejas.",
+      "sectors": "Sectores",
+      "sectorsValue": "Energía, infraestructura, financiero, salud y tecnología regulada.",
+      "coverage": "Cobertura",
+      "coverageValue": "Colombia y región andina.",
+      "serviceLines": "Líneas de servicio",
+      "serviceLinesValue": "04",
+      "publicAnalysis": "Análisis público",
+      "publicAnalysisValue": "Anual + trimestral",
+      "footnote": "Cada encargo es liderado por un socio responsable y ejecutado por equipos de tres a cinco personas, con entregables documentados y trazables."
+    }
+  },
+  "CredibilityStrip": {
+    "items": {
+      "sectors": {
+        "label": "Sectores",
+        "value": "Energía · Infra · Financiero · Tecnología · Salud"
+      },
+      "disciplines": {
+        "label": "Disciplinas",
+        "value": "Relaciones públicas, riesgos, regulatorio, ASG."
+      },
+      "publicAnalysis": {
+        "label": "Análisis público",
+        "value": "Coyuntura económica, política y monitoreo legislativo."
+      },
+      "coverage": {
+        "label": "Cobertura",
+        "value": "Bogotá, D.C. · Región andina."
+      }
+    }
+  },
+  "Methodology": {
+    "kicker": "Cómo trabajamos",
+    "headline": "Cuatro pasos, una sola metodología",
+    "headlineAccent": "una sola metodología",
+    "intro": "Cada encargo sigue la misma secuencia. Lo que cambia es el alcance y el equipo, no el rigor del proceso.",
+    "durationLabel": "Duración",
+    "steps": {
+      "diagnosis": {
+        "title": "Diagnóstico",
+        "body": "Mapeamos el contexto regulatorio, político y reputacional. Identificamos los actores, los riesgos y las decisiones en juego.",
+        "days": "5 a 10 días hábiles"
+      },
+      "plan": {
+        "title": "Plan de trabajo",
+        "body": "Diseñamos un plan con alcance, entregables, plazos y un único socio responsable. Lo validamos con usted antes de ejecutar.",
+        "days": "3 a 5 días hábiles"
+      },
+      "execution": {
+        "title": "Ejecución con interlocución",
+        "body": "Equipos de tres a cinco personas, con reuniones periódicas de avance y ajuste. Usted habla siempre con el mismo interlocutor.",
+        "days": "Variable, según encargo"
+      },
+      "delivery": {
+        "title": "Entrega y seguimiento",
+        "body": "Entregables documentados, con metodología y fuentes trazables. Sesión de cierre con recomendaciones de seguimiento.",
+        "days": "Cierre + 30 días"
+      }
+    }
+  },
+  "Services": {
+    "kicker": "Servicios",
+    "headline": "Cuatro líneas de trabajo, una sola metodología",
+    "headlineAccent": "una sola metodología",
+    "intro": "Acompañamos a nuestros clientes en la construcción de posiciones institucionales robustas, sustentadas en análisis técnico y en el conocimiento profundo del entorno regulatorio y político colombiano.",
+    "cta": "Conozca",
+    "items": {
+      "institutionalRelations": {
+        "title": "Relaciones Institucionales",
+        "summary": "Construcción y gestión de vínculos estratégicos con actores públicos y privados clave."
+      },
+      "riskAndCrisis": {
+        "title": "Gestión de Riesgos y Crisis",
+        "summary": "Identificación temprana, mitigación y manejo de escenarios de alto impacto reputacional u operativo."
+      },
+      "regulatory": {
+        "title": "Asuntos Regulatorios y Legislativos",
+        "summary": "Monitoreo, análisis e incidencia técnica en procesos normativos y legislativos."
+      },
+      "esg": {
+        "title": "Comunicaciones ASG y Sostenibilidad",
+        "summary": "Estrategias de comunicación alineadas a estándares ambientales, sociales y de gobernanza."
+      }
+    }
+  },
+  "Manifesto": {
+    "kicker": "Manifiesto",
+    "quote": "No reemplazamos la decisión: la hacemos defendible.",
+    "lead": "Influencia, rigor técnico y mitigación de riesgos.",
+    "body1": "Trabajamos bajo estándares estrictos de confidencialidad, independencia y cumplimiento. Cada encargo es liderado por un socio responsable y ejecutado por equipos de tres a cinco personas.",
+    "body2": "Aplicamos metodologías de análisis de riesgos, monitoreo regulatorio y mapeo de actores para traducir contextos complejos en decisiones defendibles."
+  },
+  "Equipo": {
+    "kicker": "Liderazgo",
+    "headline": "Una socia fundadora, con trayectoria pública",
+    "headlineAccent": "con trayectoria pública",
+    "intro": "Temptum es dirigida por profesionales con experiencia en periodismo, comunicación corporativa y asuntos públicos. Cada encargo se lidera de principio a fin.",
+    "quote": "La cercanía con el cliente y la profundidad técnica son las dos cosas que no se pueden comprometer.",
+    "quoteFooter": "Silvia Juliana Parra Cañas · CEO & socia fundadora",
+    "body": "Más de una década construyendo estrategias de comunicación, manejando crisis de alto perfil y fortaleciendo el posicionamiento de marcas nacionales e internacionales en Colombia y la región andina.",
+    "labels": {
+      "formation": "Formación",
+      "trajectory": "Trayectoria",
+      "teaching": "Docencia",
+      "linkedin": "LinkedIn"
+    },
+    "formationValue": "Magíster en Periodismo, Universidad del Rosario. Comunicadora Social y Periodista, Universidad Jorge Tadeo Lozano.",
+    "trajectoryValue": "Edelman, Millenium Group, SPR Group & Marco de Comunicaciones. Antes, periodista de investigación en Publicaciones Semana y Revista Dinero.",
+    "teachingValue": "Cátedra en Relaciones Públicas, Communication Strategy y Marketing y Comunicación Política en Universidad del Rosario y Universidad Jorge Tadeo Lozano.",
+    "linkedinValue": "linkedin.com/in/silviajulianaparra",
+    "cta": "Conozca a Temptum"
+  },
+  "CasesPreview": {
+    "kicker": "Análisis y opinión",
+    "headline": "Análisis de nuestro equipo.",
+    "cta": "Todos los análisis"
+  },
+  "IntelligenceCenter": {
+    "kicker": "Centro de Inteligencia",
+    "headline": "Información estratégica, antes que la necesite.",
+    "intro": "Análisis de coyuntura y monitoreo legislativo producidos por nuestro equipo. Distribución bajo suscripción institucional: conversemos para evaluar si el alcance aplica a su organización.",
+    "cta": "Solicite una conversación",
+    "lockLabel": "Suscriptores institucionales",
+    "items": {
+      "outlook": {
+        "title": "Análisis de Coyuntura Económica y Política 2025",
+        "summary": "Panorama macroeconómico, agenda legislativa del Congreso y prioridades regulatorias por sector, con escenarios de impacto para la toma de decisiones corporativas en Colombia.",
+        "periodicity": "Anual"
+      },
+      "monitoring": {
+        "title": "Monitoreo Legislativo Sectorial",
+        "summary": "Seguimiento trimestral de proyectos de ley, decretos y agendas de comisiones, con matriz de priorización y resúmenes ejecutivos por iniciativa.",
+        "periodicity": "Trimestral"
+      }
+    }
+  },
+  "ContactForm": {
+    "fields": {
+      "name": "Nombre completo",
+      "organization": "Organización",
+      "email": "Correo electrónico",
+      "message": "Mensaje"
+    },
+    "privacy": "Sus datos solo se utilizan para responder a esta solicitud.",
+    "submit": "Enviar Mensaje",
+    "submitting": "Enviando…",
+    "successAria": "Su mensaje fue enviado correctamente.",
+    "errorAria": "No fue posible enviar el mensaje.",
+    "errorFallback": "No fue posible enviar el mensaje.",
+    "successVisible": "Recibimos su mensaje. Le responderemos en un plazo de dos días hábiles."
+  },
+  "CopyButton": {
+    "copied": "{value} copiado al portapapeles",
+    "error": "No se pudo copiar. Seleccione el texto manualmente."
+  },
+  "Breadcrumb": {
+    "ariaLabel": "Breadcrumb"
+  },
+  "PageHero": {},
+  "HomePage": {
+    "metadata": {
+      "description": "Centro especializado en Colombia en corporate & government affairs. Acompañamos a empresas reguladas, equipos legales y de cumplimiento en escenarios donde la decisión tiene que sostenerse ante un regulador, un juez o la opinión pública.",
+      "ogTitle": "Temptum | Consultoría Estratégica",
+      "ogDescription": "Centro especializado en Colombia en corporate & government affairs. Acompañamos a empresas reguladas, equipos legales y de cumplimiento en escenarios donde la decisión tiene que sostenerse ante un regulador, un juez o la opinión pública.",
+      "twitterTitle": "Temptum | Consultoría Estratégica",
+      "twitterDescription": "Centro especializado en Colombia en corporate & government affairs. Acompañamos a empresas reguladas, equipos legales y de cumplimiento en escenarios donde la decisión tiene que sostenerse ante un regulador, un juez o la opinión pública."
+    },
+    "founderJobTitle": "CEO y socia fundadora",
+    "founderKnowsAbout": [
+      "Relaciones públicas",
+      "Periodismo",
+      "Gestión de crisis",
+      "Asuntos públicos"
+    ]
+  },
+  "AboutPage": {
+    "metadata": {
+      "title": "",
+      "description": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "twitterTitle": "",
+      "twitterDescription": ""
+    },
+    "kicker": "",
+    "headline": "",
+    "headlineAccent": "",
+    "subhead": "",
+    "stats": {
+      "office": "",
+      "coverage": "",
+      "sectors": "",
+      "founded": ""
+    },
+    "breadcrumbs": {
+      "home": "",
+      "current": ""
+    },
+    "about": {
+      "kicker": "",
+      "headline": "",
+      "headlineAccent": "",
+      "body": ""
+    },
+    "aboutParagraphs": [],
+    "sessionCaption": "",
+    "languages": "",
+    "engagementModels": {
+      "title": "",
+      "byProject": {
+        "title": "",
+        "body": ""
+      },
+      "retainer": {
+        "title": "",
+        "body": ""
+      },
+      "advisory": {
+        "title": "",
+        "body": ""
+      }
+    },
+    "operationalCoverage": "",
+    "leadership": {
+      "kicker": "",
+      "name": "",
+      "role": "",
+      "intro": "",
+      "quote": "",
+      "trajectoryTitle": "",
+      "formationTitle": "",
+      "teachingTitle": "",
+      "linkedinCta": "",
+      "formation": {
+        "master": {
+          "title": "",
+          "school": ""
+        },
+        "bachelor": {
+          "title": "",
+          "school": ""
+        }
+      },
+      "teaching": {
+        "rosario": {
+          "title": "",
+          "body": ""
+        },
+        "tadeo": {
+          "title": "",
+          "body": ""
+        }
+      }
+    },
+    "trajectory": [],
+    "allies": {
+      "kicker": "",
+      "headline": "",
+      "headlineAccent": "",
+      "body1": "",
+      "body2": "",
+      "caption": ""
+    },
+    "commitments": {
+      "kicker": "",
+      "headline": "",
+      "headlineAccent": "",
+      "intro": "",
+      "items": []
+    },
+    "cta": {
+      "kicker": "",
+      "headline": "",
+      "headlineAccent": "",
+      "body": "",
+      "primary": "",
+      "secondary": ""
+    }
+  },
+  "ServicesPage": {
+    "metadata": {
+      "title": "",
+      "description": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "twitterTitle": "",
+      "twitterDescription": ""
+    },
+    "kicker": "",
+    "headline": "",
+    "headlineAccent": "",
+    "subhead": "",
+    "breadcrumbs": {
+      "home": "",
+      "current": ""
+    },
+    "ctaWhatsapp": "",
+    "ecosystem": {
+      "kicker": "",
+      "headline": "",
+      "headlineAccent": "",
+      "body1": "",
+      "body2": "",
+      "caption": ""
+    },
+    "indexAriaLabel": "",
+    "items": []
+  },
+  "ContactPage": {
+    "metadata": {
+      "title": "Contacto",
+      "description": "Conversemos sobre el contexto de su organización. Le respondemos en un plazo de dos días hábiles. Bogotá, Colombia.",
+      "ogTitle": "Contacto | Temptum",
+      "ogDescription": "Conversemos sobre el contexto de su organización. Le respondemos en un plazo de dos días hábiles.",
+      "twitterTitle": "Contacto | Temptum",
+      "twitterDescription": "Conversemos sobre el contexto de su organización. Le respondemos en dos días hábiles."
+    },
+    "kicker": "Contacto",
+    "headline": "Iniciemos una conversación",
+    "headlineAccent": "una conversación",
+    "subhead": "Cuéntenos brevemente el contexto de su organización y el desafío que enfrenta. Le responderemos en un plazo de dos días hábiles.",
+    "breadcrumbs": {
+      "home": "Inicio",
+      "current": "Contacto"
+    },
+    "aside": {
+      "email": "Correo",
+      "phone": "Teléfono",
+      "office": "Sede",
+      "country": "Colombia"
+    },
+    "copyLabels": {
+      "email": "Correo",
+      "phone": "Teléfono"
+    }
+  },
+  "IntelligencePage": {
+    "metadata": {
+      "title": "",
+      "description": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "twitterTitle": "",
+      "twitterDescription": ""
+    },
+    "kicker": "",
+    "headline": "",
+    "headlineAccent": "",
+    "subhead": "",
+    "breadcrumbs": {
+      "home": "",
+      "current": ""
+    },
+    "sample": {
+      "kicker": "",
+      "headline": "",
+      "body": "",
+      "ctaRead": ""
+    },
+    "includes": [],
+    "samplePreview": {
+      "kicker": "",
+      "headline": "",
+      "items": []
+    },
+    "disclaimer": "",
+    "documents": [],
+    "subscription": {
+      "title": "",
+      "body": ""
+    }
+  },
+  "PrivacyPage": {
+    "metadata": {
+      "title": "",
+      "description": "",
+      "ogTitle": "",
+      "ogDescription": "",
+      "twitterTitle": "",
+      "twitterDescription": ""
+    },
+    "kicker": "",
+    "headline": "",
+    "breadcrumbs": {
+      "home": "",
+      "current": ""
+    },
+    "sections": []
+  },
+  "CaseStudiesPage": {
+    "metadata": {
+      "title": "Análisis y opinión",
+      "description": "Análisis y opinión de nuestro equipo sobre comunicaciones estratégicas, gestión de crisis, cumplimiento normativo y el impacto de la inteligencia artificial en la disciplina.",
+      "ogTitle": "Análisis y opinión | Temptum",
+      "ogDescription": "Reflexiones firmadas por nuestro equipo sobre comunicaciones estratégicas, gestión de crisis y cumplimiento normativo. Análisis editoriales, no estudios de cliente.",
+      "twitterTitle": "Análisis y opinión | Temptum",
+      "twitterDescription": "Reflexiones firmadas por nuestro equipo sobre comunicaciones estratégicas, gestión de crisis y cumplimiento normativo."
+    },
+    "kicker": "Análisis y opinión",
+    "headline": "Lo que estamos leyendo y pensando",
+    "headlineAccent": "leyendo y pensando",
+    "subhead": "Reflexiones firmadas por nuestro equipo sobre comunicaciones estratégicas, gestión de crisis, cumplimiento normativo y el impacto de la inteligencia artificial en la disciplina. No son estudios de cliente: son análisis editoriales.",
+    "breadcrumbs": {
+      "home": "Inicio",
+      "current": "Análisis y opinión"
+    },
+    "by": "Por {author}"
+  },
+  "CaseDetailPage": {
+    "backToList": "Todos los análisis",
+    "breadcrumbs": {
+      "home": "Inicio",
+      "list": "Análisis y opinión"
+    },
+    "publishedOn": "Publicado el {date}",
+    "by": "Por {author}",
+    "byAuthor": "Por {author}",
+    "spanishOnlyBanner": "El cuerpo de este análisis está disponible solo en español. Estamos trabajando en la traducción al inglés.",
+    "cases": {
+      "beso-muerte-rubiales": {
+        "title": "El beso de la muerte: la caída reputacional de Rubiales",
+        "resumen": "Lecciones de gestión de crisis extraídas del caso Rubiales: entrenamiento de voceros, asesoría jurídica y empatía."
+      },
+      "compliance-comunicaciones": {
+        "title": "Justo y necesario: Compliance en las comunicaciones corporativas",
+        "resumen": "El entorno legal y político condiciona las comunicaciones corporativas. Una estrategia de cumplimiento es hoy una ventaja competitiva."
+      },
+      "good-will": {
+        "title": "Cuando contemos con \"Good Will\"",
+        "resumen": "Sobre la construcción del buen nombre corporativo como activo intangible y su rol estratégico en las comunicaciones empresariales."
+      },
+      "ia-socio-silencioso": {
+        "title": "La IA: la socia silenciosa pero eficiente de las comunicaciones",
+        "resumen": "La inteligencia artificial ya transforma las estrategias de comunicación corporativa, desde el análisis de datos hasta la personalización."
+      }
+    }
+  }
+}
