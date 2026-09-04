@@ -9,7 +9,7 @@ const WHATSAPP_HREF = WHATSAPP_SERVICIOS;
 export const metadata: Metadata = {
   title: 'Servicios Especializados',
   description:
-    'Relaciones institucionales, gestión de riesgos y crisis, asuntos regulatorios y legislativos, y comunicaciones ASG y sostenibilidad.',
+    'Relaciones institucionales, gestión de riesgos y crisis, asuntos regulatorios y legislativos, y comunicaciones ASG y sostenibilidad. Metodología común, equipos por encargo.',
   alternates: {
     canonical: '/servicios',
   },

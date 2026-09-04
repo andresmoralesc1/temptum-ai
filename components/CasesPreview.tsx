@@ -23,7 +23,7 @@ export function CasesPreview() {
             href="/casos-de-estudio"
             className="group inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-widest text-navy-600 hover:text-navy-950"
           >
-            Todos los casos
+            Todos los análisis
             <ArrowUpRight
               size={16}
               strokeWidth={2}

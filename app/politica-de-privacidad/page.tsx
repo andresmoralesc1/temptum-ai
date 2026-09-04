@@ -4,7 +4,7 @@ import { PageHero } from '@/components/PageHero';
 export const metadata: Metadata = {
   title: 'Política de Privacidad',
   description:
-    'Política de privacidad y tratamiento de datos personales de Temptum.',
+    'Cómo Temptum trata los datos personales recolectados a través de este sitio y los derechos que usted puede ejercer como titular.',
   alternates: {
     canonical: '/politica-de-privacidad',
   },

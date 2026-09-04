@@ -8,7 +8,7 @@ import { WHATSAPP_QUIENES } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Quiénes Somos',
   description:
-    'Temptum es el primer centro especializado en Colombia en corporate & government affairs. Conoce a nuestra CEO, Silvia Juliana Parra Cañas, y cómo trabajamos.',
+    'Temptum es una firma independiente de corporate & government affairs en Bogotá. Conozca a nuestra CEO, nuestra trayectoria y cómo conformamos equipos para cada encargo.',
   alternates: { canonical: '/quienes-somos' },
 };
 
