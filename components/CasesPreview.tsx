@@ -1,10 +1,14 @@
-import Link from 'next/link';
 import { Calendar, ArrowUpRight } from 'lucide-react';
+import { getTranslations, getLocale } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 import { getAllCasos } from '@/lib/content';
 import { formatDate } from '@/lib/dates';
 import { Reveal } from '@/components/Reveal';
 
-export function CasesPreview() {
+export async function CasesPreview() {
+  const t = await getTranslations('CasesPreview');
+  const tCases = await getTranslations('CaseDetailPage.cases');
+  const locale = await getLocale();
   const casos = getAllCasos().slice(0, 3);
 
   return (
@@ -13,17 +17,17 @@ export function CasesPreview() {
         <header className="flex flex-col items-start justify-between gap-6 border-b border-navy-100 pb-10 lg:flex-row lg:items-end">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-navy-600">
-              Análisis y opinión
+              {t('kicker')}
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-navy-950 md:text-4xl lg:text-5xl">
-              Análisis de nuestro equipo.
+              {t('headline')}
             </h2>
           </div>
           <Link
             href="/casos-de-estudio"
             className="group inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-widest text-navy-600 hover:text-navy-950"
           >
-            Todos los análisis
+            {t('cta')}
             <ArrowUpRight
               size={16}
               strokeWidth={2}
@@ -49,13 +53,13 @@ export function CasesPreview() {
               >
                 <div className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">
                   <Calendar size={12} strokeWidth={1.5} aria-hidden="true" />
-                  <time dateTime={caso.date}>{formatDate(caso.date)}</time>
+                  <time dateTime={caso.date}>{formatDate(caso.date, locale === 'es' ? 'es-CO' : 'en-US')}</time>
                 </div>
                 <h3 className="mt-4 font-display text-xl font-bold leading-tight text-navy-950 transition-colors duration-200 group-hover:text-navy-600 lg:text-2xl">
-                  {caso.title}
+                  {tCases(`${caso.slug}.title`)}
                 </h3>
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-gray-700">
-                  {caso.resumen}
+                  {tCases(`${caso.slug}.resumen`)}
                 </p>
                 <div className="mt-6 flex items-center justify-between border-t border-navy-100 pt-4">
                   <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-navy-600">

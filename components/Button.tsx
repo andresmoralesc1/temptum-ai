@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link as IntlLink } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
@@ -12,7 +12,7 @@ const variants: Record<Variant, string> = {
   secondary: 'border border-navy-600 text-navy-600 hover:bg-navy-100',
 };
 
-type LinkProps = ComponentPropsWithoutRef<typeof Link> & { variant?: Variant };
+type LinkProps = ComponentPropsWithoutRef<typeof IntlLink> & { variant?: Variant };
 type ButtonProps = ComponentPropsWithoutRef<'button'> & { variant?: Variant };
 
 function isLinkProps(props: LinkProps | ButtonProps): props is LinkProps {
@@ -24,14 +24,14 @@ export function Button(props: (LinkProps | ButtonProps) & { children: ReactNode 
   const cls = cn(base, variants[variant]);
 
   if (isLinkProps(props)) {
-    const { variant: _v, className, children, ...rest } = props;
+    const { className, children, href } = props;
     return (
-      <Link {...rest} className={cn(cls, className)}>
+      <IntlLink href={href} className={cn(cls, className)}>
         {children}
-      </Link>
+      </IntlLink>
     );
   }
-  const { variant: _v, className, children, ...rest } = props;
+  const { className, children, ...rest } = props;
   return (
     <button {...rest} className={cn(cls, className)}>
       {children}

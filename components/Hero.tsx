@@ -1,11 +1,18 @@
 import Image from 'next/image';
 import { ArrowRight, MessageCircle } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 import { Button } from '@/components/Button';
 import { WHATSAPP_CONTACTO } from '@/lib/constants';
 
 const WHATSAPP_HREF = WHATSAPP_CONTACTO;
 
-export function Hero() {
+export async function Hero() {
+  const t = await getTranslations('Hero');
+  const heroAccent = t('headlineAccent');
+  const heroParts = t('headline').split(heroAccent);
+  const lede = t('lede', { discipline: t('discipline') });
+
   return (
     <section className="relative isolate overflow-hidden bg-navy-950 text-white">
       {/* Textura de fondo: grid sutil */}
@@ -34,27 +41,34 @@ export function Hero() {
               className="inline-block h-px w-8 bg-gold"
               aria-hidden="true"
             />
-            Consultoría estratégica · Bogotá
+            {t('kicker')}
           </p>
 
           <h1 className="mt-8 max-w-2xl font-display text-4xl font-bold leading-[1.05] text-white md:text-5xl lg:text-[64px]">
-            Decisiones defendibles,{' '}
-            <span className="text-gold">antes que el ruido</span>.
+            {heroParts[0]}
+            <span className="text-gold">{heroAccent}</span>
+            {heroParts[1] ?? ''}
           </h1>
 
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-navy-100">
-            El primer centro especializado en Colombia en{' '}
-            <strong className="font-medium text-white">
-              corporate &amp; government affairs
-            </strong>
-            . Acompañamos a empresas reguladas, equipos legales y de cumplimiento
-            en escenarios donde la decisión tiene que sostenerse ante un
-            regulador, un juez o la opinión pública.
+            {(() => {
+              // The lede contains a placeholder for the discipline name wrapped
+              // in <strong>. We split on the discipline to inject the styled span.
+              const discipline = t('discipline');
+              const parts = lede.split(discipline);
+              return (
+                <>
+                  {parts[0]}
+                  <strong className="font-medium text-white">{discipline}</strong>
+                  {parts[1] ?? ''}
+                </>
+              );
+            })()}
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button href="/servicios" className="group w-full active:scale-[0.98] sm:w-auto">
-              Conozca nuestra metodología
+              {t('ctaMethodology')}
               <ArrowRight
                 size={16}
                 strokeWidth={2}
@@ -69,7 +83,7 @@ export function Hero() {
               className="inline-flex w-full items-center justify-center gap-2 rounded bg-gold px-6 py-3 text-[13px] font-semibold uppercase tracking-widest text-navy-950 shadow-sm transition-all duration-150 hover:bg-gold/90 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 sm:w-auto"
             >
               <MessageCircle size={16} strokeWidth={2} aria-hidden="true" />
-              Conversemos por WhatsApp
+              {t('ctaWhatsapp')}
             </a>
           </div>
 
@@ -77,7 +91,7 @@ export function Hero() {
           <figure className="mt-12 hidden border-l-2 border-gold pl-6 lg:block">
             <Image
               src="/images/equipo/equipo-reunion.jpg"
-              alt="Sesión de trabajo con clientes y aliados"
+              alt={t('photoAlt')}
               width={680}
               height={453}
               priority
@@ -85,7 +99,7 @@ export function Hero() {
               className="aspect-[3/2] w-full max-w-2xl object-cover"
             />
             <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-white/80">
-              Sesión de trabajo con aliados · Workshops y consultoría
+              {t('photoCaption')}
             </figcaption>
           </figure>
         </div>
@@ -93,48 +107,46 @@ export function Hero() {
         <aside className="lg:col-span-5">
           <div className="border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm lg:p-10">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gold">
-              Quiénes nos consultan
+              {t('card.kicker')}
             </p>
             <h2 className="mt-4 font-display text-2xl font-semibold leading-tight text-white">
-              Organizaciones que defienden decisiones complejas.
+              {t('card.headline')}
             </h2>
 
             <ul className="mt-10 divide-y divide-white/10" role="list">
               <li className="grid grid-cols-2 gap-6 py-5 first:pt-0">
                 <div>
                   <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/80">
-                    Sectores
+                    {t('card.sectors')}
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-white">
-                    Energía, infraestructura, financiero, salud y tecnología
-                    regulada.
+                    {t('card.sectorsValue')}
                   </p>
                 </div>
                 <div>
                   <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/80">
-                    Cobertura
+                    {t('card.coverage')}
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-white">
-                    Colombia y región andina.
+                    {t('card.coverageValue')}
                   </p>
                 </div>
               </li>
               <li className="grid grid-cols-2 gap-6 py-5">
                 <div>
                   <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/80">
-                    Líneas de servicio
+                    {t('card.serviceLines')}
                   </p>
                   <p className="mt-2 font-display text-3xl font-bold leading-none text-white">
-                    04
+                    {t('card.serviceLinesValue')}
                   </p>
                 </div>
                 <div>
                   <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/80">
-                    Análisis público
+                    {t('card.publicAnalysis')}
                   </p>
                   <p className="mt-2 text-base font-medium leading-snug text-white">
-                    Anual
-                    <br />+ trimestral
+                    {t('card.publicAnalysisValue')}
                   </p>
                 </div>
               </li>
@@ -142,9 +154,7 @@ export function Hero() {
 
             <div className="mt-10 border-t border-white/10 pt-6">
               <p className="text-xs leading-relaxed text-navy-100">
-                Cada encargo es liderado por un socio responsable y ejecutado
-                por equipos de tres a cinco personas, con entregables
-                documentados y trazables.
+                {t('card.footnote')}
               </p>
             </div>
           </div>
@@ -153,7 +163,7 @@ export function Hero() {
           <figure className="mt-10 border-l-2 border-gold pl-4 lg:hidden">
             <Image
               src="/images/equipo/equipo-reunion.jpg"
-              alt="Sesión de trabajo con clientes y aliados"
+              alt={t('photoAlt')}
               width={680}
               height={453}
               priority
@@ -161,7 +171,7 @@ export function Hero() {
               className="aspect-[3/2] w-full object-cover"
             />
             <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-white/80">
-              Workshops y consultoría con aliados
+              {t('photoCaptionMobile')}
             </figcaption>
           </figure>
         </aside>

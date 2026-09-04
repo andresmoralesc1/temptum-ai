@@ -1,11 +1,13 @@
 'use client';
 
 import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { useTranslations } from 'next-intl';
 import { Loader2 } from 'lucide-react';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 export function ContactForm() {
+  const t = useTranslations('ContactForm');
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const statusRef = useRef<HTMLDivElement>(null);
@@ -34,14 +36,14 @@ export function ContactForm() {
 
       if (!res.ok) {
         const payload = (await res.json().catch(() => ({}))) as { error?: string };
-        throw new Error(payload.error || 'No fue posible enviar el mensaje.');
+        throw new Error(payload.error || t('errorFallback'));
       }
 
       form.reset();
       setStatus('success');
     } catch (err) {
       setStatus('error');
-      setErrorMessage(err instanceof Error ? err.message : 'Error inesperado.');
+      setErrorMessage(err instanceof Error ? err.message : t('errorFallback'));
     }
   }
 
@@ -52,7 +54,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       <div>
         <label htmlFor="nombre" className="block text-xs font-medium uppercase tracking-widest text-navy-600">
-          Nombre completo
+          {t('fields.name')}
         </label>
         <input
           id="nombre"
@@ -66,7 +68,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="organizacion" className="block text-xs font-medium uppercase tracking-widest text-navy-600">
-          Organización
+          {t('fields.organization')}
         </label>
         <input
           id="organizacion"
@@ -79,7 +81,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="email" className="block text-xs font-medium uppercase tracking-widest text-navy-600">
-          Correo electrónico
+          {t('fields.email')}
         </label>
         <input
           id="email"
@@ -93,7 +95,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="mensaje" className="block text-xs font-medium uppercase tracking-widest text-navy-600">
-          Mensaje
+          {t('fields.message')}
         </label>
         <textarea
           id="mensaje"
@@ -105,9 +107,7 @@ export function ContactForm() {
       </div>
 
       <div className="flex items-center justify-between gap-4">
-        <p className="text-xs text-gray-500">
-          Sus datos solo se utilizan para responder a esta solicitud.
-        </p>
+        <p className="text-xs text-gray-500">{t('privacy')}</p>
         <button
           type="submit"
           disabled={status === 'submitting'}
@@ -122,7 +122,7 @@ export function ContactForm() {
               aria-hidden="true"
             />
           )}
-          {status === 'submitting' ? 'Enviando…' : 'Enviar Mensaje'}
+          {status === 'submitting' ? t('submitting') : t('submit')}
         </button>
       </div>
 
@@ -132,8 +132,8 @@ export function ContactForm() {
         aria-live="polite"; role="alert" implica aria-live="assertive".
       */}
       <div ref={statusRef} aria-live="polite" className="sr-only">
-        {status === 'success' && 'Su mensaje fue enviado correctamente.'}
-        {status === 'error' && errorMessage}
+        {status === 'success' && t('successAria')}
+        {status === 'error' && (errorMessage || t('errorAria'))}
       </div>
 
       {status === 'success' && (
@@ -141,7 +141,7 @@ export function ContactForm() {
           role="status"
           className="border border-navy-600 bg-navy-100 px-4 py-3 text-sm text-navy-950"
         >
-          Recibimos su mensaje. Le responderemos en un plazo de dos días hábiles.
+          {t('successVisible')}
         </p>
       )}
 
@@ -150,7 +150,7 @@ export function ContactForm() {
           role="alert"
           className="border border-red-600 bg-red-50 px-4 py-3 text-sm text-red-700"
         >
-          {errorMessage}
+          {errorMessage || t('errorFallback')}
         </p>
       )}
     </form>
