@@ -1,104 +1,95 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Building2, ShieldAlert, Gavel, Leaf } from 'lucide-react';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { PageHero } from '@/components/PageHero';
 import { WHATSAPP_SERVICIOS } from '@/lib/constants';
 import { SITE_URL } from '@/lib/site';
 
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'ServicesPage' });
+  return {
+    title: t('metadata.title'),
+    description: t('metadata.description'),
+    alternates: {
+      canonical: locale === 'es' ? '/servicios' : `/${locale}/servicios`,
+      languages: {
+        'es-CO': '/servicios',
+        'es-419': '/servicios',
+        es: '/servicios',
+        en: '/en/servicios',
+        'en-US': '/en/servicios',
+      },
+    },
+    openGraph: {
+      title: t('metadata.ogTitle'),
+      description: t('metadata.ogDescription'),
+      url:
+        locale === 'es'
+          ? `${SITE_URL}/servicios`
+          : `${SITE_URL}/en/servicios`,
+    },
+    twitter: {
+      title: t('metadata.twitterTitle'),
+      description: t('metadata.twitterDescription'),
+    },
+  };
+}
+
 const WHATSAPP_HREF = WHATSAPP_SERVICIOS;
 
-export const metadata: Metadata = {
-  title: 'Servicios especializados',
-  description:
-    'Relaciones institucionales, gestión de riesgos y crisis, asuntos regulatorios y legislativos, y comunicaciones ASG y sostenibilidad. Metodología común, equipos por encargo.',
-  alternates: {
-    canonical: '/servicios',
-  },
-  openGraph: {
-    title: 'Servicios especializados | Temptum',
-    description:
-      'Cuatro líneas de trabajo con metodología común: relaciones institucionales, gestión de riesgos y crisis, asuntos regulatorios y legislativos, y comunicaciones ASG.',
-    url: `${SITE_URL}/servicios`,
-  },
-  twitter: {
-    title: 'Servicios especializados | Temptum',
-    description:
-      'Cuatro líneas de trabajo con metodología común: relaciones institucionales, gestión de riesgos, regulatorio, y comunicaciones ASG.',
-  },
+// Map service id to icon (component-side, not localized).
+// The id values from the JSON differ across locales (e.g. "relaciones-institucionales"
+// vs "institutional-relations"), so we key the icon map by a stable internal key
+// the JSONs share, then resolve id+title+body from the localized entry.
+const ICON_BY_ID: Record<string, typeof Building2> = {
+  'relaciones-institucionales': Building2,
+  'institutional-relations': Building2,
+  'gestion-riesgos': ShieldAlert,
+  'risk-management': ShieldAlert,
+  'asuntos-regulatorios': Gavel,
+  'regulatory-affairs': Gavel,
+  'comunicaciones-asg': Leaf,
+  'esg-communications': Leaf,
 };
 
-const servicios = [
-  {
-    id: 'relaciones-institucionales',
-    icon: Building2,
-    title: 'Relaciones Institucionales',
-    summary:
-      'Construcción y gestión de vínculos estratégicos con actores públicos y privados clave.',
-    body: [
-      'Mapeo y caracterización de actores públicos, gremiales y de la sociedad civil relevantes para la operación del cliente.',
-      'Diseño e implementación de estrategias de acercamiento institucional de largo plazo, no transaccionales.',
-      'Acompañamiento en escenarios de relacionamiento de alta sensibilidad, incluyendo audiencias públicas, comités sectoriales y procesos legislativos.',
-      'Monitoreo permanente de agendas públicas, posiciones de los actores y movimientos del entorno.',
-    ],
-  },
-  {
-    id: 'gestion-riesgos',
-    icon: ShieldAlert,
-    title: 'Gestión de Riesgos y Crisis',
-    summary:
-      'Identificación temprana, mitigación y manejo de escenarios de alto impacto reputacional u operativo.',
-    body: [
-      'Diagnóstico de vulnerabilidades reputacionales, regulatorias y operativas, con priorización cuantitativa.',
-      'Diseño de manuales de crisis, protocolos de escalamiento y matrices de respuesta por escenario.',
-      'Coordinación de mesas de crisis, vocería y respuesta institucional en escenarios activos.',
-      'Acompañamiento posterior a la crisis: evaluación de impacto, ajustes organizacionales y reconstrucción de confianza.',
-    ],
-  },
-  {
-    id: 'asuntos-regulatorios',
-    icon: Gavel,
-    title: 'Asuntos Regulatorios y Legislativos',
-    summary:
-      'Monitoreo, análisis e incidencia técnica en procesos normativos y legislativos.',
-    body: [
-      'Monitoreo legislativo y regulatorio permanente, con alertas tempranas y resúmenes ejecutivos.',
-      'Análisis técnico-jurídico de proyectos de ley, decretos, resoluciones y consultas públicas, con identificación de impactos para el cliente.',
-      'Elaboración de documentos técnicos, posicionamientos y propuestas regulatorias, en articulación con asesores jurídicos del cliente.',
-      'Acompañamiento en audiencias públicas, foros legislativos y mesas técnicas sectoriales.',
-    ],
-  },
-  {
-    id: 'comunicaciones-asg',
-    icon: Leaf,
-    title: 'Comunicaciones ASG y Sostenibilidad',
-    summary:
-      'Estrategias de comunicación alineadas a estándares ambientales, sociales y de gobernanza.',
-    body: [
-      'Diagnóstico de brechas en la narrativa institucional frente a estándares ASG y marcos de reporte vigentes.',
-      'Diseño de la arquitectura de comunicación de sostenibilidad, articulada con los hitos de reporte y la estrategia corporativa.',
-      'Construcción de mensajes clave para públicos financieros, regulators, comunidades y colaboradores.',
-      'Acompañamiento en la interlocución con inversionistas, calificadores y grupos de interés.',
-    ],
-  },
-];
+type ServiceItem = { id: string; title: string; summary: string; body: string[] };
 
-export default function ServiciosPage() {
+export default async function ServiciosPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: 'ServicesPage' });
+
+  const heroAccent = t('headlineAccent');
+  const heroParts = t('headline').split(heroAccent);
+
+  const ecoAccent = t('ecosystem.headlineAccent');
+  const ecoParts = t('ecosystem.headline').split(ecoAccent);
+
+  const items = t.raw('items') as ServiceItem[];
+
   return (
     <>
       <PageHero
-        kicker="Servicios especializados"
-        breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Servicios' }]}
+        kicker={t('kicker')}
+        breadcrumbs={[
+          { label: t('breadcrumbs.home'), href: '/' },
+          { label: t('breadcrumbs.current') },
+        ]}
         headline={
           <>
-            Cuatro líneas de trabajo,
+            {heroParts[0]}
             <br />
-            <span className="text-gold">una sola metodología.</span>
+            <span className="text-gold">{heroAccent}</span>
           </>
         }
-        subhead="Nuestros servicios se articulan bajo una metodología común de análisis, interlocución y ejecución. Cada línea puede contratarse de forma independiente o como parte de un encargo integrado."
+        subhead={t('subhead')}
         ctas={[
           {
-            label: 'Conversemos por WhatsApp',
+            label: t('ctaWhatsapp'),
             href: WHATSAPP_HREF,
             variant: 'outline',
             external: true,
@@ -112,40 +103,31 @@ export default function ServiciosPage() {
             <figure className="border-l-2 border-gold pl-6 lg:col-span-7">
               <Image
                 src="/images/equipo/equipo-acuerdo.jpg"
-                alt="Equipo interdisciplinario de aliados y colaboradores en sesión de trabajo"
+                alt={t('ecosystem.alt')}
                 width={1600}
                 height={900}
                 sizes="(min-width: 1024px) 800px, 100vw"
                 className="aspect-[16/9] w-full object-cover"
               />
               <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-gray-500">
-                Sesión de trabajo con aliados sectoriales y académicos
+                {t('ecosystem.caption')}
               </figcaption>
             </figure>
 
             <div className="lg:col-span-5">
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-navy-600">
-                Ecosistema de trabajo
+                {t('ecosystem.kicker')}
               </p>
               <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-navy-950 md:text-4xl">
-                Las necesidades de nuestros clientes son diversas.
+                {ecoParts[0]}
                 <br />
-                <span className="text-navy-600">
-                  Integramos equipos para cada encargo.
-                </span>
+                <span className="text-navy-600">{ecoAccent}</span>
               </h2>
               <p className="mt-6 text-base leading-relaxed text-gray-700">
-                Por cada proyecto convocamos una combinación de perfiles
-                especializados —jurídicos, técnicos, académicos, sectoriales— que
-                se articulan con nuestro equipo permanente. No vendemos un
-                catálogo fijo: diseñamos el equipo que cada contexto exige,
-                manteniendo una coordinación central y un solo interlocutor
-                responsable.
+                {t('ecosystem.body1')}
               </p>
               <p className="mt-4 text-base leading-relaxed text-gray-700">
-                Esa flexibilidad es la que nos permite operar simultáneamente en
-                sectores regulados, escenarios de crisis y procesos legislativos
-                de alta complejidad técnica.
+                {t('ecosystem.body2')}
               </p>
             </div>
           </div>
@@ -155,11 +137,11 @@ export default function ServiciosPage() {
       <section className="bg-ice py-16 lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <nav
-            aria-label="Índice de servicios"
+            aria-label={t('indexAriaLabel')}
             className="border-y border-navy-100 bg-white"
           >
             <ul className="flex flex-wrap divide-x divide-navy-100">
-              {servicios.map((s) => (
+              {items.map((s) => (
                 <li key={s.id} className="flex-1">
                   <a
                     href={`#${s.id}`}
@@ -173,8 +155,8 @@ export default function ServiciosPage() {
           </nav>
 
           <div className="mt-16 space-y-20">
-            {servicios.map((s) => {
-              const Icon = s.icon;
+            {items.map((s) => {
+              const Icon = ICON_BY_ID[s.id] ?? Building2;
               return (
                 <section
                   key={s.id}

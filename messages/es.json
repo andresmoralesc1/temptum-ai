@@ -428,32 +428,78 @@
   },
   "ServicesPage": {
     "metadata": {
-      "title": "",
-      "description": "",
-      "ogTitle": "",
-      "ogDescription": "",
-      "twitterTitle": "",
-      "twitterDescription": ""
+      "title": "Servicios especializados",
+      "description": "Relaciones institucionales, gestión de riesgos y crisis, asuntos regulatorios y legislativos, y comunicaciones ASG y sostenibilidad. Metodología común, equipos por encargo.",
+      "ogTitle": "Servicios especializados | Temptum",
+      "ogDescription": "Cuatro líneas de trabajo con metodología común: relaciones institucionales, gestión de riesgos y crisis, asuntos regulatorios y legislativos, y comunicaciones ASG.",
+      "twitterTitle": "Servicios especializados | Temptum",
+      "twitterDescription": "Cuatro líneas de trabajo con metodología común: relaciones institucionales, gestión de riesgos, regulatorio, y comunicaciones ASG."
     },
-    "kicker": "",
-    "headline": "",
-    "headlineAccent": "",
-    "subhead": "",
+    "kicker": "Servicios especializados",
+    "headline": "Cuatro líneas de trabajo, una sola metodología.",
+    "headlineAccent": "una sola metodología.",
+    "subhead": "Nuestros servicios se articulan bajo una metodología común de análisis, interlocución y ejecución. Cada línea puede contratarse de forma independiente o como parte de un encargo integrado.",
     "breadcrumbs": {
-      "home": "",
-      "current": ""
+      "home": "Inicio",
+      "current": "Servicios"
     },
-    "ctaWhatsapp": "",
+    "ctaWhatsapp": "Conversemos por WhatsApp",
     "ecosystem": {
-      "kicker": "",
-      "headline": "",
-      "headlineAccent": "",
-      "body1": "",
-      "body2": "",
-      "caption": ""
+      "kicker": "Ecosistema de trabajo",
+      "headline": "Las necesidades de nuestros clientes son diversas. Integramos equipos para cada encargo.",
+      "headlineAccent": "Integramos equipos para cada encargo.",
+      "body1": "Por cada proyecto convocamos una combinación de perfiles especializados —jurídicos, técnicos, académicos, sectoriales— que se articulan con nuestro equipo permanente. No vendemos un catálogo fijo: diseñamos el equipo que cada contexto exige, manteniendo una coordinación central y un solo interlocutor responsable.",
+      "body2": "Esa flexibilidad es la que nos permite operar simultáneamente en sectores regulados, escenarios de crisis y procesos legislativos de alta complejidad técnica.",
+      "caption": "Sesión de trabajo con aliados sectoriales y académicos",
+      "alt": "Equipo interdisciplinario de aliados y colaboradores en sesión de trabajo"
     },
-    "indexAriaLabel": "",
-    "items": []
+    "indexAriaLabel": "Índice de servicios",
+    "items": [
+      {
+        "id": "relaciones-institucionales",
+        "title": "Relaciones Institucionales",
+        "summary": "Construcción y gestión de vínculos estratégicos con actores públicos y privados clave.",
+        "body": [
+          "Mapeo y caracterización de actores públicos, gremiales y de la sociedad civil relevantes para la operación del cliente.",
+          "Diseño e implementación de estrategias de acercamiento institucional de largo plazo, no transaccionales.",
+          "Acompañamiento en escenarios de relacionamiento de alta sensibilidad, incluyendo audiencias públicas, comités sectoriales y procesos legislativos.",
+          "Monitoreo permanente de agendas públicas, posiciones de los actores y movimientos del entorno."
+        ]
+      },
+      {
+        "id": "gestion-riesgos",
+        "title": "Gestión de Riesgos y Crisis",
+        "summary": "Identificación temprana, mitigación y manejo de escenarios de alto impacto reputacional u operativo.",
+        "body": [
+          "Diagnóstico de vulnerabilidades reputacionales, regulatorias y operativas, con priorización cuantitativa.",
+          "Diseño de manuales de crisis, protocolos de escalamiento y matrices de respuesta por escenario.",
+          "Coordinación de mesas de crisis, vocería y respuesta institucional en escenarios activos.",
+          "Acompañamiento posterior a la crisis: evaluación de impacto, ajustes organizacionales y reconstrucción de confianza."
+        ]
+      },
+      {
+        "id": "asuntos-regulatorios",
+        "title": "Asuntos Regulatorios y Legislativos",
+        "summary": "Monitoreo, análisis e incidencia técnica en procesos normativos y legislativos.",
+        "body": [
+          "Monitoreo legislativo y regulatorio permanente, con alertas tempranas y resúmenes ejecutivos.",
+          "Análisis técnico-jurídico de proyectos de ley, decretos, resoluciones y consultas públicas, con identificación de impactos para el cliente.",
+          "Elaboración de documentos técnicos, posicionamientos y propuestas regulatorias, en articulación con asesores jurídicos del cliente.",
+          "Acompañamiento en audiencias públicas, foros legislativos y mesas técnicas sectoriales."
+        ]
+      },
+      {
+        "id": "comunicaciones-asg",
+        "title": "Comunicaciones ASG y Sostenibilidad",
+        "summary": "Estrategias de comunicación alineadas a estándares ambientales, sociales y de gobernanza.",
+        "body": [
+          "Diagnóstico de brechas en la narrativa institucional frente a estándares ASG y marcos de reporte vigentes.",
+          "Diseño de la arquitectura de comunicación de sostenibilidad, articulada con los hitos de reporte y la estrategia corporativa.",
+          "Construcción de mensajes clave para públicos financieros, regulatorios, comunidades y colaboradores.",
+          "Acompañamiento en la interlocución con inversionistas, calificadores y grupos de interés."
+        ]
+      }
+    ]
   },
   "ContactPage": {
     "metadata": {
