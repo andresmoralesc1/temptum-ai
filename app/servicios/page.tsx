@@ -3,15 +3,27 @@ import Image from 'next/image';
 import { Building2, ShieldAlert, Gavel, Leaf } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { WHATSAPP_SERVICIOS } from '@/lib/constants';
+import { SITE_URL } from '@/lib/site';
 
 const WHATSAPP_HREF = WHATSAPP_SERVICIOS;
 
 export const metadata: Metadata = {
-  title: 'Servicios Especializados',
+  title: 'Servicios especializados',
   description:
     'Relaciones institucionales, gestión de riesgos y crisis, asuntos regulatorios y legislativos, y comunicaciones ASG y sostenibilidad. Metodología común, equipos por encargo.',
   alternates: {
     canonical: '/servicios',
+  },
+  openGraph: {
+    title: 'Servicios especializados | Temptum',
+    description:
+      'Cuatro líneas de trabajo con metodología común: relaciones institucionales, gestión de riesgos y crisis, asuntos regulatorios y legislativos, y comunicaciones ASG.',
+    url: `${SITE_URL}/servicios`,
+  },
+  twitter: {
+    title: 'Servicios especializados | Temptum',
+    description:
+      'Cuatro líneas de trabajo con metodología común: relaciones institucionales, gestión de riesgos, regulatorio, y comunicaciones ASG.',
   },
 };
 
@@ -75,6 +87,7 @@ export default function ServiciosPage() {
     <>
       <PageHero
         kicker="Servicios especializados"
+        breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Servicios' }]}
         headline={
           <>
             Cuatro líneas de trabajo,

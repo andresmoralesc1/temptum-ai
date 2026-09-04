@@ -1,13 +1,25 @@
 import type { Metadata } from 'next';
 import { FileText, Lock, CheckCircle2 } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Inteligencia y Política Pública',
+  title: 'Inteligencia y política pública',
   description:
     'Análisis de coyuntura económica y política, y monitoreo legislativo sectorial producido por el equipo de Temptum. Muestra pública disponible.',
   alternates: {
     canonical: '/inteligencia-politica',
+  },
+  openGraph: {
+    title: 'Inteligencia y política pública | Temptum',
+    description:
+      'Análisis de coyuntura y monitoreo legislativo producidos por nuestro equipo. Muestra pública disponible, informes completos bajo suscripción institucional.',
+    url: `${SITE_URL}/inteligencia-politica`,
+  },
+  twitter: {
+    title: 'Inteligencia y política pública | Temptum',
+    description:
+      'Análisis de coyuntura y monitoreo legislativo producidos por nuestro equipo.',
   },
 };
 
@@ -31,6 +43,7 @@ export default function InteligenciaPoliticaPage() {
     <>
       <PageHero
         kicker="Centro de Inteligencia"
+        breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Centro de Inteligencia' }]}
         headline={
           <>
             Información estratégica,

@@ -3,14 +3,26 @@ import Link from 'next/link';
 import { Calendar, ArrowUpRight } from 'lucide-react';
 import { getAllCasos } from '@/lib/content';
 import { formatDate } from '@/lib/dates';
+import { SITE_URL } from '@/lib/site';
 import { PageHero } from '@/components/PageHero';
 
 export const metadata: Metadata = {
-  title: 'Análisis | Temptum',
+  title: 'Análisis y opinión',
   description:
     'Análisis y opinión de nuestro equipo sobre comunicaciones estratégicas, gestión de crisis, cumplimiento normativo y el impacto de la inteligencia artificial en la disciplina.',
   alternates: {
     canonical: '/casos-de-estudio',
+  },
+  openGraph: {
+    title: 'Análisis y opinión | Temptum',
+    description:
+      'Reflexiones firmadas por nuestro equipo sobre comunicaciones estratégicas, gestión de crisis y cumplimiento normativo. Análisis editoriales, no estudios de cliente.',
+    url: `${SITE_URL}/casos-de-estudio`,
+  },
+  twitter: {
+    title: 'Análisis y opinión | Temptum',
+    description:
+      'Reflexiones firmadas por nuestro equipo sobre comunicaciones estratégicas, gestión de crisis y cumplimiento normativo.',
   },
 };
 
@@ -21,6 +33,7 @@ export default function CasosDeEstudioPage() {
     <>
       <PageHero
         kicker="Análisis y opinión"
+        breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Análisis y opinión' }]}
         headline={
           <>
             Lo que estamos

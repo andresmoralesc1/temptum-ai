@@ -1,12 +1,24 @@
 import type { Metadata } from 'next';
 import { PageHero } from '@/components/PageHero';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidad',
+  title: 'Política de privacidad',
   description:
     'Cómo Temptum trata los datos personales recolectados a través de este sitio y los derechos que usted puede ejercer como titular.',
   alternates: {
     canonical: '/politica-de-privacidad',
+  },
+  openGraph: {
+    title: 'Política de privacidad | Temptum',
+    description:
+      'Cómo Temptum trata los datos personales recolectados a través de este sitio y los derechos que usted puede ejercer como titular.',
+    url: `${SITE_URL}/politica-de-privacidad`,
+  },
+  twitter: {
+    title: 'Política de privacidad | Temptum',
+    description:
+      'Cómo Temptum trata los datos personales y los derechos del titular.',
   },
 };
 
@@ -16,7 +28,8 @@ export default function PoliticaPrivacidadPage() {
       <PageHero
         variant="light"
         kicker="Legal"
-        headline="Política de Privacidad"
+        breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Política de privacidad' }]}
+        headline="Política de privacidad"
       />
 
       <section className="bg-ice pb-24 pt-12 lg:pb-32 lg:pt-16">

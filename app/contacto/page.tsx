@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import { ContactForm } from '@/components/ContactForm';
 import { CopyButton } from '@/components/CopyButton';
 import { PageHero } from '@/components/PageHero';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Contacto',
@@ -11,6 +12,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/contacto',
   },
+  openGraph: {
+    title: 'Contacto | Temptum',
+    description:
+      'Conversemos sobre el contexto de su organización. Le respondemos en un plazo de dos días hábiles.',
+    url: `${SITE_URL}/contacto`,
+  },
+  twitter: {
+    title: 'Contacto | Temptum',
+    description:
+      'Conversemos sobre el contexto de su organización. Le respondemos en dos días hábiles.',
+  },
 };
 
 export default function ContactoPage() {
@@ -18,6 +30,7 @@ export default function ContactoPage() {
     <>
       <PageHero
         kicker="Contacto"
+        breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Contacto' }]}
         headline={
           <>
             Iniciemos

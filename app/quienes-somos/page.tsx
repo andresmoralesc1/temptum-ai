@@ -4,12 +4,24 @@ import Link from 'next/link';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { WHATSAPP_QUIENES } from '@/lib/constants';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Quiénes Somos',
+  title: 'Quiénes somos',
   description:
     'Temptum es una firma independiente de corporate & government affairs en Bogotá. Conozca a nuestra CEO, nuestra trayectoria y cómo conformamos equipos para cada encargo.',
   alternates: { canonical: '/quienes-somos' },
+  openGraph: {
+    title: 'Quiénes somos | Temptum',
+    description:
+      'Firma independiente de corporate & government affairs en Bogotá. CEO con experiencia en Edelman y periodismo de investigación. Equipos por encargo.',
+    url: `${SITE_URL}/quienes-somos`,
+  },
+  twitter: {
+    title: 'Quiénes somos | Temptum',
+    description:
+      'Firma independiente de corporate & government affairs en Bogotá. CEO con experiencia en Edelman y periodismo de investigación.',
+  },
 };
 
 const WHATSAPP_HREF = WHATSAPP_QUIENES;
@@ -63,7 +75,8 @@ export default function QuienesSomosPage() {
   return (
     <>
       <PageHero
-        kicker="Quiénes Somos"
+        kicker="Quiénes somos"
+        breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Quiénes somos' }]}
         headline={
           <>
             El primer centro especializado en Colombia en{' '}

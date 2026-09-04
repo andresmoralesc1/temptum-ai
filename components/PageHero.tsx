@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { Breadcrumb } from '@/components/Breadcrumb';
 
 type Variant = 'dark' | 'light';
 
@@ -15,6 +16,8 @@ type Cta = {
   external?: boolean;
 };
 
+type Crumb = { label: string; href?: string };
+
 type Props = {
   kicker: string;
   headline: ReactNode;
@@ -22,6 +25,7 @@ type Props = {
   stats?: Stat[];
   ctas?: Cta[];
   variant?: Variant;
+  breadcrumbs?: Crumb[];
 };
 
 const gridBg = {
@@ -84,6 +88,7 @@ export function PageHero({
   stats,
   ctas,
   variant = 'dark',
+  breadcrumbs,
 }: Props) {
   return (
     <section className={`${baseClasses} ${variantClasses[variant]}`}>
@@ -102,6 +107,11 @@ export function PageHero({
       )}
 
       <div className="mx-auto max-w-content px-5 pb-24 pt-32 lg:px-20 lg:pb-32 lg:pt-40">
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <div className="mb-8">
+            <Breadcrumb items={breadcrumbs} />
+          </div>
+        )}
         <p
           className={`inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] ${kickerClasses[variant]}`}
         >

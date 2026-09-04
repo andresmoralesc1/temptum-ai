@@ -2,13 +2,7 @@ import type { MetadataRoute } from 'next';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { getAllCasos } from '@/lib/content';
-
-// Dominio canónico. Se fija via env var en deploy (Caddy/Nginx);
-// el fallback es el subdominio temporal mientras se configura el DNS.
-const BASE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-  'https://temptum.andresmorales.com.co'
-).replace(/\/$/, '');
+import { SITE_URL } from '@/lib/site';
 
 type Route = {
   path: string;
@@ -39,7 +33,7 @@ async function getMtime(relativePath: string): Promise<Date> {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticEntries = await Promise.all(
     STATIC_ROUTES.map(async (route) => ({
-      url: `${BASE_URL}${route.path}`,
+      url: `${SITE_URL}${route.path}`,
       lastModified: await getMtime(route.sourceFile),
       changeFrequency: route.changeFrequency,
       priority: route.priority,
@@ -47,7 +41,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
 
   const casoEntries = getAllCasos().map((caso) => ({
-    url: `${BASE_URL}/casos-de-estudio/${caso.slug}`,
+    url: `${SITE_URL}/casos-de-estudio/${caso.slug}`,
     lastModified: new Date(caso.date),
     changeFrequency: 'yearly' as const,
     priority: 0.6,

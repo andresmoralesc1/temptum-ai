@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Archivo, Inter } from 'next/font/google';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { SITE_URL, SITE_DESCRIPTION } from '@/lib/site';
 import './globals.css';
 
 const archivo = Archivo({
@@ -28,14 +29,6 @@ const inter = Inter({
   adjustFontFallback: true,
 });
 
-const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-  'https://temptum.andresmorales.com.co'
-).replace(/\/$/, '');
-
-const SITE_DESCRIPTION =
-  'Nexo de influencia, rigor técnico y mitigación de riesgos para el sector privado y las instituciones en Colombia.';
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -46,8 +39,22 @@ export const metadata: Metadata = {
   applicationName: 'Temptum',
   authors: [{ name: 'Temptum' }],
   generator: 'Next.js',
+  keywords: [
+    'corporate government affairs Colombia',
+    'relaciones institucionales Bogotá',
+    'gestión de crisis corporativas',
+    'asuntos regulatorios Colombia',
+    'comunicaciones ASG sostenibilidad',
+    'consultoría estratégica Bogotá',
+    'monitoreo legislativo Colombia',
+  ],
   alternates: {
     canonical: '/',
+    languages: {
+      'es-CO': '/',
+      'es-419': '/',
+      es: '/',
+    },
   },
   openGraph: {
     type: 'website',
