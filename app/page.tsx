@@ -9,7 +9,7 @@ import { IntelligenceCenter } from '@/components/IntelligenceCenter';
 
 export const metadata: Metadata = {
   description:
-    'Nexo de influencia, rigor técnico y mitigación de riesgos para el sector privado y las instituciones en Colombia.',
+    'Centro especializado en Colombia en corporate & government affairs. Acompañamos a empresas reguladas, equipos legales y de cumplimiento en escenarios donde la decisión tiene que sostenerse ante un regulador, un juez o la opinión pública.',
   alternates: { canonical: '/' },
 };
 

@@ -124,14 +124,14 @@ export function Header() {
               rel="noopener noreferrer"
               // min-h-11 = 44px (WCAG target size). py-2.5 (10px) + 14px text = ~34px
               className="hidden items-center gap-2 bg-gold px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-950 shadow-sm transition-all duration-150 hover:bg-gold/90 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 lg:inline-flex min-h-11"
-              aria-label="Hablemos por WhatsApp"
+              aria-label="Conversemos por WhatsApp"
             >
               <MessageCircle
                 size={14}
                 strokeWidth={2}
                 aria-hidden="true"
               />
-              Hablemos
+              Conversemos
             </a>
 
             <button
@@ -220,14 +220,14 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-gold px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-950 transition-all duration-150 hover:bg-gold/90 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
-              aria-label="Hablemos por WhatsApp"
+              aria-label="Conversemos por WhatsApp"
             >
               <MessageCircle
                 size={14}
                 strokeWidth={2}
                 aria-hidden="true"
               />
-              Hablemos por WhatsApp
+              Conversemos por WhatsApp
             </a>
           </div>
         </div>

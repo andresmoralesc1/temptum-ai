@@ -85,7 +85,7 @@ export default function ServiciosPage() {
         subhead="Nuestros servicios se articulan bajo una metodología común de análisis, interlocución y ejecución. Cada línea puede contratarse de forma independiente o como parte de un encargo integrado."
         ctas={[
           {
-            label: 'Hablemos por WhatsApp',
+            label: 'Conversemos por WhatsApp',
             href: WHATSAPP_HREF,
             variant: 'outline',
             external: true,

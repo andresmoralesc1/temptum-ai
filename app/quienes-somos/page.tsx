@@ -102,8 +102,8 @@ export default function QuienesSomosPage() {
                 Combinamos experiencia en comunicación corporativa, periodismo
                 de investigación y asuntos públicos para servir a organizaciones
                 que toman decisiones que importan. Cada encargo se ejecuta con
-                equipos pequeños, entregables concretos y trazables, y un socio
-                responsable desde el primer diagnóstico.
+                equipos de tres a cinco personas, entregables documentados y un
+                socio responsable desde el primer diagnóstico.
               </p>
             </div>
           </header>
@@ -448,7 +448,7 @@ export default function QuienesSomosPage() {
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-700">
                 Atendemos cada conversación de manera directa, sin formularios
                 genéricos. Si su organización enfrenta un escenario complejo,
-                escríbanos o agende una llamada inicial por WhatsApp.
+                conversemos por correo o WhatsApp.
               </p>
             </div>
             <div className="flex flex-col gap-3 lg:col-span-4 lg:items-end">
@@ -456,7 +456,7 @@ export default function QuienesSomosPage() {
                 href="/contacto"
                 className="inline-flex items-center justify-center gap-2 bg-navy-600 px-6 py-3 text-[13px] font-medium uppercase tracking-widest text-white transition-colors hover:bg-navy-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
               >
-                Ir a contacto
+                Conversemos
                 <ArrowRight
                   size={16}
                   strokeWidth={2}

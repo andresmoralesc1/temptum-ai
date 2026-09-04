@@ -41,7 +41,7 @@ export function Manifesto() {
           <Reveal as="p" delay={200} className="text-base leading-relaxed text-navy-100">
             Trabajamos bajo estándares estrictos de confidencialidad,
             independencia y cumplimiento. Cada encargo es liderado por un socio
-            responsable y ejecutado por equipos pequeños.
+            responsable y ejecutado por equipos de tres a cinco personas.
           </Reveal>
           <Reveal as="p" delay={280} className="text-base leading-relaxed text-navy-100">
             Aplicamos metodologías de análisis de riesgos, monitoreo

@@ -97,7 +97,7 @@ export function Services() {
                   </div>
 
                   <div className="flex items-center justify-end gap-2 text-[13px] font-medium uppercase tracking-widest text-navy-600 transition-colors duration-200 group-hover:text-navy-950 lg:col-span-2 lg:pt-2">
-                    Ver detalle
+                    Conozca
                     <ArrowUpRight
                       size={16}
                       strokeWidth={2}

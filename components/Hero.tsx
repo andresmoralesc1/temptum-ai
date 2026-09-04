@@ -38,7 +38,7 @@ export function Hero() {
           </p>
 
           <h1 className="mt-8 max-w-2xl font-display text-4xl font-bold leading-[1.05] text-white md:text-5xl lg:text-[64px]">
-            La decisión estratégica,{' '}
+            Decisiones defendibles,{' '}
             <span className="text-gold">antes que el ruido</span>.
           </h1>
 
@@ -47,9 +47,9 @@ export function Hero() {
             <strong className="font-medium text-white">
               corporate &amp; government affairs
             </strong>
-            . Nexo de influencia, rigor técnico y mitigación de riesgos para el
-            sector privado y las instituciones. Trabajamos con quienes toman las
-            decisiones que importan.
+            . Acompañamos a empresas reguladas, equipos legales y de cumplimiento
+            en escenarios donde la decisión tiene que sostenerse ante un
+            regulador, un juez o la opinión pública.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -69,7 +69,7 @@ export function Hero() {
               className="inline-flex w-full items-center justify-center gap-2 rounded bg-gold px-6 py-3 text-[13px] font-semibold uppercase tracking-widest text-navy-950 shadow-sm transition-all duration-150 hover:bg-gold/90 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 sm:w-auto"
             >
               <MessageCircle size={16} strokeWidth={2} aria-hidden="true" />
-              Hablemos por WhatsApp
+              Conversemos por WhatsApp
             </a>
           </div>
 
@@ -106,7 +106,8 @@ export function Hero() {
                     Sectores
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-white">
-                    Energía, infraestructura, financiero, tecnología, salud.
+                    Energía, infraestructura, financiero, salud y tecnología
+                    regulada.
                   </p>
                 </div>
                 <div>
@@ -142,7 +143,8 @@ export function Hero() {
             <div className="mt-10 border-t border-white/10 pt-6">
               <p className="text-xs leading-relaxed text-navy-100">
                 Cada encargo es liderado por un socio responsable y ejecutado
-                por equipos pequeños, con entregables concretos y trazables.
+                por equipos de tres a cinco personas, con entregables
+                documentados y trazables.
               </p>
             </div>
           </div>

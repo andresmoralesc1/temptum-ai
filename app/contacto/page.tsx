@@ -7,7 +7,7 @@ import { PageHero } from '@/components/PageHero';
 export const metadata: Metadata = {
   title: 'Contacto',
   description:
-    'Póngase en contacto con el equipo de Temptum. Bogotá, Colombia.',
+    'Conversemos sobre el contexto de su organización. Le respondemos en un plazo de dos días hábiles. Bogotá, Colombia.',
   alternates: {
     canonical: '/contacto',
   },

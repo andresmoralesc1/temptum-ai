@@ -15,13 +15,13 @@ const documents = [
   {
     title: 'Análisis de Coyuntura Económica y Política 2025',
     summary:
-      'Panorama macroeconómico, escenarios legislativos y riesgos sectoriales para la toma de decisiones corporativas en Colombia. Incluye proyecciones fiscales, dinámica legislativa del Congreso y prioridades regulatorias por sector.',
+      'Panorama macroeconómico, agenda legislativa del Congreso y prioridades regulatorias por sector, con escenarios de impacto para la toma de decisiones corporativas en Colombia.',
     periodicidad: 'Anual',
   },
   {
     title: 'Monitoreo Legislativo Sectorial',
     summary:
-      'Seguimiento trimestral de proyectos de ley, decretos regulatorios y agendas de comisiones relevantes para el sector empresarial. Incluye matriz de priorización y resúmenes ejecutivos por iniciativa.',
+      'Seguimiento trimestral de proyectos de ley, decretos y agendas de comisiones, con matriz de priorización y resúmenes ejecutivos por iniciativa.',
     periodicidad: 'Trimestral',
   },
 ];
@@ -38,7 +38,7 @@ export default function InteligenciaPoliticaPage() {
             <span className="text-gold">antes que la necesite.</span>
           </>
         }
-        subhead="Documentos producidos por nuestro equipo para clientes y aliados. El acceso a los informes completos está reservado a suscriptores institucionales."
+        subhead="Análisis de coyuntura y monitoreo legislativo producidos por nuestro equipo para clientes y aliados. Los informes completos se distribuyen bajo suscripción institucional."
       />
 
       <section className="bg-navy-100 py-16 lg:py-32">
@@ -72,7 +72,7 @@ export default function InteligenciaPoliticaPage() {
                     className="mt-6 inline-flex items-center gap-2 border-b-2 border-navy-600 pb-0.5 text-xs font-semibold uppercase tracking-widest text-navy-950 transition-colors hover:border-gold hover:text-gold"
                   >
                     <Lock size={14} strokeWidth={2} aria-hidden="true" />
-                    Solicitar acceso
+                    Solicite acceso
                   </a>
                 </div>
               </article>

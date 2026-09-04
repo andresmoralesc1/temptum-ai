@@ -5,16 +5,16 @@ const documents = [
   {
     title: 'Análisis de Coyuntura Económica y Política 2025',
     summary:
-      'Panorama macroeconómico, escenarios legislativos y riesgos sectoriales para la toma de decisiones corporativas en Colombia.',
-    cta: 'Solicitar acceso',
+      'Panorama macroeconómico, agenda legislativa del Congreso y prioridades regulatorias por sector, con escenarios de impacto para la toma de decisiones corporativas en Colombia.',
+    cta: 'Solicite acceso',
     href: '/contacto',
     periodicity: 'Anual',
   },
   {
     title: 'Monitoreo Legislativo Sectorial',
     summary:
-      'Seguimiento trimestral de proyectos de ley, decretos regulatorios y agendas de comisiones relevantes para el sector empresarial.',
-    cta: 'Solicitar acceso',
+      'Seguimiento trimestral de proyectos de ley, decretos y agendas de comisiones, con matriz de priorización y resúmenes ejecutivos por iniciativa.',
+    cta: 'Solicite acceso',
     href: '/contacto',
     periodicity: 'Trimestral',
   },
@@ -40,15 +40,15 @@ export function IntelligenceCenter() {
               antes que la necesite.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-gray-700">
-              Documentos producidos por nuestro equipo para clientes y aliados.
-              Acceso bajo suscripción institucional: contáctenos para evaluar
-              su caso y habilitar el envío de informes.
+              Análisis de coyuntura y monitoreo legislativo producidos por
+              nuestro equipo. Distribución bajo suscripción institucional:
+              conversemos para evaluar si el alcance aplica a su organización.
             </p>
             <Link
               href="/contacto"
               className="mt-8 inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-widest text-navy-600 hover:text-navy-950"
             >
-              Solicitar acceso institucional
+              Solicite una conversación
               <ArrowUpRight size={16} strokeWidth={2} aria-hidden="true" />
             </Link>
           </div>
