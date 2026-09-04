@@ -602,20 +602,43 @@
   },
   "PrivacyPage": {
     "metadata": {
-      "title": "",
-      "description": "",
-      "ogTitle": "",
-      "ogDescription": "",
-      "twitterTitle": "",
-      "twitterDescription": ""
+      "title": "Privacy policy",
+      "description": "How Temptum processes the personal data collected through this site and the rights you can exercise as a data subject.",
+      "ogTitle": "Privacy policy | Temptum",
+      "ogDescription": "How Temptum processes the personal data collected through this site and the rights you can exercise as a data subject.",
+      "twitterTitle": "Privacy policy | Temptum",
+      "twitterDescription": "How Temptum processes personal data and the rights of the data subject."
     },
-    "kicker": "",
-    "headline": "",
+    "kicker": "Legal",
+    "headline": "Privacy policy",
     "breadcrumbs": {
-      "home": "",
-      "current": ""
+      "home": "Home",
+      "current": "Privacy policy"
     },
-    "sections": []
+    "sections": [
+      {
+        "title": "1. Data controller",
+        "body": "Temptum, based in Bogotá D.C., Colombia, is the data controller for the personal information collected through this website."
+      },
+      {
+        "title": "2. Data we collect",
+        "body": "We only collect the information you voluntarily provide through the contact form: name, organization, email address, and message. We do not perform international transfers of your data."
+      },
+      {
+        "title": "3. Purpose",
+        "body": "The data collected is used exclusively to respond to your contact request and, where accepted by you, to send you information about our services."
+      },
+      {
+        "title": "4. Rights of the data subject",
+        "body": "You have the right to access, update, correct, and delete your personal data, as well as to revoke the authorization granted. To exercise these rights, write to us at info@temptum.io.",
+        "email": "info@temptum.io"
+      },
+      {
+        "title": "5. Retention",
+        "body": "Personal data will be retained for as long as the commercial relationship is maintained or until the data subject requests its deletion."
+      }
+    ],
+    "lastUpdated": "Last updated: 2026."
   },
   "CaseStudiesPage": {
     "metadata": {

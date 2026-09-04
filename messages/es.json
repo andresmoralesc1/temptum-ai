@@ -602,20 +602,43 @@
   },
   "PrivacyPage": {
     "metadata": {
-      "title": "",
-      "description": "",
-      "ogTitle": "",
-      "ogDescription": "",
-      "twitterTitle": "",
-      "twitterDescription": ""
+      "title": "Política de privacidad",
+      "description": "Cómo Temptum trata los datos personales recolectados a través de este sitio y los derechos que usted puede ejercer como titular.",
+      "ogTitle": "Política de privacidad | Temptum",
+      "ogDescription": "Cómo Temptum trata los datos personales recolectados a través de este sitio y los derechos que usted puede ejercer como titular.",
+      "twitterTitle": "Política de privacidad | Temptum",
+      "twitterDescription": "Cómo Temptum trata los datos personales y los derechos del titular."
     },
-    "kicker": "",
-    "headline": "",
+    "kicker": "Legal",
+    "headline": "Política de privacidad",
     "breadcrumbs": {
-      "home": "",
-      "current": ""
+      "home": "Inicio",
+      "current": "Política de privacidad"
     },
-    "sections": []
+    "sections": [
+      {
+        "title": "1. Responsable del tratamiento",
+        "body": "Temptum, con sede en Bogotá D.C., Colombia, es responsable del tratamiento de los datos personales recolectados a través de este sitio web."
+      },
+      {
+        "title": "2. Datos recolectados",
+        "body": "Recolectamos únicamente los datos que usted nos proporciona voluntariamente mediante el formulario de contacto: nombre, organización, correo electrónico y mensaje. No realizamos transferencias internacionales de sus datos."
+      },
+      {
+        "title": "3. Finalidad",
+        "body": "Los datos recolectados se utilizan exclusivamente para responder a su solicitud de contacto y, en caso de ser aceptado por usted, enviarle información sobre nuestros servicios."
+      },
+      {
+        "title": "4. Derechos del titular",
+        "body": "Usted tiene derecho a conocer, actualizar, rectificar y suprimir sus datos personales, así como a revocar la autorización otorgada. Para ejercer estos derechos, escríbanos a info@temptum.io.",
+        "email": "info@temptum.io"
+      },
+      {
+        "title": "5. Conservación",
+        "body": "Los datos personales serán conservados mientras se mantenga la relación comercial o hasta que el titular solicite su supresión."
+      }
+    ],
+    "lastUpdated": "Última actualización: 2026."
   },
   "CaseStudiesPage": {
     "metadata": {
