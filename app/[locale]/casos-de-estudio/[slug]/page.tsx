@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/routing';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { ArrowLeft, Calendar, Info } from 'lucide-react';
-import { getAllCasoSlugs, getCasoBySlug } from '@/lib/content';
+import { ArrowLeft, Calendar } from 'lucide-react';
+import { getAllCasoSlugs, getCasoBySlug, type SupportedLocale } from '@/lib/content';
 import { formatDate } from '@/lib/dates';
 import { SITE_URL } from '@/lib/site';
 import { routing } from '@/i18n/routing';
@@ -19,7 +19,7 @@ type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
-  const caso = getCasoBySlug(slug);
+  const caso = getCasoBySlug(slug, locale as SupportedLocale);
   if (!caso) return {};
   const t = await getTranslations({ locale, namespace: 'CaseDetailPage' });
   const tCase = await getTranslations({
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CasoDetailPage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const caso = getCasoBySlug(slug);
+  const caso = getCasoBySlug(slug, locale as SupportedLocale);
   if (!caso) notFound();
 
   const t = await getTranslations({ locale, namespace: 'CaseDetailPage' });
@@ -74,7 +74,7 @@ export default async function CasoDetailPage({ params }: Props) {
   const title = tCase('title') || caso.title;
   const resumen = tCase('resumen') || caso.resumen;
 
-  const fecha = formatDate(caso.date);
+  const fecha = formatDate(caso.date, locale === 'es' ? 'es-CO' : 'en-US');
   const articlePath = locale === 'es'
     ? `/casos-de-estudio/${caso.slug}`
     : `/en/casos-de-estudio/${caso.slug}`;
@@ -169,21 +169,6 @@ export default async function CasoDetailPage({ params }: Props) {
             {t('byAuthor', { author: caso.author })}
           </p>
         </header>
-
-        {locale === 'en' && (
-          <aside
-            role="note"
-            className="mt-10 flex items-start gap-3 border-l-2 border-gold bg-white px-5 py-4 text-sm leading-relaxed text-navy-950"
-          >
-            <Info
-              size={18}
-              strokeWidth={1.5}
-              className="mt-0.5 flex-shrink-0 text-gold"
-              aria-hidden="true"
-            />
-            <p>{t('spanishOnlyBanner')}</p>
-          </aside>
-        )}
 
         <div className="prose-temptum mt-12 space-y-6 text-base leading-relaxed text-gray-700 [&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-navy-950 [&_h2]:border-b [&_h2]:border-navy-100 [&_h2]:pb-3 [&_strong]:text-navy-950 [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mt-2 [&_p]:my-4">
           <MDXRemote source={caso.body} />
