@@ -531,38 +531,73 @@
   },
   "IntelligencePage": {
     "metadata": {
-      "title": "",
-      "description": "",
-      "ogTitle": "",
-      "ogDescription": "",
-      "twitterTitle": "",
-      "twitterDescription": ""
+      "title": "Inteligencia y política pública",
+      "description": "Análisis de coyuntura económica y política, y monitoreo legislativo sectorial producido por el equipo de Temptum. Muestra pública disponible.",
+      "ogTitle": "Inteligencia y política pública | Temptum",
+      "ogDescription": "Análisis de coyuntura y monitoreo legislativo producidos por nuestro equipo. Muestra pública disponible, informes completos bajo suscripción institucional.",
+      "twitterTitle": "Inteligencia y política pública | Temptum",
+      "twitterDescription": "Análisis de coyuntura y monitoreo legislativo producidos por nuestro equipo."
     },
-    "kicker": "",
-    "headline": "",
-    "headlineAccent": "",
-    "subhead": "",
+    "kicker": "Centro de Inteligencia",
     "breadcrumbs": {
-      "home": "",
-      "current": ""
+      "home": "Inicio",
+      "current": "Centro de Inteligencia"
     },
+    "headline": "Información estratégica, antes que la necesite.",
+    "headlineAccent": "antes que la necesite.",
+    "subhead": "Análisis de coyuntura y monitoreo legislativo producidos por nuestro equipo para clientes y aliados. Los informes completos se distribuyen bajo suscripción institucional.",
     "sample": {
-      "kicker": "",
-      "headline": "",
-      "body": "",
-      "ctaRead": ""
+      "kicker": "Muestra pública",
+      "headline": "Qué contiene un informe.",
+      "body": "Antes de evaluar la suscripción, este resumen le permite conocer la profundidad, el formato y el ángulo editorial de nuestros productos. La muestra se publica con datos ilustrativos; las ediciones para suscriptores se producen con información primaria.",
+      "ctaLabel": "Lea la muestra",
+      "items": [
+        "Panorama ejecutivo: 5 a 8 páginas con hallazgos y escenarios.",
+        "Matriz de proyectos de ley con priorización por sector e impacto.",
+        "Resúmenes ejecutivos por iniciativa, con análisis técnico-jurídico.",
+        "Alertas regulatorias personalizadas para suscriptores.",
+        "Reuniones trimestrales de actualización con el equipo de Temptum."
+      ]
     },
-    "includes": [],
-    "samplePreview": {
-      "kicker": "",
-      "headline": "",
-      "items": []
+    "muestra": {
+      "tag": "Muestra · Análisis de Coyuntura 2025",
+      "title": "Tres fuerzas que reconfiguran la decisión corporativa en Colombia.",
+      "forces": [
+        {
+          "title": "1. La transición fiscal acota el margen regulatorio",
+          "body": "El cierre del ciclo de ingresos extraordinarios redefine las prioridades del gasto y de la tributación sectorial. Sectores extractivos, financieros y de servicios públicos enfrentan escenarios de ajuste que requerirán interlocución técnica con Minhacienda y los Ministerios sectoriales. Las empresas con presencia en cadenas reguladas deben anticipar el impacto en tarifas, cargas y esquemas de fiscalización."
+        },
+        {
+          "title": "2. La agenda legislativa se concentra en energía y seguridad",
+          "body": "Veintitrés proyectos de ley en trámite afectan directamente a sectores regulados. La matriz de priorización — disponible para suscriptores — asigna nivel de impacto y probabilidad de aprobación por iniciativa, y propone ventanas de interlocución por Comisión y ponente."
+        },
+        {
+          "title": "3. La justicia constitucional redefine el contorno del riesgo",
+          "body": "Las recientes decisiones de la Corte Constitucional sobre tributos, derechos colectivos y servicios públicos alteran el margen de maniobra de reguladores y administrados. El informe completo incluye un análisis por sector con implicaciones operativas."
+        }
+      ],
+      "disclaimer": "Los datos y casos de esta muestra son ilustrativos. Las ediciones para suscriptores se producen con información primaria y entrevistas a fuentes calificadas."
     },
-    "disclaimer": "",
-    "documents": [],
-    "subscription": {
-      "title": "",
-      "body": ""
+    "products": {
+      "items": [
+        {
+          "title": "Análisis de Coyuntura Económica y Política 2025",
+          "summary": "Panorama macroeconómico, agenda legislativa del Congreso y prioridades regulatorias por sector, con escenarios de impacto para la toma de decisiones corporativas en Colombia.",
+          "periodicity": "Anual"
+        },
+        {
+          "title": "Monitoreo Legislativo Sectorial",
+          "summary": "Seguimiento trimestral de proyectos de ley, decretos y agendas de comisiones, con matriz de priorización y resúmenes ejecutivos por iniciativa.",
+          "periodicity": "Trimestral"
+        }
+      ],
+      "accessCta": "Solicite acceso",
+      "subscription": {
+        "title": "Suscripción institucional",
+        "body": "Para acceder a los informes completos y a nuestro servicio de alertas regulatorias personalizadas, conversemos en",
+        "email": "info@temptum.io",
+        "emailSubject": "Suscripción institucional"
+      }
     }
   },
   "PrivacyPage": {

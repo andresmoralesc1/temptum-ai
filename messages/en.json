@@ -531,38 +531,73 @@
   },
   "IntelligencePage": {
     "metadata": {
-      "title": "",
-      "description": "",
-      "ogTitle": "",
-      "ogDescription": "",
-      "twitterTitle": "",
-      "twitterDescription": ""
+      "title": "Political and policy intelligence",
+      "description": "Economic and political analysis, and sectoral legislative monitoring produced by the Temptum team. Public sample available.",
+      "ogTitle": "Political and policy intelligence | Temptum",
+      "ogDescription": "Analysis of current affairs and legislative monitoring produced by our team. Public sample available; full reports under institutional subscription.",
+      "twitterTitle": "Political and policy intelligence | Temptum",
+      "twitterDescription": "Analysis of current affairs and legislative monitoring produced by our team."
     },
-    "kicker": "",
-    "headline": "",
-    "headlineAccent": "",
-    "subhead": "",
+    "kicker": "Intelligence Center",
     "breadcrumbs": {
-      "home": "",
-      "current": ""
+      "home": "Home",
+      "current": "Intelligence Center"
     },
+    "headline": "Strategic intelligence, before you need it.",
+    "headlineAccent": "before you need it.",
+    "subhead": "Analysis of current affairs and legislative monitoring produced by our team for clients and partners. Full reports are distributed under institutional subscription.",
     "sample": {
-      "kicker": "",
-      "headline": "",
-      "body": "",
-      "ctaRead": ""
+      "kicker": "Public sample",
+      "headline": "What a report contains.",
+      "body": "Before evaluating a subscription, this overview lets you understand the depth, format, and editorial angle of our products. The sample is published with illustrative data; subscriber editions are produced with primary information.",
+      "ctaLabel": "Read the sample",
+      "items": [
+        "Executive overview: 5 to 8 pages with findings and scenarios.",
+        "Bill matrix with prioritization by sector and impact.",
+        "Executive summaries per initiative, with technical-legal analysis.",
+        "Customized regulatory alerts for subscribers.",
+        "Quarterly update meetings with the Temptum team."
+      ]
     },
-    "includes": [],
-    "samplePreview": {
-      "kicker": "",
-      "headline": "",
-      "items": []
+    "muestra": {
+      "tag": "Sample · 2025 Analysis of Current Affairs",
+      "title": "Three forces reshaping corporate decision-making in Colombia.",
+      "forces": [
+        {
+          "title": "1. The fiscal transition narrows the regulatory margin",
+          "body": "The end of the extraordinary revenue cycle reshapes spending priorities and sectoral taxation. Extractive, financial, and public services sectors face adjustment scenarios that will require technical engagement with the Ministry of Finance and sector ministries. Companies operating in regulated value chains should anticipate the impact on tariffs, charges, and enforcement schemes."
+        },
+        {
+          "title": "2. The legislative agenda concentrates on energy and security",
+          "body": "Twenty-three bills in progress directly affect regulated sectors. The prioritization matrix — available to subscribers — assigns impact level and probability of approval for each initiative, and proposes engagement windows by committee and rapporteur."
+        },
+        {
+          "title": "3. Constitutional justice redefines the risk contour",
+          "body": "Recent Constitutional Court rulings on taxes, collective rights, and public services alter the room for maneuver of regulators and regulated parties. The full report includes a sector-by-sector analysis with operational implications."
+        }
+      ],
+      "disclaimer": "The data and cases in this sample are illustrative. Subscriber editions are produced with primary information and interviews with qualified sources."
     },
-    "disclaimer": "",
-    "documents": [],
-    "subscription": {
-      "title": "",
-      "body": ""
+    "products": {
+      "items": [
+        {
+          "title": "2025 Economic and Political Analysis",
+          "summary": "Macroeconomic outlook, the Congress legislative agenda, and sectoral regulatory priorities, with impact scenarios for corporate decision-making in Colombia.",
+          "periodicity": "Annual"
+        },
+        {
+          "title": "Sectoral Legislative Monitoring",
+          "summary": "Quarterly tracking of bills, decrees, and committee agendas, with prioritization matrix and executive summaries per initiative.",
+          "periodicity": "Quarterly"
+        }
+      ],
+      "accessCta": "Request access",
+      "subscription": {
+        "title": "Institutional subscription",
+        "body": "To access the full reports and our customized regulatory alerts service, contact us at",
+        "email": "info@temptum.io",
+        "emailSubject": "Institutional subscription"
+      }
     }
   },
   "PrivacyPage": {
