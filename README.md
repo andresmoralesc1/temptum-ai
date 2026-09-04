@@ -109,25 +109,25 @@ pnpm typecheck  # tsc --noEmit (sin emisión, solo type-check)
 
 ## Deploy
 
-Configuración activa en `temptum.andresmorales.com.co`.
+Configuración activa en `temptum.io` (DNS en propagación — mientras tanto, deploy temporal en `temptum.andresmorales.com.co`).
 
 - **systemd**: `deploy/temptum-ai.service` → puerto `:3008`
 - **Caddy**: `deploy/Caddyfile-snippet.txt` (TLS vía ACME + cache + security headers)
-- **DNS**: Namecheap, registro A en `andresmorales.com.co`
+- **DNS**: Namecheap, registro A en `temptum.io` (en propagación; fallback `andresmorales.com.co`)
 
 ### Deploy routine (rebuild + restart)
 
 ```bash
 # 1. Build con URL correcta (NEXT_PUBLIC_* se bakea)
 cd /home/telchar/temptum-ai
-NEXT_PUBLIC_SITE_URL=https://temptum.andresmorales.com.co pnpm build
+NEXT_PUBLIC_SITE_URL=https://temptum.io pnpm build
 
 # 2. Reiniciar systemd
 sudo systemctl restart temptum-ai
 
 # 3. Verificar
 sleep 3
-curl -sI https://temptum.andresmorales.com.co/ | head -1   # → HTTP/2 200
+curl -sI https://temptum.io/ | head -1   # → HTTP/2 200
 ```
 
 ### Setup inicial (solo la primera vez)
@@ -143,7 +143,7 @@ sudo tee -a /etc/caddy/Caddyfile < deploy/Caddyfile-snippet.txt
 sudo systemctl reload caddy
 
 # 3. DNS
-# Agregar registro A para temptum.andresmorales.com.co en Namecheap
+# Agregar registro A para temptum.io en Namecheap
 # apuntando a la IP del VPS (propagación puede tomar hasta 48h)
 ```
 
@@ -250,7 +250,7 @@ El listado en `/casos-de-estudio` se genera automáticamente a partir de estos a
 # Chrome path es específico del entorno local. Ajustar CHROME_PATH
 # a la ruta del binario chrome-for-testing (o chromium del sistema).
 CHROME_PATH="$(ls -d /home/*/.cache/ms-playwright/chromium-*/chrome-linux*/chrome 2>/dev/null | head -1)" \
-  npx lighthouse https://temptum.andresmorales.com.co/ \
+  npx lighthouse https://temptum.io/ \
     --preset=desktop \
     --only-categories=performance,accessibility,best-practices,seo \
     --output=json --output=html \
@@ -311,7 +311,7 @@ Sin CI todavía. Para correr manualmente, ver `tests/axe-check.mjs` (script suel
 4. **CTAs header mobile drawer**: versión corta "WhatsApp" cuando hay poco ancho
 5. **CI**: GitHub Actions corriendo Lighthouse + axe en cada PR
 6. **Tests**: unit tests para componentes interactivos (ContactForm, CopyButton, NavMenu)
-7. **Dominio definitivo**: migrar de `temptum.andresmorales.com.co` a `temptum.io` cuando se decida
+7. **Dominio definitivo**: DNS de `temptum.io` en propagación — una vez activo, mover el deploy y quitar el fallback `temptum.andresmorales.com.co`.
 
 ---
 
@@ -357,7 +357,7 @@ Ver `git log` para detalles. Los sprints recientes cubrieron:
 ## Contacto del proyecto
 
 - **CEO**: Silvia Juliana Parra Cañas
-- **Web**: https://temptum.andresmorales.com.co
+- **Web**: https://temptum.io
 - **LinkedIn**: https://www.linkedin.com/in/silviajulianaparra/
 - **Email institucional**: info@temptum.io
 - **WhatsApp**: +57 302 238 8618
