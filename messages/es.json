@@ -44,7 +44,10 @@
       "cases": "Casos",
       "about": "Quiénes somos",
       "contact": "Contacto"
-    }
+    },
+    "languagePickerLabel": "Cambiar idioma",
+    "languageEsLabel": "Español (Colombia)",
+    "languageEnLabel": "Inglés (Estados Unidos)"
   },
   "Footer": {
     "brandTagline": "Corporate & Government Affairs",

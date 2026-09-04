@@ -44,7 +44,10 @@
       "cases": "Case studies",
       "about": "About",
       "contact": "Contact"
-    }
+    },
+    "languagePickerLabel": "Change language",
+    "languageEsLabel": "Spanish (Colombia)",
+    "languageEnLabel": "English (United States)"
   },
   "Footer": {
     "brandTagline": "Corporate & Government Affairs",

@@ -9,6 +9,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { WHATSAPP_BASE } from '@/lib/constants';
 import { useFocusTrap } from '@/hooks/useFocusTrap';
+import { FlagIcon } from '@/components/FlagIcon';
 
 export function Header() {
   const pathname = usePathname();
@@ -109,6 +110,43 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <div
+              className="hidden items-center gap-1 lg:flex"
+              role="group"
+              aria-label={tCommon('languagePickerLabel')}
+            >
+              <Link
+                href={pathname}
+                locale="es"
+                aria-current={locale === 'es' ? 'true' : undefined}
+                aria-label={tCommon('languageEsLabel')}
+                className={cn(
+                  'flex h-9 w-9 items-center justify-center overflow-hidden rounded-sm border transition-all',
+                  'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950',
+                  locale === 'es'
+                    ? 'border-gold opacity-100'
+                    : 'border-white/20 opacity-50 hover:opacity-100',
+                )}
+              >
+                <FlagIcon code="CO" className="block h-5 w-7" />
+              </Link>
+              <Link
+                href={pathname}
+                locale="en"
+                aria-current={locale === 'en' ? 'true' : undefined}
+                aria-label={tCommon('languageEnLabel')}
+                className={cn(
+                  'flex h-9 w-9 items-center justify-center overflow-hidden rounded-sm border transition-all',
+                  'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950',
+                  locale === 'en'
+                    ? 'border-gold opacity-100'
+                    : 'border-white/20 opacity-50 hover:opacity-100',
+                )}
+              >
+                <FlagIcon code="US" className="block h-5 w-7" />
+              </Link>
+            </div>
+
             <a
               href={WHATSAPP_BASE}
               target="_blank"
