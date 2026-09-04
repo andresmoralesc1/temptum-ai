@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Hero } from '@/components/Hero';
 import { CredibilityStrip } from '@/components/CredibilityStrip';
+import { Methodology } from '@/components/Methodology';
 import { Services } from '@/components/Services';
 import { Manifesto } from '@/components/Manifesto';
 import { Equipo } from '@/components/Equipo';
@@ -44,6 +45,7 @@ export default function HomePage() {
     <>
       <Hero />
       <CredibilityStrip />
+      <Methodology />
       <Services />
       <Manifesto />
       <Equipo />

@@ -162,9 +162,35 @@ export default function QuienesSomosPage() {
                   <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-navy-600">
                     Modelos de trabajo
                   </dt>
-                  <dd className="mt-2 text-sm text-navy-950">
-                    Encargos por proyecto · Retainer mensual · Asesoría
-                    estratégica
+                  <dd className="mt-3 space-y-3 text-sm text-navy-950">
+                    <div>
+                      <p className="font-semibold text-navy-950">
+                        Por proyecto
+                      </p>
+                      <p className="text-gray-700">
+                        Alcance, entregables y plazo definidos. Para mandatos
+                        con inicio y cierre claros.
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-navy-950">
+                        Retainer mensual
+                      </p>
+                      <p className="text-gray-700">
+                        Disponibilidad permanente del equipo. Para
+                        organizaciones con asuntos regulatorios o
+                        institucionales recurrentes.
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-navy-950">
+                        Asesoría estratégica
+                      </p>
+                      <p className="text-gray-700">
+                        Acompañamiento al CEO, al directorio o al equipo legal
+                        en decisiones de alto impacto.
+                      </p>
+                    </div>
                   </dd>
                 </div>
                 <div>
