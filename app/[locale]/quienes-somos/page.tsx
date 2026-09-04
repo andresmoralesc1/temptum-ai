@@ -1,217 +1,182 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 import { PageHero } from '@/components/PageHero';
 import { WHATSAPP_QUIENES } from '@/lib/constants';
 import { SITE_URL } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'Quiénes somos',
-  description:
-    'Temptum es una firma independiente de corporate & government affairs en Bogotá. Conozca a nuestra CEO, nuestra trayectoria y cómo conformamos equipos para cada encargo.',
-  alternates: { canonical: '/quienes-somos' },
-  openGraph: {
-    title: 'Quiénes somos | Temptum',
-    description:
-      'Firma independiente de corporate & government affairs en Bogotá. CEO con experiencia en Edelman y periodismo de investigación. Equipos por encargo.',
-    url: `${SITE_URL}/quienes-somos`,
-  },
-  twitter: {
-    title: 'Quiénes somos | Temptum',
-    description:
-      'Firma independiente de corporate & government affairs en Bogotá. CEO con experiencia en Edelman y periodismo de investigación.',
-  },
-};
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'AboutPage' });
+  return {
+    title: t('metadata.title'),
+    description: t('metadata.description'),
+    alternates: {
+      canonical: locale === 'es' ? '/quienes-somos' : `/${locale}/quienes-somos`,
+      languages: {
+        'es-CO': '/quienes-somos',
+        'es-419': '/quienes-somos',
+        es: '/quienes-somos',
+        en: '/en/quienes-somos',
+        'en-US': '/en/quienes-somos',
+      },
+    },
+    openGraph: {
+      title: t('metadata.ogTitle'),
+      description: t('metadata.ogDescription'),
+      url:
+        locale === 'es'
+          ? `${SITE_URL}/quienes-somos`
+          : `${SITE_URL}/en/quienes-somos`,
+    },
+    twitter: {
+      title: t('metadata.twitterTitle'),
+      description: t('metadata.twitterDescription'),
+    },
+  };
+}
 
 const WHATSAPP_HREF = WHATSAPP_QUIENES;
 
-const trayectoria = [
-  {
-    period: '2023 — Actualidad',
-    role: 'CEO',
-    org: 'Temptum Hub',
-    detail:
-      'Centro especializado en Colombia en corporate & government affairs: comunicaciones estratégicas, direccionamiento digital, infraestructura web y explotación de datos para inteligencia de negocios.',
-  },
-  {
-    period: '2019 — 2023',
-    role: 'Cofundadora',
-    org: 'VIM La Agencia',
-    detail:
-      'Expansión a medios digitales y servicios de comunicación basados en tecnología: estrategia en redes sociales y desarrollo de plataformas.',
-  },
-  {
-    period: '2015 — 2019',
-    role: 'Directora de cuenta',
-    org: 'SPR Group & Marco de Comunicaciones',
-    detail:
-      'Manejo de crisis, asuntos públicos y de gobierno, y relaciones públicas para clientes en escenarios de alto impacto.',
-  },
-  {
-    period: '2015',
-    role: 'Líder de cuentas',
-    org: 'Medios Milenium',
-    detail:
-      'Comunicación interna, externa y relaciones públicas para cuentas corporativas regionales en Latinoamérica.',
-  },
-  {
-    period: '2013 — 2014',
-    role: 'Consultora de comunicaciones',
-    org: 'Edelman Colombia',
-    detail:
-      'Diseño y ejecución de campañas estratégicas para marcas nacionales e internacionales en una de las firmas de PR más importantes del mundo.',
-  },
-  {
-    period: '2011 — 2013',
-    role: 'Periodista de investigación',
-    org: 'Publicaciones Semana · Revista Dinero',
-    detail:
-      'Reportería en los sectores económico y empresarial; redacción de géneros periodísticos e investigación para edición impresa y digital.',
-  },
-];
+type StatItem = { label: string; value: string };
+type TrayectoriaItem = { period: string; role: string; org: string; detail: string };
+type CommitmentItem = { n: string; title: string; body: string };
 
-export default function QuienesSomosPage() {
+export default async function QuienesSomosPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: 'AboutPage' });
+
+  const heroAccent = t('headlineAccent');
+  const heroParts = t('headline').split(heroAccent);
+
+  const heroStats: StatItem[] = [
+    { label: t('stats.office.label'), value: t('stats.office.value') },
+    { label: t('stats.coverage.label'), value: t('stats.coverage.value') },
+    { label: t('stats.sectors.label'), value: t('stats.sectors.value') },
+    { label: t('stats.founded.label'), value: t('stats.founded.value') },
+  ];
+
+  const aboutAccent = t('about.headlineAccent');
+  const aboutParts = t('about.headline').split(aboutAccent);
+
+  const aboutParagraphs = t.raw('aboutParagraphs') as string[];
+  const trayectoria = t.raw('trajectory') as TrayectoriaItem[];
+  const commitments = t.raw('commitments.items') as CommitmentItem[];
+
   return (
     <>
       <PageHero
-        kicker="Quiénes somos"
-        breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Quiénes somos' }]}
+        kicker={t('kicker')}
+        breadcrumbs={[
+          { label: t('breadcrumbs.home'), href: '/' },
+          { label: t('breadcrumbs.current') },
+        ]}
         headline={
           <>
-            El primer centro especializado en Colombia en{' '}
-            <span className="text-gold">
-              corporate &amp; government affairs
-            </span>
-            .
+            {heroParts[0]}
+            <span className="text-gold">{heroAccent}</span>
+            {heroParts[1] ?? ''}
           </>
         }
-        subhead="Temptum es una firma independiente con sede en Bogotá. Acompañamos a organizaciones del sector privado e instituciones en la construcción de posiciones defendibles — sustentadas en análisis técnico, conocimiento regulatorio y lectura política del entorno."
-        stats={[
-          { label: 'Sede', value: 'Bogotá' },
-          { label: 'Cobertura', value: 'Colombia · Región andina' },
-          {
-            label: 'Sectores',
-            value: 'Energía, infra, financiero, tecnología, salud',
-          },
-          { label: 'Fundada', value: '2023' },
-        ]}
+        subhead={t('subhead')}
+        stats={heroStats}
       />
 
-      {/* SOBRE TEMPTUM */}
+      {/* ABOUT TEMPTUM */}
       <section className="bg-ice py-16 lg:py-32">
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <header className="grid gap-8 border-b border-navy-100 pb-12 lg:grid-cols-12 lg:gap-12">
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-navy-600 lg:col-span-4">
-              Sobre Temptum
+              {t('about.kicker')}
             </p>
             <div className="lg:col-span-8">
               <h2 className="font-display text-3xl font-bold leading-tight text-navy-950 md:text-4xl lg:text-5xl">
-                Una práctica fundada en
+                {aboutParts[0]}
                 <br />
-                <span className="text-navy-600">rigor, no en urgencia.</span>
+                <span className="text-navy-600">{aboutAccent}</span>
+                {aboutParts[1] ?? ''}
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-700">
-                Combinamos experiencia en comunicación corporativa, periodismo
-                de investigación y asuntos públicos para servir a organizaciones
-                que toman decisiones que importan. Cada encargo se ejecuta con
-                equipos de tres a cinco personas, entregables documentados y un
-                socio responsable desde el primer diagnóstico.
+                {t('about.body')}
               </p>
             </div>
           </header>
 
           <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7 space-y-6 text-base leading-relaxed text-gray-700">
-              <p>
-                Temptum reúne cuatro líneas de trabajo — relaciones
-                institucionales, gestión de riesgos y crisis, asuntos
-                regulatorios y legislativos, y comunicaciones ASG — bajo una
-                sola metodología: traducir contextos complejos en decisiones
-                defendibles.
-              </p>
-              <p>
-                Nuestro equipo combina perfiles de ciencias políticas, derecho,
-                economía y comunicación estratégica, con experiencia directa en
-                el sector público, el sector privado y la academia. Aplicamos
-                metodologías de análisis de riesgos, monitoreo regulatorio y
-                mapeo de actores para producir inteligencia accionable — no
-                diagnósticos genéricos.
-              </p>
-              <p>
-                Operamos bajo estándares estrictos de confidencialidad,
-                independencia y cumplimiento. No sustituimos al cliente: lo
-                acompañamos con rigor técnico y criterio estratégico para que
-                cada decisión sea defendible ante sus audiencias, sus
-                reguladores y la opinión pública.
-              </p>
+              {aboutParagraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
             </div>
 
             <aside className="lg:col-span-5">
               <figure className="border-l-2 border-gold pl-6">
                 <Image
                   src="/images/equipo/equipo-reunion.jpg"
-                  alt="Sesión de consultoría con clientes y aliados"
+                  alt={
+                    locale === 'es'
+                      ? 'Sesión de consultoría con clientes y aliados'
+                      : 'Consulting session with clients and partners'
+                  }
                   width={1000}
                   height={667}
                   sizes="(min-width: 1024px) 480px, 100vw"
                   className="aspect-[3/2] w-full object-cover"
                 />
                 <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-gray-500">
-                  Sesión de análisis con aliados y clientes
+                  {t('sessionCaption')}
                 </figcaption>
               </figure>
 
               <dl className="mt-10 space-y-6 border-t border-navy-100 pt-6">
                 <div>
                   <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-navy-600">
-                    Idiomas
+                    {t('languagesLabel')}
                   </dt>
-                  <dd className="mt-2 text-sm text-navy-950">
-                    Español · Inglés
-                  </dd>
+                  <dd className="mt-2 text-sm text-navy-950">{t('languages')}</dd>
                 </div>
                 <div>
                   <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-navy-600">
-                    Modelos de trabajo
+                    {t('engagementModels.title')}
                   </dt>
                   <dd className="mt-3 space-y-3 text-sm text-navy-950">
                     <div>
                       <p className="font-semibold text-navy-950">
-                        Por proyecto
+                        {t('engagementModels.byProject.title')}
                       </p>
                       <p className="text-gray-700">
-                        Alcance, entregables y plazo definidos. Para mandatos
-                        con inicio y cierre claros.
+                        {t('engagementModels.byProject.body')}
                       </p>
                     </div>
                     <div>
                       <p className="font-semibold text-navy-950">
-                        Retainer mensual
+                        {t('engagementModels.retainer.title')}
                       </p>
                       <p className="text-gray-700">
-                        Disponibilidad permanente del equipo. Para
-                        organizaciones con asuntos regulatorios o
-                        institucionales recurrentes.
+                        {t('engagementModels.retainer.body')}
                       </p>
                     </div>
                     <div>
                       <p className="font-semibold text-navy-950">
-                        Asesoría estratégica
+                        {t('engagementModels.advisory.title')}
                       </p>
                       <p className="text-gray-700">
-                        Acompañamiento al CEO, al directorio o al equipo legal
-                        en decisiones de alto impacto.
+                        {t('engagementModels.advisory.body')}
                       </p>
                     </div>
                   </dd>
                 </div>
                 <div>
                   <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-navy-600">
-                    Cobertura operativa
+                    {t('coverageLabel')}
                   </dt>
                   <dd className="mt-2 text-sm text-navy-950">
-                    Bogotá · Medellín · Cali · Quito · Lima
+                    {t('operationalCoverage')}
                   </dd>
                 </div>
               </dl>
@@ -225,22 +190,17 @@ export default function QuienesSomosPage() {
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <header className="grid gap-8 border-b border-navy-100 pb-12 lg:grid-cols-12 lg:gap-12">
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-navy-600 lg:col-span-4">
-              Liderazgo
+              {t('leadership.kicker')}
             </p>
             <div className="lg:col-span-8">
               <h2 className="font-display text-3xl font-bold leading-tight text-navy-950 md:text-4xl lg:text-5xl">
-                Silvia Juliana Parra Cañas
+                {t('leadership.name')}
               </h2>
               <p className="mt-3 text-base font-medium uppercase tracking-[0.18em] text-navy-600">
-                CEO &amp; socia fundadora
+                {t('leadership.role')}
               </p>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-700">
-                Magíster en Periodismo por la Universidad del Rosario y
-                comunicadora social y periodista de la Universidad Jorge Tadeo
-                Lozano. Más de una década construyendo estrategias de
-                comunicación, manejando crisis de alto perfil y fortaleciendo el
-                posicionamiento de marcas nacionales e internacionales en
-                Colombia y la región.
+                {t('leadership.intro')}
               </p>
             </div>
           </header>
@@ -252,8 +212,7 @@ export default function QuienesSomosPage() {
                   <span className="text-gold" aria-hidden="true">
                     &ldquo;
                   </span>
-                  La cercanía con el cliente y la profundidad técnica son las
-                  dos cosas que no se pueden comprometer.
+                  {t('leadership.quote')}
                   <span className="text-gold" aria-hidden="true">
                     &rdquo;
                   </span>
@@ -261,7 +220,7 @@ export default function QuienesSomosPage() {
               </blockquote>
 
               <h3 className="mt-12 font-display text-lg font-bold uppercase tracking-[0.18em] text-navy-600">
-                Trayectoria profesional
+                {t('leadership.trajectoryTitle')}
               </h3>
               <ol className="mt-6 space-y-8 border-l border-navy-100 pl-6">
                 {trayectoria.map((item) => (
@@ -289,7 +248,7 @@ export default function QuienesSomosPage() {
               <figure className="border-l-2 border-gold pl-6">
                 <Image
                   src="/images/equipo/silvia-juliana.png"
-                  alt="Silvia Juliana Parra Cañas, CEO y socia fundadora de Temptum"
+                  alt={t('leadership.name')}
                   width={800}
                   height={800}
                   sizes="(min-width: 1024px) 480px, 100vw"
@@ -300,45 +259,40 @@ export default function QuienesSomosPage() {
 
               <div className="border-t border-navy-100 pt-8">
                 <h3 className="font-display text-lg font-bold uppercase tracking-[0.18em] text-navy-600">
-                  Formación
+                  {t('leadership.formationTitle')}
                 </h3>
                 <ul className="mt-4 space-y-4 text-sm leading-relaxed text-navy-950">
                   <li>
                     <strong className="block text-navy-950">
-                      Magíster en Periodismo
+                      {t('leadership.formation.master.title')}
                     </strong>
-                    Universidad del Rosario · 2012 – 2014
+                    {t('leadership.formation.master.school')}
                   </li>
                   <li>
                     <strong className="block text-navy-950">
-                      Comunicadora Social y Periodista
+                      {t('leadership.formation.bachelor.title')}
                     </strong>
-                    Fundación Universidad de Bogotá Jorge Tadeo Lozano ·
-                    2007 – 2010
+                    {t('leadership.formation.bachelor.school')}
                   </li>
                 </ul>
               </div>
 
               <div className="border-t border-navy-100 pt-8">
                 <h3 className="font-display text-lg font-bold uppercase tracking-[0.18em] text-navy-600">
-                  Docencia
+                  {t('leadership.teachingTitle')}
                 </h3>
                 <ul className="mt-4 space-y-4 text-sm leading-relaxed text-navy-950">
                   <li>
                     <strong className="block text-navy-950">
-                      Universidad del Rosario
+                      {t('leadership.teaching.rosario.title')}
                     </strong>
-                    Cátedra <em>Storytelling</em> — Maestría en Comunicación
-                    Política Digital.
+                    {t('leadership.teaching.rosario.body')}
                   </li>
                   <li>
                     <strong className="block text-navy-950">
-                      Universidad Jorge Tadeo Lozano
+                      {t('leadership.teaching.tadeo.title')}
                     </strong>
-                    Cátedras de <em>Relaciones Públicas</em>,{' '}
-                    <em>Communication Strategy for Organizations</em> y{' '}
-                    <em>Marketing y Comunicación Política</em> (pregrado y
-                    maestría).
+                    {t('leadership.teaching.tadeo.body')}
                   </li>
                 </ul>
               </div>
@@ -350,7 +304,7 @@ export default function QuienesSomosPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-widest text-navy-600 hover:text-navy-950"
                 >
-                  LinkedIn
+                  {t('leadership.linkedinCta')}
                   <ArrowUpRight
                     size={16}
                     strokeWidth={2}
@@ -369,40 +323,39 @@ export default function QuienesSomosPage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-navy-600">
-                Aliados y sectores
+                {t('allies.kicker')}
               </p>
               <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-navy-950 md:text-4xl">
-                Un ecosistema amplio,
+                {t('allies.headline').split(t('allies.headlineAccent'))[0]}
                 <br />
                 <span className="text-navy-600">
-                  articulado para cada encargo.
+                  {t('allies.headlineAccent')}
                 </span>
+                {t('allies.headline').split(t('allies.headlineAccent'))[1] ?? ''}
               </h2>
               <p className="mt-6 text-base leading-relaxed text-gray-700">
-                Temptum trabaja con una red estable de aliados sectoriales,
-                académicos y consultivos en Colombia y la región andina. Para
-                cada proyecto convocamos a los perfiles que el contexto exige:
-                abogados, economistas, científicos políticos, comunicadores
-                estratégicos y especialistas técnicos.
+                {t('allies.body1')}
               </p>
               <p className="mt-4 text-base leading-relaxed text-gray-700">
-                Esta red no reemplaza al equipo permanente: lo complementa. La
-                coordinación, el criterio editorial y la interlocución con el
-                cliente permanecen en casa.
+                {t('allies.body2')}
               </p>
             </div>
 
             <figure className="border-l-2 border-gold pl-6 lg:col-span-7">
               <Image
                 src="/images/equipo/equipo-acuerdo.jpg"
-                alt="Equipo interdisciplinario de aliados y colaboradores"
+                alt={
+                  locale === 'es'
+                    ? 'Equipo interdisciplinario de aliados y colaboradores'
+                    : 'Interdisciplinary team of partners and collaborators'
+                }
                 width={1600}
                 height={900}
                 sizes="(min-width: 1024px) 800px, 100vw"
                 className="aspect-[16/9] w-full object-cover"
               />
               <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-gray-500">
-                Red de aliados sectoriales y académicos
+                {t('allies.caption')}
               </figcaption>
             </figure>
           </div>
@@ -414,42 +367,25 @@ export default function QuienesSomosPage() {
         <div className="mx-auto max-w-content px-5 lg:px-20">
           <header className="grid gap-8 border-b border-white/10 pb-12 lg:grid-cols-12 lg:gap-12">
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-gold lg:col-span-4">
-              Cómo trabajamos
+              {t('commitments.kicker')}
             </p>
             <div className="lg:col-span-8">
               <h2 className="font-display text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
-                Tres compromisos
+                {t('commitments.headline').split(t('commitments.headlineAccent'))[0]}
                 <br />
-                <span className="text-gold">innegociables.</span>
+                <span className="text-gold">
+                  {t('commitments.headlineAccent')}
+                </span>
+                {t('commitments.headline').split(t('commitments.headlineAccent'))[1] ?? ''}
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-navy-100">
-                Cada encargo se ejecuta bajo los mismos tres principios. No son
-                eslóganes: son la base operativa de la firma.
+                {t('commitments.intro')}
               </p>
             </div>
           </header>
 
           <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
-            {[
-              {
-                n: '01',
-                title: 'Confidencialidad estricta',
-                body:
-                  'Manejo de información sensible bajo protocolos formales de acceso, archivo y destrucción. No usamos el nombre del cliente como activo de mercadeo.',
-              },
-              {
-                n: '02',
-                title: 'Independencia de criterio',
-                body:
-                  'No recibimos compensación de terceros por resultados regulatorios o de política pública. Recomendamos lo que es defendible, no lo que conviene al proveedor.',
-              },
-              {
-                n: '03',
-                title: 'Cumplimiento verificable',
-                body:
-                  'Cada entregable es trazable, cada metodología documentada, cada equipo de trabajo identificado por escrito. La auditoría del trabajo propio es parte del servicio.',
-              },
-            ].map((p) => (
+            {commitments.map((p) => (
               <article key={p.n}>
                 <p
                   className="font-display text-5xl font-bold leading-none text-gold"
@@ -475,19 +411,18 @@ export default function QuienesSomosPage() {
           <div className="grid items-end gap-12 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-8">
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-navy-600">
-                ¿Conversamos?
+                {t('cta.kicker')}
               </p>
               <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-navy-950 md:text-4xl lg:text-5xl">
-                Cuéntenos el contexto.
+                {t('cta.headline').split(t('cta.headlineAccent'))[0]}
                 <br />
                 <span className="text-navy-600">
-                  Le respondemos en un plazo de dos días hábiles.
+                  {t('cta.headlineAccent')}
                 </span>
+                {t('cta.headline').split(t('cta.headlineAccent'))[1] ?? ''}
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-700">
-                Atendemos cada conversación de manera directa, sin formularios
-                genéricos. Si su organización enfrenta un escenario complejo,
-                conversemos por correo o WhatsApp.
+                {t('cta.body')}
               </p>
             </div>
             <div className="flex flex-col gap-3 lg:col-span-4 lg:items-end">
@@ -495,7 +430,7 @@ export default function QuienesSomosPage() {
                 href="/contacto"
                 className="inline-flex items-center justify-center gap-2 bg-navy-600 px-6 py-3 text-[13px] font-medium uppercase tracking-widest text-white transition-colors hover:bg-navy-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
               >
-                Conversemos
+                {t('cta.primary')}
                 <ArrowRight
                   size={16}
                   strokeWidth={2}
@@ -508,7 +443,7 @@ export default function QuienesSomosPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 border border-navy-600 px-6 py-3 text-[13px] font-medium uppercase tracking-widest text-navy-600 transition-colors hover:bg-navy-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
               >
-                WhatsApp directo
+                {t('cta.secondary')}
                 <ArrowUpRight
                   size={16}
                   strokeWidth={2}

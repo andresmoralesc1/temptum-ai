@@ -265,10 +265,22 @@
     "headlineAccent": "corporate & government affairs",
     "subhead": "Temptum is an independent firm based in Bogotá. We support private-sector organizations and institutions in building defensible positions — grounded in technical analysis, regulatory knowledge, and political reading of the environment.",
     "stats": {
-      "office": "Bogotá",
-      "coverage": "Colombia · Andean region",
-      "sectors": "Energy, infrastructure, financial, technology, healthcare",
-      "founded": "2023"
+      "office": {
+        "label": "Office",
+        "value": "Bogotá"
+      },
+      "coverage": {
+        "label": "Coverage",
+        "value": "Colombia · Andean region"
+      },
+      "sectors": {
+        "label": "Sectors",
+        "value": "Energy, infrastructure, financial, technology, healthcare"
+      },
+      "founded": {
+        "label": "Founded",
+        "value": "2023"
+      }
     },
     "breadcrumbs": {
       "home": "Home",
@@ -410,7 +422,9 @@
       "body": "We handle every conversation directly, without generic forms. If your organization faces a complex scenario, let's talk by email or WhatsApp.",
       "primary": "Let's talk",
       "secondary": "Let's talk on WhatsApp"
-    }
+    },
+    "languagesLabel": "Languages",
+    "coverageLabel": "Operational coverage"
   },
   "ServicesPage": {
     "metadata": {

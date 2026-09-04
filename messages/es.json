@@ -265,10 +265,22 @@
     "headlineAccent": "corporate & government affairs",
     "subhead": "Temptum es una firma independiente con sede en Bogotá. Acompañamos a organizaciones del sector privado e instituciones en la construcción de posiciones defendibles — sustentadas en análisis técnico, conocimiento regulatorio y lectura política del entorno.",
     "stats": {
-      "office": "Bogotá",
-      "coverage": "Colombia · Región andina",
-      "sectors": "Energía, infra, financiero, tecnología, salud",
-      "founded": "2023"
+      "office": {
+        "label": "Sede",
+        "value": "Bogotá"
+      },
+      "coverage": {
+        "label": "Cobertura",
+        "value": "Colombia · Región andina"
+      },
+      "sectors": {
+        "label": "Sectores",
+        "value": "Energía, infra, financiero, tecnología, salud"
+      },
+      "founded": {
+        "label": "Fundada",
+        "value": "2023"
+      }
     },
     "breadcrumbs": {
       "home": "Inicio",
@@ -410,7 +422,9 @@
       "body": "Atendemos cada conversación de manera directa, sin formularios genéricos. Si su organización enfrenta un escenario complejo, conversemos por correo o WhatsApp.",
       "primary": "Conversemos",
       "secondary": "Conversemos por WhatsApp"
-    }
+    },
+    "languagesLabel": "Idiomas",
+    "coverageLabel": "Cobertura operativa"
   },
   "ServicesPage": {
     "metadata": {
