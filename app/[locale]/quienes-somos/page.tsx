@@ -247,7 +247,7 @@ export default async function QuienesSomosPage({ params }: Props) {
             <aside className="lg:col-span-5 space-y-8">
               <figure className="border-l-2 border-gold pl-6">
                 <Image
-                  src="/images/equipo/silvia-juliana.png"
+                  src="/images/equipo/juliana-becerra.webp"
                   alt={t('leadership.name')}
                   width={800}
                   height={800}
