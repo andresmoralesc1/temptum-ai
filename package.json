@@ -8,6 +8,17 @@
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
+  "browserslist": [
+    "chrome >= 111",
+    "edge >= 111",
+    "firefox >= 111",
+    "safari >= 16.4",
+    "ios_saf >= 16.4",
+    "opera >= 97",
+    "samsung >= 22",
+    "not dead",
+    "not IE 11"
+  ],
   "dependencies": {
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
