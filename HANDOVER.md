@@ -173,6 +173,8 @@ Validado con [Schema Markup Validator](https://validator.schema.org/) sin errore
 - **LCP < 1.5s** en mobile (Vercel edge). Imágenes del hero y casos servidas como AVIF/WebP por el loader de Next.
 - **Lighthouse 100/100/100/100** en desktop y **95-100** en mobile en las 9 páginas principales (medición pre-deploy a Vercel, host local).
 - Headers de seguridad: `X-Content-Type-Options: nosniff`, `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy: camera=(), microphone=(), geolocation=()`.
+- **CSS inline, no render-blocking (`16c3905`, PR #4)**. `experimental.inlineCss: true` en `next.config.mjs` mueve el chunk de Tailwind (42 KB) a un `<style data-href=...>` dentro del HTML, eliminando la request bloqueante que PageSpeed Insights reportaba. El chunk `1od0ebl33rv-2.css` sigue siendo servible por el CDN para browsers que no honren el inline, con `cache-control: public,max-age=31536000,immutable`.
+- **Sin polyfills legacy (`16c3905`, PR #4)**. `browserslist` en `package.json` apunta a navegadores evergreen de los últimos 12 meses (Chrome/Edge/Firefox >= 111, Safari/iOS >= 16.4, Opera >= 97, Samsung >= 22, más `not dead` y `not IE 11`). Next 16 (`get-supported-browsers.js`) lo lee automáticamente y omite el shim de `Array.prototype.at/flat/flatMap`, `Object.fromEntries`, `String.prototype.trimStart/trimEnd`, etc. El polyfill chunk que queda es solo `Object.hasOwn` (~1 KB).
 
 ---
 
@@ -382,6 +384,10 @@ Si el build falla, Vercel notifica por email y el deploy anterior sigue sirviend
 | `d5ae863` | i18n | Flag switcher en header y footer |
 | `51aa8fc` | i18n refactor | Mover keys de Header a Common |
 | `b3ed4d7` | Deploy | vercel.json + README bilingüe |
+| `46f1316` | Photo | Reemplazar silvia-juliana.png por juliana-becerra.webp (1.3 MB → 35 KB) |
+| `9574319` | Photo + UI | Fondo transparente de Juliana + quitar flags del footer (queda LocaleSwitcher flotante) |
+| `be97048` | SEO | Canonical domain → www.temptum.io + x-default hreflang en 8 páginas + layout + sitemap |
+| `16c3905` | perf | CSS inline (sin render-blocking) + browserslist evergreen (sin polyfills legacy) |
 
 ---
 
