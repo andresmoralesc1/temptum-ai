@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical:
         locale === 'es' ? '/inteligencia-politica' : `/${locale}/inteligencia-politica`,
       languages: {
+        'x-default': '/',
         'es-CO': '/inteligencia-politica',
         'es-419': '/inteligencia-politica',
         es: '/inteligencia-politica',

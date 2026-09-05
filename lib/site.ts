@@ -1,6 +1,6 @@
 export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-  'https://temptum.andresmorales.com.co'
+  'https://www.temptum.io'
 ).replace(/\/$/, '');
 
 export const SITE_DESCRIPTION =

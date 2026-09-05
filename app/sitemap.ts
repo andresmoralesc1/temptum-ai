@@ -46,6 +46,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: route.priority,
       alternates: {
         languages: {
+          'x-default': esUrl,
           'es-CO': esUrl,
           'es-419': esUrl,
           es: esUrl,
@@ -62,6 +63,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: route.priority,
       alternates: {
         languages: {
+          'x-default': esUrl,
           'es-CO': esUrl,
           'es-419': esUrl,
           es: esUrl,
@@ -83,6 +85,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
       alternates: {
         languages: {
+          'x-default': esUrl,
           'es-CO': esUrl,
           'es-419': esUrl,
           es: esUrl,
@@ -99,6 +102,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
       alternates: {
         languages: {
+          'x-default': esUrl,
           'es-CO': esUrl,
           'es-419': esUrl,
           es: esUrl,
