@@ -108,7 +108,7 @@ export async function Equipo() {
           <Reveal as="figure" delay={120} className="lg:col-span-5">
             <div className="border-l-2 border-gold pl-6">
               <Image
-                src="/images/equipo/silvia-juliana.png"
+                src="/images/equipo/juliana-becerra.webp"
                 alt={t('quoteFooter')}
                 width={800}
                 height={800}
