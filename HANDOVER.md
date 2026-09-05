@@ -147,8 +147,9 @@ Sitemap: https://temptum.io/sitemap.xml
 
 - **Default locale: `es` (sin prefijo).** `/` sirve la versión española. `/en/` sirve la inglesa. Decisión consciente para preservar los backlinks existentes de `/` y consolidar signals de SEO en el dominio raíz para consultas en español.
 - `<link rel="canonical">` apunta siempre a la versión del locale actual.
-- `<link rel="alternate" hreflang="...">` con 5 variantes por página.
+- `<link rel="alternate" hreflang="...">` con 6 variantes por página (`x-default`, `es-CO`, `es-419`, `es`, `en`, `en-US`).
 - **x-default** apunta a `/` (no `/en/`), para que Google sirva español a usuarios sin preferencia clara.
+- **Importante:** El dominio canónico se construye desde `process.env.NEXT_PUBLIC_SITE_URL`, con fallback `https://www.temptum.io` en `lib/site.ts`. Si esa variable no está configurada en el entorno de deploy (Vercel → Settings → Environment Variables → Production), el build usa el fallback. Verificar tras cada cambio de dominio o de proveedor.
 
 ### 5.4 Open Graph y Twitter Cards
 

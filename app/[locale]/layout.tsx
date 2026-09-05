@@ -48,7 +48,9 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'Site' });
   const tMeta = await getTranslations({ locale, namespace: 'Site.meta' });
 
-  const languages: Record<string, string> = {};
+  const languages: Record<string, string> = {
+    'x-default': '/',
+  };
   for (const l of routing.locales) {
     if (l === 'es') {
       languages['es-CO'] = '/';
