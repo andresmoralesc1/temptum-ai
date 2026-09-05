@@ -1,17 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { Link, usePathname } from '@/i18n/routing';
+import { Link } from '@/i18n/routing';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { useTranslations, useLocale } from 'next-intl';
-import { cn } from '@/lib/utils';
-import { FlagIcon } from '@/components/FlagIcon';
+import { useTranslations } from 'next-intl';
 
 export function Footer() {
   const t = useTranslations('Footer');
   const tCommon = useTranslations('Common');
-  const locale = useLocale();
-  const pathname = usePathname();
   const year = new Date().getFullYear();
   return (
     <footer className="bg-navy-950 text-navy-100">
@@ -152,44 +148,8 @@ export function Footer() {
       </div>
 
       <div className="border-t border-navy-800">
-        <div className="mx-auto flex max-w-content flex-col items-start justify-between gap-3 px-5 py-5 text-xs text-navy-100 sm:flex-row sm:items-center lg:px-20">
+        <div className="mx-auto flex max-w-content items-center px-5 py-5 text-xs text-navy-100 lg:px-20">
           <p>{tCommon('copyright', { year })}</p>
-          <div
-            className="flex items-center gap-2"
-            role="group"
-            aria-label={tCommon('languagePickerLabel')}
-          >
-            <Link
-              href={pathname}
-              locale="es"
-              aria-current={locale === 'es' ? 'true' : undefined}
-              aria-label={tCommon('languageEsLabel')}
-              className={cn(
-                'flex h-7 w-9 items-center justify-center overflow-hidden rounded-sm border transition-all',
-                'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950',
-                locale === 'es'
-                  ? 'border-gold opacity-100'
-                  : 'border-white/20 opacity-60 hover:opacity-100',
-              )}
-            >
-              <FlagIcon code="CO" className="block h-4 w-6" />
-            </Link>
-            <Link
-              href={pathname}
-              locale="en"
-              aria-current={locale === 'en' ? 'true' : undefined}
-              aria-label={tCommon('languageEnLabel')}
-              className={cn(
-                'flex h-7 w-9 items-center justify-center overflow-hidden rounded-sm border transition-all',
-                'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950',
-                locale === 'en'
-                  ? 'border-gold opacity-100'
-                  : 'border-white/20 opacity-60 hover:opacity-100',
-              )}
-            >
-              <FlagIcon code="US" className="block h-4 w-6" />
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
